@@ -1,0 +1,27 @@
+{
+  "name": "multietch",
+  "version": "1.0.0",
+  "description": "https://multietch.com",
+  "main": "README.md",
+  "scripts": {
+    "format": "npx prettier -w .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exotica-jewelry/multietch-dev.git"
+  },
+  "author": "Ivan Boothe <git@rootwork.org> (https://rootwork.org/)",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/exotica-jewelry/multietch-dev/issues"
+  },
+  "homepage": "https://github.com/exotica-jewelry/multietch-dev#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3"
+  }
+}
