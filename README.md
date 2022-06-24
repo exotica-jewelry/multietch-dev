@@ -83,13 +83,13 @@ and the [overview of Hugo modules](https://gohugo.io/hugo-modules/).
 
 ### Node modules
 
-- `yarn outdated`
-- `yarn upgrade [package]` to upgrade to the newest version satisfied by the
-  version range in `package.json`
-- `yarn upgrade [package@version]` to upgrade to a specific version,
-  disregarding `package.json`
-- `yarn upgrade [package] --latest` to upgrade to the newest version,
-  disregarding `package.json`
+- `yarn outdated`, then:
+  - `yarn upgrade [package]` to upgrade to the newest version satisfied by the
+    version range in `package.json`
+  - `yarn upgrade [package@version]` to upgrade to a specific version,
+    disregarding `package.json`
+  - `yarn upgrade [package] --latest` to upgrade to the newest version,
+    disregarding `package.json`
 
 ## Licenses
 
