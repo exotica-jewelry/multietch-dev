@@ -1,6 +1,8 @@
 # Development site for https://multietch.com
 
-Multi-Etch is created with the static site generator [Hugo](http://gohugo.io). This repo also uses Node/yarn for some helper scripts, so everything Hugo-related is in the `hugo` directory.
+Multi-Etch is created with the static site generator [Hugo](http://gohugo.io).
+This repo also uses Node with yarn for some helper scripts, so everything
+Hugo-related is in the `hugo` directory.
 
 ## Editing site variables
 
@@ -87,9 +89,12 @@ Then `npm up <module>` as necessary, and commit.
 
 ## Licenses
 
-Code portions including any Bash scripts, HTML, Sass/CSS, Javascript, and Go templates are licensed AGPLv3. See [LICENSE-code](LICENSE-code).
+Code portions including any Bash scripts, HTML, Sass/CSS, Javascript, and Go
+templates are licensed AGPLv3. See [LICENSE-code](LICENSE-code).
 
-Content of web pages, including text in `hugo/content` and its subdirectories, and images/logos in the `hugo/content`
-and `hugo/static` directories and their subdirectories, are © All Rights Reserved by Multi-Etch, LLC, or their respective copyright-holders as noted. See [LICENSE-content](LICENSE-content).
+Content of web pages, including text in `hugo/content` and its subdirectories,
+and images/logos in the `hugo/content` and `hugo/static` directories and their
+subdirectories, are © All Rights Reserved by Multi-Etch, LLC, or their
+respective copyright-holders as noted. See [LICENSE-content](LICENSE-content).
 
 "Multi-Etch" is a registered trademark of Exotica Jewelry, Inc.
