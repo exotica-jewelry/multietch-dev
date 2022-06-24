@@ -1,7 +1,7 @@
 # Development site for https://multietch.com
 
 Multi-Etch is created with the static site generator [Hugo](http://gohugo.io).
-This repo also uses Node with yarn for some helper scripts, so everything
+This repo also uses Node and yarn for some helper scripts, so everything
 Hugo-related is in the `hugo` directory.
 
 ## Editing site variables
@@ -83,9 +83,13 @@ and the [overview of Hugo modules](https://gohugo.io/hugo-modules/).
 
 ### Node modules
 
-`npm outdated`
-
-Then `npm up <module>` as necessary, and commit.
+- `yarn outdated`
+- `yarn upgrade [package]` to upgrade to the newest version satisfied by the
+  version range in `package.json`
+- `yarn upgrade [package@version]` to upgrade to a specific version,
+  disregarding `package.json`
+- `yarn upgrade [package] --latest` to upgrade to the newest version,
+  disregarding `package.json`
 
 ## Licenses
 
