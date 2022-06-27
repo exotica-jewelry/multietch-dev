@@ -35,39 +35,21 @@ overridden files from upstream.
 
 - `git clone git@github.com:exotica-jewelry/multietch-dev.git`
 - `cd multietch-dev`
-- `npm i`
+- `yarn install --immutable --immutable-cache`
 
-Tested with Node 16.x, npm 8.x, and yarn 1.22.x.
-
-### Go
-
-- [Follow the instructions](https://golang.org/doc/install)
-
-### Hugo
-
-- Get the `hugo_extended_VERSION_OS-64bit.*`
-  [package from GitHub releases](https://github.com/gohugoio/hugo/releases)
-  (e.g. `hugo_extended_0.81.0_Linux-64bit.deb`). On Debian-based Linux systems,
-  ignore the alert that
-  [an older package is available in the channel](https://gohugo.io/getting-started/installing#debian-and-ubuntu).
-- Install the package, which will place it in `/usr/local/bin/hugo`.
+Tested with Node 16.x and yarn 1.22.x.
 
 ## Updating dependencies
 
-### Go
-
-- Check version: `go version`
-- [Remove old version and install new version](https://gist.github.com/nikhita/432436d570b89cab172dcf2894465753)
-
 ### Hugo
 
-- Check version: `hugo version`
-- `sudo rm -rf /usr/local/bin/hugo`
-- Get the `hugo_extended_VERSION_OS-64bit.*`
-  [package from GitHub releases](https://github.com/gohugoio/hugo/releases)
-  (e.g. `hugo_extended_0.81.0_Linux-64bit.deb`) and install.
+Hugo extended is installed via
+[hugo-bin](https://www.npmjs.com/package/hugo-bin). To update to the newest
+version, run `yarn install`.
 
 ### Hugo modules
+
+From the `./hugo` subdirectory:
 
 - Update all modules: `hugo mod get -u`
 - Update all modules recursively: `hugo mod get -u ./...`

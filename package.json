@@ -4,6 +4,10 @@
   "description": "https://multietch.com",
   "main": "README.md",
   "scripts": {
+    "build": "hugo --source='./hugo'",
+    "build:preview": "hugo --source='./hugo' --buildDrafts --buildFuture",
+    "create": "hugo --source='./hugo' new",
+    "serve": "hugo --source='./hugo' server",
     "format": "npx prettier -w .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
@@ -20,8 +24,12 @@
   "homepage": "https://github.com/exotica-jewelry/multietch-dev#readme",
   "dependencies": {},
   "devDependencies": {
+    "hugo-bin": "^0.89.0",
     "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
   }
 }
