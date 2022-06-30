@@ -1,0 +1,98 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Multi-Etch®"
+titleSeparator = "|"
+titleAddition = "A Safer Alternative to Hydrofluoric Acid"
+description = "Multi-Etch® is a low-acid (pH 6.8) alternative to hydrofluoric acid and can be used to optimize titanium and other metals for welding and anodizing."
+
+## Documentation
+# docsVersion = "0.3"
+
+## Open Graph
+images = ["multietch-share-image.png"]
+ogLocale = "en_US"
+domainTLD = "multietch.com"
+titleHome = "Multi-Etch® | A Safer Alternative to Hydrofluoric Acid"
+
+## Twitter Cards
+twitterSite = "@multietch"
+twitterCreator = "@multietch"
+
+## JSON-LD
+## Resources:
+##   List of entities: https://schema.org/docs/full.html
+##   Schema validator: https://validator.schema.org
+##   Google "Rich Results" tester: https://search.google.com/test/rich-results
+schemaType = "Corporation"
+schemaName = "Multi-Etch"
+schemaAuthor = "Multi-Etch"
+schemaAuthorTwitter = "https://twitter.com/multietch"
+schemaAuthorLinkedIn = "https://www.linkedin.com/company/multietch/"
+schemaAuthorGitHub = "https://github.com/exotica-jewelry"
+schemaLocale = "en-US"
+schemaLogo = "multietch-bg.png"
+schemaLogoWidth = 1000
+schemaLogoHeight = 423
+schemaImage = "multietch-share-image.png"
+schemaImageWidth = 1280
+schemaImageHeight = 640
+schemaTwitter = "https://twitter.com/multietch"
+schemaLinkedIn = "https://www.linkedin.com/company/multietch/"
+schemaGitHub = "https://github.com/exotica-jewelry"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = false
+
+## Chrome Browser
+themeColor = "#44165a"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+smallLimit = "300"
+
+# Footer
+footer = "© 2022, All Rights Reserved, Multi-Etch, LLC"
+
+# Feed
+copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"
+
+# Alert
+alert = false
+alertDismissable = true
+# alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\" target=\"_blank\" rel=\"noopener\">Check out Doks v0.2</a>"
+alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
+
+# Edit Page
+# repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
+repoHost = "GitHub"
+#repoHost = "Gitea"
+docsRepo = "https://github.com/exotica-jewelry/multietch"
+docsRepoBranch = "main"
+docsRepoSubPath = ""
+editPage = false
+lastMod = false
+
+[options]
+  lazySizes = true
+  clipBoard = false
+  instantPage = true
+  flexSearch = true
+  darkMode = true
+  bootStrapJs = true
+  breadCrumb = true
+  highLight = false
+  kaTex = false
+  multilingualMode = false
+  docsVersioning = false
+  fullWidth = false
+
+[menu]
+  [menu.section]
+    auto = true
+    collapsibleSidebar = true

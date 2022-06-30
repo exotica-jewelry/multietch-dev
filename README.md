@@ -4,21 +4,45 @@ Multi-Etch is created with the static site generator [Hugo](http://gohugo.io).
 This repo also uses Node and yarn for some helper scripts, so everything
 Hugo-related is in the `hugo` directory.
 
-## Editing site variables
+## Local development
+
+### Installation
+
+- `git clone git@github.com:exotica-jewelry/multietch-dev.git`
+- `cd multietch-dev`
+- `yarn install --immutable --immutable-cache`
+- `cd hugo && npm ci`
+
+Tested with Node 16.x and yarn 1.22.x.
+
+### Serving the site
+
+`yarn serve`
+
+Because the theme makes use of Hugo's `.Scratch` function, `fastRender` is
+turned off.
+
+By default, the site is served in development mode:
+
+- Drafts are included
+- Future-scheduled posts are included
+- Asset fingerprinting, CDNs and comment systems are disabled
+
+Alternatively, use `yarn serve:prod` to preview the production mode:
+
+- Drafts are not included
+- Future-scheduled posts are not included
+- Asset fingerprinting, CDNs and comment systems are enabled.
+
+### Creating a new post
+
+`yarn run create <path>` or `hugo new <path>`.
+
+### Editing site variables
 
 - `hugo/config/_default/config.toml` (main configuration)
 
-## Hugo modules
-
-The site imports components like the theme as
-[Hugo modules](https://gohugo.io/hugo-modules/) rather than as git submodules
-(as in the past).
-[More information about this approach.](https://github.com/rootwork/hugo-module-site)
-
-The `go.mod` file is in the `hugo` directory of the repository, and modules are
-loaded in `hugo/config/_default/config.toml`.
-
-## Editing the theme
+### Editing the theme
 
 Customizing a theme is done by
 [overriding theme files](https://gohugo.io/hugo-modules/theme-components/).
@@ -29,15 +53,30 @@ Add notes at the top of any overridden files using Go comments (`{{/* */}}`) to
 note what has been changed -- this vastly eases integrating new changes to the
 overridden files from upstream.
 
-## Fresh installation
+## Generating the site for production
 
-### This repo
+`yarn build`
 
-- `git clone git@github.com:exotica-jewelry/multietch-dev.git`
-- `cd multietch-dev`
-- `yarn install --immutable --immutable-cache`
+This will generate the Hugo site in `public` with minification turned on. It's
+equivalent to running:
 
-Tested with Node 16.x and yarn 1.22.x.
+```sh
+hugo --source='./hugo' --minify --gc
+```
+
+Note that `public` is excluded from the repo in `.gitignore`, so this command
+should be run from a GitHub Action or other CI to build the site.
+
+If you want to build a flat version of the development site, with drafts and
+future-scheduled posts included and minification disabled, use:
+
+`yarn build:dev`
+
+This is equivalent to running:
+
+```sh
+hugo --source='./hugo' --buildDrafts --buildFuture
+```
 
 ## Updating dependencies
 
@@ -46,22 +85,6 @@ Tested with Node 16.x and yarn 1.22.x.
 Hugo extended is installed via
 [hugo-bin](https://www.npmjs.com/package/hugo-bin). To update to the newest
 version, run `yarn install`.
-
-### Hugo modules
-
-From the `./hugo` subdirectory:
-
-- Update all modules: `hugo mod get -u`
-- Update all modules recursively: `hugo mod get -u ./...`
-- Update a single module: `hugo mod get -u <repo_path>`
-- Update a single module to a specific branch:
-  `hugo mod get <repo_path>@<branch>`
-- Update a single module to a specific version (tag
-  [must use semver](https://go.dev/doc/modules/version-numbers)):
-  `hugo mod get <repo_path>@<git_tag>`
-
-For more, see [Hugo Module Site](https://github.com/rootwork/hugo-module-site)
-and the [overview of Hugo modules](https://gohugo.io/hugo-modules/).
 
 ### Node modules
 
@@ -72,6 +95,10 @@ and the [overview of Hugo modules](https://gohugo.io/hugo-modules/).
     disregarding `package.json`
   - `yarn upgrade [package] --latest` to upgrade to the newest version,
     disregarding `package.json`
+
+Because the theme itself has a separate set of Node packages, you also need to
+`cd hugo` and run the corresponding `npm` commands (Yarn is incompatible with
+the theme) like `npm outdated` and `npm upgrade`
 
 ## Licenses
 

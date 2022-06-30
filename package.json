@@ -4,10 +4,11 @@
   "description": "https://multietch.com",
   "main": "README.md",
   "scripts": {
-    "build": "hugo --source='./hugo'",
-    "build:preview": "hugo --source='./hugo' --buildDrafts --buildFuture",
-    "create": "hugo --source='./hugo' new",
-    "serve": "hugo --source='./hugo' server",
+    "build": "hugo --source='./hugo' --minify --gc",
+    "build:dev": "hugo --source='./hugo' --buildDrafts --buildFuture",
+    "create": "hugo new --source='./hugo'",
+    "serve": "hugo server --source='./hugo' --disableFastRender --buildDrafts --buildFuture",
+    "serve:prod": "hugo server --source='./hugo' --disableFastRender -e production",
     "format": "npx prettier -w .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"

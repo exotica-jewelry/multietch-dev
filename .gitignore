@@ -3,6 +3,8 @@ hugo/public
 hugo/public/*
 
 # Hugo caches
+hugo/_vendor
+hugo/_vendor/*
 hugo/resources/_gen
 hugo/resources/_gen/*
 hugo/.hugo_build.lock
