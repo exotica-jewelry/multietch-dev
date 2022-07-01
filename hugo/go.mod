@@ -9,6 +9,6 @@ go 1.18
 // `hugo mod get` on the command line. More info:
 // https://github.com/rootwork/hugo-module-site#local-theme-development
 
-// replace github.com/exotica-jewelry/purple-prism => ../../purple-prism
+replace github.com/exotica-jewelry/purple-prism => ../../purple-prism
 
-require github.com/exotica-jewelry/purple-prism v0.0.0-20220628212555-5f44b653953e // indirect
+require github.com/exotica-jewelry/purple-prism v0.0.0-20220628234147-8fcf7e5582f3 // indirect
