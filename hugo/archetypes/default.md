@@ -1,8 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 description: ""
+metaTitle: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
-draft: true
+draft: false
 images: []
 ---
