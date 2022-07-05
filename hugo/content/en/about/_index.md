@@ -35,6 +35,7 @@ sometimes used for etching titanium, contain hydrofluoric acid.
 Whether you're preparing a metal for electrical anodizing or cleaning a metal
 for welding and other uses, Multi-Etch will do the job! Zirconium, niobium,
 platinum, copper, NiTinol, aluminum and more all respond well to Multi-Etch.
+[See our etch rate tables for all metals.](/etch-rates)
 
 {{< button relref="/" text="View Multi-Etch instructions for all metals" level="secondary" >}}
 
