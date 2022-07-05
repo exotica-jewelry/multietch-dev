@@ -5,8 +5,10 @@ metaTitle: 'Our History'
 date: 2022-07-01T18:26:46-07:00
 lastmod: 2022-07-01T18:26:46-07:00
 draft: false
-images: []
+images: [multietch-products.jpg]
 ---
+
+{{< img src="multietch-products.jpg" alt="Multi-Etch Solution and Containers" align="right" >}}
 
 Why did we pursue an alternative to hydrofluoric acid? We understood the hazards
 of working with hydrofluoric acid and nitric acids, which were the historic
