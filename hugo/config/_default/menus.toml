@@ -5,6 +5,13 @@
   identifier = "about"
 
 [[main]]
+  weight = 1
+  name = "Our History"
+  url = "/about/history/"
+  identifier = "history"
+  parent = "about"
+
+[[main]]
   weight = 20
   name = "How to Use"
   url = "/how-to-use/"

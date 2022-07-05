@@ -6,9 +6,6 @@ titleSeparator = "|"
 titleAddition = "A Safer Alternative to Hydrofluoric Acid"
 description = "Multi-Etch® is a low-acid (pH 6.8) alternative to hydrofluoric acid and can be used to optimize titanium and other metals for welding and anodizing."
 
-## Documentation
-# docsVersion = "0.3"
-
 ## Open Graph
 images = ["multietch-share-image.png"]
 ogLocale = "en_US"
@@ -42,9 +39,6 @@ schemaLinkedIn = "https://www.linkedin.com/company/multietch/"
 schemaGitHub = "https://github.com/exotica-jewelry"
 schemaSection = "blog"
 
-## Sitelinks Search Box
-siteLinksSearchBox = false
-
 ## Chrome Browser
 themeColor = "#44165a"
 
@@ -56,6 +50,10 @@ portraitPhotoWidths = [800, 700, 600, 500]
 lqipWidth = "20x"
 smallLimit = "300"
 
+### Image template
+defaultImage = "default-image.png" # put in `./assets/images/`
+fillImage = "1280x720 Center" # normalize image size
+
 # Footer
 footer = "© 2022, All Rights Reserved, Multi-Etch, LLC"
 
@@ -65,33 +63,20 @@ copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"
 # Alert
 alert = false
 alertDismissable = true
-# alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\" target=\"_blank\" rel=\"noopener\">Check out Doks v0.2</a>"
-alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
+# alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
 
-# Edit Page
-# repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
-repoHost = "GitHub"
-#repoHost = "Gitea"
-docsRepo = "https://github.com/exotica-jewelry/multietch"
-docsRepoBranch = "main"
-docsRepoSubPath = ""
-editPage = false
-lastMod = false
-
+# Doks-specific options
+#
+# Most of these need to be enabled in the templates in order to work.
 [options]
   lazySizes = true
-  clipBoard = false
   instantPage = true
   flexSearch = true
-  darkMode = true
-  bootStrapJs = true
   breadCrumb = true
-  highLight = false
-  kaTex = false
-  multilingualMode = false
-  docsVersioning = false
-  fullWidth = false
 
+# Doks-specific menu
+#
+# Likely will be refactored
 [menu]
   [menu.section]
     auto = true
