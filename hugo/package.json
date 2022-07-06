@@ -3,8 +3,8 @@
   "description": "Multi-Etch Hugo theme",
   "version": "1.0.0",
   "engines": {
-		"node": ">=16.15.0"
-	},
+    "node": ">=16.15.0"
+  },
   "browserslist": [
     "defaults"
   ],
@@ -52,6 +52,7 @@
     "@babel/preset-env": "^7.17",
     "@fullhuman/postcss-purgecss": "^4.1",
     "@hyas/core": "^1.5",
+    "@hyas/images": "^0.2.1",
     "@popperjs/core": "^2.11",
     "auto-changelog": "^2.4",
     "autoprefixer": "^10.4",

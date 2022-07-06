@@ -1,0 +1,41 @@
+[[imports]]
+  path = "github.com/exotica-jewelry/purple-prism" # Theme components
+[[mounts]]
+  source = "node_modules/@hyas/core/archetypes"
+  target = "archetypes"
+[[mounts]]
+  source = "node_modules/@hyas/core/assets"
+  target = "assets"
+#[[mounts]]
+#  source = "node_modules/@hyas/core/content"
+#  target = "content"
+[[mounts]]
+  source = "node_modules/@hyas/core/data"
+  target = "data"
+[[mounts]]
+  source = "node_modules/@hyas/core/layouts"
+  target = "layouts"
+[[mounts]]
+  source = "node_modules/@hyas/core/static"
+  target = "static"
+[[mounts]]
+  source = "assets"
+  target = "assets"
+[[mounts]]
+  source = "static"
+  target = "static"
+[[mounts]]
+  source = "content"
+  target = "content"
+[[mounts]]
+  source = "layouts"
+  target = "layouts"
+[[mounts]]
+  source = "node_modules/@hyas/images/layouts"
+  target = "layouts"
+[[mounts]]
+  source = "archetypes"
+  target = "archetypes"
+[[mounts]]
+  source = "data"
+  target = "data"

@@ -8,6 +8,8 @@ draft: false
 images: [multietch-products.jpg]
 ---
 
+![foo](multietch-products.jpg)
+
 {{< img src="multietch-products.jpg" alt="Multi-Etch Solution and Containers" align="right" >}}
 
 Why did we pursue an alternative to hydrofluoric acid? We understood the hazards

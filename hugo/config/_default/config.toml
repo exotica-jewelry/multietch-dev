@@ -1,4 +1,4 @@
-baseurl = "https://exotica-jewelry.github.io/multietch-dev"
+baseurl = "/"
 canonifyURLs = false
 disableAliases = false
 disableHugoGeneratorInject = true
@@ -72,43 +72,3 @@ toLower = false
   [[related.indices]]
   name = "date"
   weight = 10
-
-[module]
-  [[module.imports]]
-    path = "github.com/exotica-jewelry/purple-prism" # Theme components
-  [[module.mounts]]
-    source = "node_modules/@hyas/core/archetypes"
-    target = "archetypes"
-  [[module.mounts]]
-    source = "node_modules/@hyas/core/assets"
-    target = "assets"
-#  [[module.mounts]]
-#    source = "node_modules/@hyas/core/content"
-#    target = "content"
-  [[module.mounts]]
-    source = "node_modules/@hyas/core/data"
-    target = "data"
-  [[module.mounts]]
-    source = "node_modules/@hyas/core/layouts"
-    target = "layouts"
-  [[module.mounts]]
-    source = "node_modules/@hyas/core/static"
-    target = "static"
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.mounts]]
-    source = "static"
-    target = "static"
-  [[module.mounts]]
-    source = "content"
-    target = "content"
-  [[module.mounts]]
-    source = "layouts"
-    target = "layouts"
-  [[module.mounts]]
-    source = "archetypes"
-    target = "archetypes"
-  [[module.mounts]]
-    source = "data"
-    target = "data"
