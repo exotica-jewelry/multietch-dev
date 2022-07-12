@@ -2,10 +2,11 @@
 tasks:
   - name: Setup
     before: |
+      alias ~="cd /workspace/multietch-dev"
       yarn install --immutable --immutable-cache
       cd hugo && npm ci
-      cd ..
-    init: echo "Your version of Hugo is `hugo version`"
+      ~
+    init: echo "Welcome to Gitpod!"
     command: yarn serve:gitpod
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
