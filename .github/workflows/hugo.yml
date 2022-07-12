@@ -14,7 +14,12 @@ jobs:
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
       - name: Setup Node.js
         uses: actions/setup-node@v2
-      - name: Install Node dependencies
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+      - name: Install dependencies
         # The first line of `run` is designed to omit husky setup, since it's
         # not necessary or desireable in a remote build.
         run: |
@@ -23,11 +28,6 @@ jobs:
           cd hugo
           npm ci
           cd ..
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
       - name: Build Hugo site
         run: |
           yarn build
