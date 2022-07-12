@@ -38,9 +38,11 @@ Finally, `yarn serve:gitpod` runs the development mode optimized for a Gitpod co
 
 ### Creating a new post
 
-`yarn run create <path>` or `hugo new <path>`.
+`yarn run create <path>`
 
-Note all instances of "Multi-Etch" are automatically replaced with a version that a) includes the `®` character, and b) won't break on the hyphens when wrapping. This is done behind the scenes; just write `Multi-Etch` as normal and Hugo will do the work :)
+For example, `yarn run create foo.md` will create a file at `hugo/content/foo.md`. Note Hugo is installed in the `hugo/` subdirectory, so paths are relative to that. This is also the reason we use `yarn` rather than the `hugo` command directly.
+
+All instances of "Multi-Etch" are automatically replaced with a version that a) includes the `®` character, and b) won't break on the hyphens when wrapping. This is done behind the scenes; just write `Multi-Etch` as normal and Hugo will do the work :)
 
 ### Editing site variables
 
