@@ -19,7 +19,7 @@ jobs:
         uses: urlstechie/urlchecker-action@master
         with:
           # A comma-separated list of file types to cover in the URL checks
-          file_types: .md,.toml,.yml,.scss
+          file_types: .md,.yml,.scss
           # The timeout seconds to provide to requests, defaults to 5 seconds
           timeout: 180
           # How many times to retry a failed request (each is logged, defaults to 1)
