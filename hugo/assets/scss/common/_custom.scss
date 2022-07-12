@@ -5,6 +5,16 @@
   text-align: left;
 }
 
+.content {
+
+  blockquote {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 3px currentColor solid;
+    background-color: whitesmoke;
+  }
+}
+
 .multietch-wordmark {
   white-space: nowrap;
   word-break: keep-all;
