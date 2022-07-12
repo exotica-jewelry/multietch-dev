@@ -8,6 +8,7 @@
     "build:dev": "hugo --source='./hugo' --buildDrafts --buildFuture",
     "create": "hugo new --source='./hugo'",
     "serve": "hugo server --source='./hugo' --disableFastRender --buildDrafts --buildFuture",
+    "serve:gitpod": "hugo server --source='./hugo' --disableFastRender --buildDrafts --buildFuture --baseUrl $(gp url 1313) --liveReloadPort=443 --appendPort=false --bind=0.0.0.0",
     "serve:prod": "hugo server --source='./hugo' --disableFastRender -e production",
     "format": "npx prettier -w .",
     "test": "echo \"Error: no test specified\" && exit 1",
