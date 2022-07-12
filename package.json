@@ -5,6 +5,7 @@
   "main": "README.md",
   "scripts": {
     "build": "hugo --source='./hugo' --minify --gc",
+    "build:gh-pages": "hugo --source='./hugo' --minify --gc --baseUrl https://exotica-jewelry.github.io/multietch-dev/",
     "build:dev": "hugo --source='./hugo' --buildDrafts --buildFuture",
     "create": "hugo new --source='./hugo'",
     "serve": "hugo server --source='./hugo' --disableFastRender --buildDrafts --buildFuture",
