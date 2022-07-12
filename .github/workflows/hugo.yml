@@ -28,7 +28,7 @@ jobs:
         run: |
           npm pkg set scripts.prepare=" "
           yarn install --immutable --immutable-cache
-          yarn add postcss
+          yarn add postcss postcss-cli
           cd hugo
           npm ci
           cd ..
