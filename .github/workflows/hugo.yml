@@ -14,21 +14,12 @@ jobs:
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
       - name: Setup Node.js
         uses: actions/setup-node@v2
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
       - name: Install dependencies
         # The first line of `run` is designed to omit husky setup, since it's
         # not necessary or desireable in a remote build.
-        # Installing postcss-cli shouldn't be necessary, as it's included in
-        # Hugo extended, and we explicitly install the extended version above
-        # ... nonetheless, yarn/Hugo complains if we don't.
         run: |
           npm pkg set scripts.prepare=" "
           yarn install --immutable --immutable-cache
-          yarn add postcss postcss-cli
           cd hugo
           npm ci
           cd ..
