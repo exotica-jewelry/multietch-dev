@@ -68,7 +68,7 @@ copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"
 # Alert
 alert = false
 alertDismissable = true
-# alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
+# alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/\">Check out Doks v0.2</a>"
 
 # Doks-specific options
 #
