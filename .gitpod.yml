@@ -5,7 +5,7 @@ tasks:
       alias ~="cd /workspace/multietch-dev"
       yarn install --immutable --immutable-cache
       cd hugo && npm ci
-      ~
+      cd ..
     init: echo "Welcome to Gitpod!"
     command: yarn serve:gitpod
 
