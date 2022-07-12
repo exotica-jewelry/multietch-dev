@@ -2,8 +2,6 @@
 tasks:
   - name: Setup
     before: |
-      export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
-      brew install hugo
       yarn install --immutable --immutable-cache
       cd hugo && npm ci
       cd ..
