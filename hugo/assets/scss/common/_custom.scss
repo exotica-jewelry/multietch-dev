@@ -4,3 +4,13 @@
   margin: 1.25rem 0;
   text-align: left;
 }
+
+.multietch-wordmark {
+  white-space: nowrap;
+  word-break: keep-all;
+
+  .registered {
+    vertical-align: super;
+    font-size: 85%;
+  }
+}
