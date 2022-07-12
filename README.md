@@ -11,9 +11,9 @@ Hugo-related is in the `hugo` directory.
 - `git clone git@github.com:exotica-jewelry/multietch-dev.git`
 - `cd multietch-dev`
 - `yarn install --immutable --immutable-cache`
-- `cd hugo && npm ci`
+- `cd hugo && npm ci && cd ..`
 
-Tested with Node 16.x and yarn 1.22.x.
+Tested with Node 16.x and yarn 1.22.x. The parent theme requires a separate npm installation, and doesn't work with yarn.
 
 ### Serving the site
 
@@ -34,9 +34,13 @@ Alternatively, use `yarn serve:prod` to preview the production mode:
 - Future-scheduled posts are not included
 - Asset fingerprinting, CDNs and comment systems are enabled.
 
+Finally, `yarn serve:gitpod` runs the development mode optimized for a Gitpod container.
+
 ### Creating a new post
 
 `yarn run create <path>` or `hugo new <path>`.
+
+Note all instances of "Multi-Etch" are automatically replaced with a version that a) includes the `®` character, and b) won't break on the hyphens when wrapping. This is done behind the scenes; just write `Multi-Etch` as normal and Hugo will do the work :)
 
 ### Editing site variables
 
@@ -77,6 +81,8 @@ This is equivalent to running:
 ```sh
 hugo --source='./hugo' --buildDrafts --buildFuture
 ```
+
+Finally, `yarn build:gh-pages` builds the production site optimized for GitHub Pages.
 
 ## Updating dependencies
 
