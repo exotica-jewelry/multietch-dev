@@ -19,7 +19,7 @@ jobs:
         # not necessary or desireable in a remote build.
         run: |
           npm pkg set scripts.prepare=" "
-          yarn install --immutable --immutable-cache
+          export HUGO_BIN_BUILD_TAGS="extended" yarn install --immutable --immutable-cache
           cd hugo
           npm ci
           cd ..
