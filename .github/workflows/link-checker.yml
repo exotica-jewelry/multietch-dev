@@ -28,5 +28,7 @@ jobs:
           retry_count: 3
           # Choose whether to include files with no URLs in the output
           print_all: false
+          # A comma separated list of file patterns (direct paths work as well) to exclude
+          exclude_files: hyas.md
           # A comma separated patterns to exclude during URL checks
           exclude_patterns: http://www.w3.org,http://schema.org/,http://purl.org,http://ogp.me,http://rdfs.org,http://xmlns.com,http://localhost,https://www.linkedin.com/company/multietch/
