@@ -11,4 +11,4 @@ go 1.18
 
 replace github.com/exotica-jewelry/purple-prism => ../../purple-prism
 
-require github.com/exotica-jewelry/purple-prism v0.0.0-20220702021206-6009824e9fce // indirect
+require github.com/exotica-jewelry/purple-prism v0.0.0-20220706013216-ced53b56e261 // indirect
