@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://exotica-jewelry.github.io/multietch-dev/sitemap.xml
