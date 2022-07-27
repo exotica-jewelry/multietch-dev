@@ -86,6 +86,10 @@ Hugo extended is installed via
 [hugo-bin](https://www.npmjs.com/package/hugo-bin). To update to the newest
 version, run `yarn install`.
 
+### Hugo modules
+
+`yarn modup`, which is equivalent to running `hugo mod get -u ./...`.
+
 ### Node modules
 
 - `yarn outdated`, then:
