@@ -93,7 +93,7 @@ version, run `npm install`.
     version range in `package.json`
   - `npm upgrade [package@version]` to upgrade to a specific version,
     disregarding `package.json`
-  - `npm upgrade [package] --latest` to upgrade to the newest version,
+  - `npm upgrade [package@latest]` to upgrade to the newest version,
     disregarding `package.json`
 
 ## Licenses
