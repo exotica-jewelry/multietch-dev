@@ -18,6 +18,8 @@ jobs:
       - name: Report broken links
         uses: urlstechie/urlchecker-action@master
         with:
+          # Choose whether to print a more verbose end summary with files and broken URLs
+          verbose: true
           # A comma-separated list of file types to cover in the URL checks
           file_types: .md,.yml,.toml,.scss
           # The timeout seconds to provide to requests, defaults to 5 seconds
