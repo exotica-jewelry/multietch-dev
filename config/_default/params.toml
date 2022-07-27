@@ -68,4 +68,4 @@ copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"
 # Alert
 alert = false
 alertDismissable = true
-# alertText = "Deliver web projects 10x faster. <a class=\"alert-link\" href=\"https://www.netlify.com/whitepaper/\" target=\"_blank\" rel=\"noopener\">Get the free enterprise paper →</a>"
+# alertText = ""
