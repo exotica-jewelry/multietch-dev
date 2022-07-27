@@ -1,0 +1,71 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Multi-Etch®"
+titleSeparator = "|"
+titleAddition = "A Safer Alternative to Hydrofluoric Acid"
+description = "Multi-Etch® is a low-acid (pH 6.8) alternative to hydrofluoric acid and can be used to optimize titanium and other metals for welding and anodizing."
+
+## Open Graph
+images = ["multietch-share-image.png"]
+ogLocale = "en_US"
+domainTLD = "multietch.com"
+titleHome = "Multi-Etch® | A Safer Alternative to Hydrofluoric Acid"
+
+## Twitter Cards
+twitterSite = "@multietch"
+twitterCreator = "@multietch"
+
+## JSON-LD
+## Resources:
+##   List of entities: https://schema.org/docs/full.html
+##   Schema validator: https://validator.schema.org
+##   Google "Rich Results" tester: https://search.google.com/test/rich-results
+schemaType = "Corporation"
+schemaName = "Multi-Etch"
+schemaAuthor = "Multi-Etch"
+schemaAuthorTwitter = "https://twitter.com/multietch"
+schemaAuthorLinkedIn = "https://www.linkedin.com/company/multietch/"
+schemaAuthorGitHub = "https://github.com/exotica-jewelry"
+schemaLocale = "en-US"
+schemaLogo = "multietch-bg.png"
+schemaLogoWidth = 1000
+schemaLogoHeight = 423
+schemaImage = "multietch-share-image.png"
+schemaImageWidth = 1280
+schemaImageHeight = 640
+schemaTwitter = "https://twitter.com/multietch"
+schemaLinkedIn = "https://www.linkedin.com/company/multietch/"
+schemaGitHub = "https://github.com/exotica-jewelry"
+schemaSection = "blog"
+
+## Chrome Browser
+themeColor = "#44165a"
+
+# Images - Temporarily left in place for backward compatibility
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+smallLimit = "320"
+imageResponsive = true
+imageConvertTo = "webp"
+imageImageSizes = ["480","720","1080","1280","1600","2048"]
+singleSize = false
+imageAddClass = "img-fluid lazyload blur-up"
+
+### Image template
+defaultImage = "default-image.png" # put in `./assets/images/`
+fillImage = "1280x720 Center" # normalize image size
+
+# Footer
+footer = "© 2022, All Rights Reserved, Multi-Etch, LLC"
+
+# Feed
+copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"
+
+# Alert
+alert = false
+alertDismissable = true
+# alertText = "Deliver web projects 10x faster. <a class=\"alert-link\" href=\"https://www.netlify.com/whitepaper/\" target=\"_blank\" rel=\"noopener\">Get the free enterprise paper →</a>"

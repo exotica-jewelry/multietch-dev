@@ -1,0 +1,26 @@
+{{/*
+
+USAGE
+
+< point href="https://example.com/" text="Follow this link" >
+
+*/}}
+{{ $text := .Get "text" }}
+{{ $ref := .Get "href" }}
+{{ $rel := "" }}
+{{ with $ref }}
+  {{ $rel = "noreferrer" }}
+{{ end }}
+{{ with .Get "relref" }}
+  {{ $ref = relref $ . }}
+{{ end }}
+  <a
+    {{ with $ref }}
+      href="{{ . }}"
+    {{ end }}
+    {{ with $rel }}
+      rel="{{ . }}"
+    {{ end }}
+    class="link-point"
+  >{{- $text | safeHTML -}}&nbsp;→</a>
+

@@ -1,13 +1,13 @@
-# Hugo compiled site
-hugo/public
-hugo/public/*
+# Hugo builds
+public
+public/*
 
 # Hugo caches
-hugo/_vendor
-hugo/_vendor/*
-hugo/resources/_gen
-hugo/resources/_gen/*
-hugo/.hugo_build.lock
+_vendor
+_vendor/*
+resources/_gen
+resources/_gen/*
+.hugo_build.lock
 
 # Trash
 $RECYCLE.BIN/

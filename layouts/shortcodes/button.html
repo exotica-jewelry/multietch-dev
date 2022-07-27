@@ -1,0 +1,48 @@
+{{/*
+
+USAGE
+
+Primary-colored button to external link:
+< button href="https://example.com/" text="Follow this link" level="primary" >
+
+Secondary-colored button to internal link:
+< button relref="/about" text="Follow this link" level="secondary" >
+
+Primary-colored small button to internal link, with arbitrary class:
+< button relref="/foo" text="Follow this link" level="primary" size="sm" class="foo" >
+
+Secondary-colored small left-aligned button with non-bolded text, to internal link:
+< button relref="/bar" text="Follow this link" level="secondary" size="sm" align="left" weight="normal" >
+
+*/}}
+{{ $text := .Get "text" }}
+{{ $ref := .Get "href" }}
+{{ $rel := "" }}
+{{ with $ref }}
+  {{ $rel = "noreferrer" }}
+{{ end }}
+{{ with .Get "relref" }}
+  {{ $ref = relref $ . }}
+{{ end }}
+{{ $align := .Get "align" }}
+{{ $size := .Get "size" }}
+{{ $weight := .Get "weight" }}
+<div class="text-{{ $align | default "center"}}">
+  <a
+    {{ with $ref }}
+      href="{{ . }}"
+    {{ end }}
+    {{ with $rel }}
+      rel="{{ . }}"
+    {{ end }}
+    role="button"
+    class="
+      btn
+      btn-{{ $size | default "lg"}}
+      btn-{{ $weight | default "bold"}}
+      {{ with .Get "level" }}btn-{{ . }}{{ end }}
+      {{ with .Get "class" }}{{ . }}{{ end }}
+    "
+  >{{- $text | safeHTML -}}</a>
+</div>
+

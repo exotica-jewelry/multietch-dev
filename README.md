@@ -1,23 +1,25 @@
 # Development site for https://multietch.com
 
-Multi-Etch is created with the static site generator [Hugo](http://gohugo.io).
-This repo also uses Node and yarn for some helper scripts, so everything
-Hugo-related is in the `hugo` directory.
+Multi-Etch is created with the static site generator [Hugo](http://gohugo.io)
+using the [Hyas](https://gethyas.com/)
+[child theme](https://github.com/h-enk/hyas-child-theme) forked into this repo.
+The original Hyas child theme readme is located at [`hyas.md`](hyas.md).
 
 ## Local development
 
+This theme requires Node to run, and has been tested with Node 16.x. It does not
+appear to work with Yarn.
+
 ### Installation
 
-- `git clone git@github.com:exotica-jewelry/multietch-dev.git`
-- `cd multietch-dev`
-- `yarn install --immutable --immutable-cache`
-- `cd hugo && npm ci`
+- `npm install`
 
-Tested with Node 16.x and yarn 1.22.x.
+### Serving the development site
 
-### Serving the site
+- `npm run start`
 
-`yarn serve`
+Serves the site LiveReload, accessible in the browser at
+`http://localhost:1313/`.
 
 Because the theme makes use of Hugo's `.Scratch` function, `fastRender` is
 turned off.
@@ -28,7 +30,7 @@ By default, the site is served in development mode:
 - Future-scheduled posts are included
 - Asset fingerprinting, CDNs and comment systems are disabled
 
-Alternatively, use `yarn serve:prod` to preview the production mode:
+Alternatively, use `npm run build:preview` to preview the production mode:
 
 - Drafts are not included
 - Future-scheduled posts are not included
@@ -36,33 +38,31 @@ Alternatively, use `yarn serve:prod` to preview the production mode:
 
 ### Creating a new post
 
-`yarn run create <path>` or `hugo new <path>`.
+`npm run create [path]`
 
 ### Editing site variables
 
-- `hugo/config/_default/config.toml` (main configuration)
+- `hugo/config/_default/config.toml`: main configuration and Hugo setup
+- `hugo/config/_default/params.toml`: site information and Hyas theme options
+- `hugo/config/_default/markup.toml`: Markdown rendering options
+- `hugo/config/_default/menus.toml`: navigation menus
 
 ### Editing the theme
 
 Customizing a theme is done by
 [overriding theme files](https://gohugo.io/hugo-modules/theme-components/).
-Because themes are loaded dynamically using Hugo modules, go to the themes'
-original repos to see what files to override and their initial content.
+Consult the [main Hyas theme](https://github.com/h-enk/hyas) to see what theme
+files exist (and therefore can be overridden) and their initial contents.
 
 Add notes at the top of any overridden files using Go comments (`{{/* */}}`) to
 note what has been changed -- this vastly eases integrating new changes to the
-overridden files from upstream.
+overridden files from upstream, which unfortunately has to be done manually.
 
 ## Generating the site for production
 
-`yarn build`
+`npm run build`
 
-This will generate the Hugo site in `public` with minification turned on. It's
-equivalent to running:
-
-```sh
-hugo --source='./hugo' --minify --gc
-```
+This will generate the Hugo site in `public` with minification turned on.
 
 Note that `public` is excluded from the repo in `.gitignore`, so this command
 should be run from a GitHub Action or other CI to build the site.
@@ -70,13 +70,7 @@ should be run from a GitHub Action or other CI to build the site.
 If you want to build a flat version of the development site, with drafts and
 future-scheduled posts included and minification disabled, use:
 
-`yarn build:dev`
-
-This is equivalent to running:
-
-```sh
-hugo --source='./hugo' --buildDrafts --buildFuture
-```
+`npm run build:preview`
 
 ## Updating dependencies
 
@@ -84,30 +78,27 @@ hugo --source='./hugo' --buildDrafts --buildFuture
 
 Hugo extended is installed via
 [hugo-bin](https://www.npmjs.com/package/hugo-bin). To update to the newest
-version, run `yarn install`.
-
-### Hugo modules
-
-`yarn modup`, which is equivalent to running `hugo mod get -u ./...`.
+version, run `npm install`.
 
 ### Node modules
 
-- `yarn outdated`, then:
-  - `yarn upgrade [package]` to upgrade to the newest version satisfied by the
+- `npm outdated`, then:
+  - `npm upgrade [package]` to upgrade to the newest version satisfied by the
     version range in `package.json`
-  - `yarn upgrade [package@version]` to upgrade to a specific version,
+  - `npm upgrade [package@version]` to upgrade to a specific version,
     disregarding `package.json`
-  - `yarn upgrade [package] --latest` to upgrade to the newest version,
+  - `npm upgrade [package] --latest` to upgrade to the newest version,
     disregarding `package.json`
-
-Because the theme itself has a separate set of Node packages, you also need to
-`cd hugo` and run the corresponding `npm` commands (Yarn is incompatible with
-the theme) like `npm outdated` and `npm upgrade`
 
 ## Licenses
 
-Code portions including any Bash scripts, HTML, Sass/CSS, Javascript, and Go
-templates are licensed AGPLv3. See [LICENSE-code](LICENSE-code).
+Hyas is
+[licensed](https://github.com/h-enk/hyas-child-theme/blob/master/LICENSE) under
+the "MIT" ([Expat](https://directory.fsf.org/wiki/License:Expat)) license.
+
+Code portions specific to _this_ fork, including HTML, Sass/CSS, Javascript, and
+Go templates, as well as any Bash scripts, are licensed AGPLv3. See
+[LICENSE-code](LICENSE-code).
 
 Content of web pages, including text in `hugo/content` and its subdirectories,
 and images/logos in the `hugo/content` and `hugo/static` directories and their
