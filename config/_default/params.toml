@@ -60,7 +60,7 @@ defaultImage = "default-image.png" # put in `./assets/images/`
 fillImage = "1280x720 Center" # normalize image size
 
 # Footer
-footer = "© 2022, All Rights Reserved, Multi-Etch, LLC"
+footer = "© 2022, All Rights Reserved, <span class='multietch-wordmark'>Multi&#8209;Etch<span class='registered'>&#174;</span></span>, LLC"
 
 # Feed
 copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"

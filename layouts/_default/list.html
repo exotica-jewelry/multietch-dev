@@ -1,8 +1,10 @@
 {{ define "main" }}
 <div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8 text-left">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
+  <div class="col-md-12 col-lg-10 col-xl-8">
+    <article>
+      <h1>{{ replace .Title "Multi-Etch" "<span class='multietch-wordmark'>Multi&#8209;Etch<span class='registered'>&#174;</span></span>" | safeHTML }}</h1>
+      {{ replace .Content "Multi-Etch" "<span class='multietch-wordmark'>Multi&#8209;Etch<span class='registered'>&#174;</span></span>" | safeHTML }}
+    </article>
   </div>
 </div>
 {{ end }}

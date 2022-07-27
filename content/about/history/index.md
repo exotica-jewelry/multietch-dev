@@ -1,6 +1,6 @@
 ---
 title: 'History of Multi-Etch'
-description: ''
+description: 'Why did we pursue an alternative to hydrofluoric acid? We understood the hazards of working with hydrofluoric acid and nitric acids. After much research and experimentation with different solutions, we perfected an etchant that met our exacting quality standards and is exponentially safer: Multi-Etch!'
 metaTitle: 'Our History'
 date: 2022-07-01T18:26:46-07:00
 lastmod: 2022-07-01T18:26:46-07:00

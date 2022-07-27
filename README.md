@@ -40,6 +40,10 @@ Alternatively, use `npm run build:preview` to preview the production mode:
 
 `npm run create [path]`
 
+For example, `npm run create foo.md` will create a file at `content/foo.md`.
+
+All instances of "Multi-Etch" are automatically replaced with a version that a) includes the `®` character, and b) won't break on the hyphens when wrapping. This is done behind the scenes; just write `Multi-Etch` as normal and Hugo will do the work :)
+
 ### Editing site variables
 
 - `hugo/config/_default/config.toml`: main configuration and Hugo setup
@@ -65,7 +69,9 @@ overridden files from upstream, which unfortunately has to be done manually.
 This will generate the Hugo site in `public` with minification turned on.
 
 Note that `public` is excluded from the repo in `.gitignore`, so this command
-should be run from a GitHub Action or other CI to build the site.
+should be run from a GitHub Action or other CI to build the site. To build a version optimized for GitHub Pages, run:
+
+`npm run build:gh-pages`
 
 If you want to build a flat version of the development site, with drafts and
 future-scheduled posts included and minification disabled, use:

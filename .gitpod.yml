@@ -1,0 +1,13 @@
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: Setup
+    before: |
+      alias ~="cd /workspace/multietch-dev"
+      npm ci
+    init: echo "Welcome to Gitpod!"
+    command: npm run start:gitpod
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 1313
+    onOpen: open-preview

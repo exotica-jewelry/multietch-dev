@@ -73,3 +73,25 @@ a {
     margin-left: 2rem;
   }
 }
+
+.content {
+
+  blockquote {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 3px currentColor solid;
+    background-color: whitesmoke;
+  }
+}
+
+.multietch-wordmark {
+  white-space: nowrap;
+  word-break: keep-all;
+
+  .registered {
+    vertical-align: super;
+    margin: 0 -0.15rem;
+    font-size: 70%;
+  }
+}
+
