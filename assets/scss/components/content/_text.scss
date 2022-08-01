@@ -1,6 +1,8 @@
 // Note some styles for base HTMl tags are also set in common/_global.scss
 
 .content {
+  line-height: calc(var(--bs-body-line-height) * 1.1);
+
   p {
     margin: $text-space;
     text-align: left;
@@ -11,5 +13,10 @@
     padding: ($spacer / 2) ($spacer * 2);
     border-left: 3px currentColor solid;
     background-color: whitesmoke;
+  }
+
+  h4,
+  h6 {
+    font-style: italic;
   }
 }
