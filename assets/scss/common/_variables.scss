@@ -71,6 +71,13 @@ $h6-font-size: $font-size-lg;
 
 $spacer: 1rem;
 
+// Paragraph text `p` tags and paragraph-like block items such as blockquotes,
+// full-width buttons, and full-width images.
+
+$text-space-y: $spacer * 1.5;
+$text-space-x: 0;
+$text-space: $text-space-y $text-space-x;
+
 // Navbar
 
 $navbar-padding-y: $spacer * 1.5;
