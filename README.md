@@ -16,10 +16,10 @@ appear to work with Yarn.
 
 ### Serving the development site
 
-- `npm run start`
+- `npm start` (or `npm run start`)
 
-Serves the site LiveReload, accessible in the browser at
-`http://localhost:1313/`.
+Serves the site with LiveReload, accessible in the browser at
+`http://localhost:1313/`
 
 Because the theme makes use of Hugo's `.Scratch` function, `fastRender` is
 turned off.
