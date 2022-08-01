@@ -1,0 +1,207 @@
+// Is-On: Use in place of `&:hover` and the like (when element is "on")
+
+@mixin is-on($property: null, $value: null, $valueReset: null) {
+  @if $property and $value {
+    &:hover,
+    &:active {
+      #{$property}: $value;
+    }
+    @include focus(#{$property}, #{$value}, #{$valueReset});
+  } @else {
+    &:hover,
+    &:active,
+    &:focus-visible {
+      @content;
+    }
+  }
+}
+
+// Motion mixin: Ensure any motion is gated behind prefers-reduced-motion: no-preference
+
+@mixin motion($property, $motion-value...) {
+  @at-root {
+    @media (prefers-reduced-motion: no-preference) {
+      & {
+        #{$property}: $motion-value;
+      }
+    }
+  }
+}
+
+// No-motion mixin: Does the reverse of the motion mixin.
+
+@mixin no-motion($property, $no-motion-value...) {
+  @at-root {
+    @media (prefers-reduced-motion: reduce) {
+      & {
+        #{$property}: $no-motion-value;
+      }
+    }
+  }
+}
+
+// Hiding
+//
+// Classes and mixins to hide content selectively.
+
+// All hidden: Removes from the DOM.
+
+@mixin hidden-all {
+  display: none;
+}
+
+.hidden-all {
+  @include hidden-all;
+}
+
+// Invisible: Retains the space of the element; good for transitions.
+
+@mixin hidden-invisible {
+  visibility: hidden;
+}
+
+.hidden-invisible {
+  @include hidden-invisible;
+}
+
+// Offscreen: Moves visible element off-screen; good for transitions
+
+@mixin hidden-offscreen {
+  position: absolute;
+  left: -100vw;
+}
+
+.hidden-offscreen {
+  @include hidden-offscreen;
+}
+
+// Hidden visually: Hides from sighted users, but present in markup for assistive technology
+
+@mixin hidden-visually {
+  &:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+.hidden-visually {
+  @include hidden-visually;
+}
+
+// To hide from screenreaders only (e.g. decoration) use `aria-hidden="true"` on the element.
+
+// Backwards-compatible :focus-visible
+// See https://www.tpgi.com/focus-visible-and-backwards-compatibility/
+// and for a full polyfill, https://github.com/WICG/focus-visible
+//
+// Inspired by https://fotis.xyz/posts/progressively-enhancing-focus-visible/
+// This mixin is not as elegant or flexible, but simpler.
+
+// Usage
+//
+// SCSS:
+//
+// a {
+//   @include focus(outline, 1px black dotted, none);
+// }
+//
+// CSS:
+//
+// a:focus {
+//   outline: 1px black dotted;
+// }
+//
+// a:focus:not(:focus-visible) {
+//   outline: none;
+// }
+//
+// a:focus-visible {
+//   outline: 1px black dotted;
+// }
+//
+// If the focus reset is "none", it can be omitted:
+// @include focus(outline, 1px black dotted);
+
+@mixin focus($property, $focusStyle, $focusReset: none) {
+  &:focus {
+    #{$property}: $focusStyle;
+  }
+
+  &:focus:not(:focus-visible) {
+    #{$property}: $focusReset;
+  }
+
+  &:focus-visible {
+    #{$property}: $focusStyle;
+  }
+}
+
+@mixin focus-line($color) {
+  position: relative;
+
+  &:focus {
+    outline: none !important;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: -0.55rem;
+      height: 3px;
+      background-color: $color;
+    }
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+
+    &::after {
+      position: absolute;
+      display: none;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      background-color: transparent;
+    }
+  }
+
+  &:focus-visible {
+    outline: none !important;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: -0.55rem;
+      height: 3px;
+      background-color: $color;
+    }
+  }
+}
+
+// Turn default focus indicators back on as fallbacks.
+
+html a:focus {
+  outline: 2px solid #00b877 !important;
+  outline-offset: 0.25rem;
+}
+
+html a:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+html a:focus-visible {
+  outline: 2px solid #00b877 !important;
+  transition-duration: 0s;
+}
