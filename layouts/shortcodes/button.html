@@ -27,7 +27,7 @@ Secondary-colored small left-aligned button with non-bolded text, to internal li
 {{ $align := .Get "align" }}
 {{ $size := .Get "size" }}
 {{ $weight := .Get "weight" }}
-<div class="text-{{ $align | default "center"}}">
+<div class="btn-wrapper btn-wrapper--shortcode">
   <a
     {{ with $ref }}
       href="{{ . }}"
@@ -38,6 +38,7 @@ Secondary-colored small left-aligned button with non-bolded text, to internal li
     role="button"
     class="
       btn
+      btn--shortcode
       btn-{{ $size | default "lg"}}
       btn-{{ $weight | default "bold"}}
       {{ with .Get "level" }}btn-{{ . }}{{ end }}
