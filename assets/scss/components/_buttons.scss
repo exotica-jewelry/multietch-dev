@@ -1,0 +1,23 @@
+.btn {
+  text-decoration: none;
+
+  &-bold {
+    font-weight: bold;
+  }
+
+  // Buttons created through the <button> shortcode.
+  &--shortcode {
+    display: inline-block;
+  }
+}
+
+.btn-wrapper {
+
+  // Buttons created through the <button> shortcode have a wrapping container.
+  &--shortcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: $spacer 0;
+  }
+}

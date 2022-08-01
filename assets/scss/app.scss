@@ -10,88 +10,24 @@
 /** Import theme styles */
 @import 'common/fonts';
 @import 'common/global';
-@import 'components/alerts';
-@import 'components/buttons';
-@import 'components/code';
 
-// @import "components/syntax";
-@import 'components/comments';
-@import 'components/forms';
-@import 'components/images';
-@import 'layouts/footer';
 @import 'layouts/header';
 @import 'layouts/pages';
 @import 'layouts/posts';
 @import 'layouts/sidebar';
+@import 'layouts/footer';
 
-.section p {
-  margin: 1.5rem 0;
-  text-align: left;
-}
+@import 'components/content/container';
+@import 'components/content/text';
 
-a {
-  text-decoration: underline;
-}
+@import 'components/logo-wordmark';
+@import 'components/links';
+@import 'components/buttons';
+@import 'components/images';
 
-.btn {
-  text-decoration: none;
-}
-
-.btn-bold {
-  font-weight: bold;
-}
-
-.simpleicons {
-  width: 20px;
-  height: 20px;
-}
-
-.inline-icon {
-  vertical-align: text-top;
-  margin-top: 0.45rem;
-}
-
-.link-point {
-  margin-left: 2rem;
-  font-weight: bold;
-}
-
-@include media-breakpoint-up(sm) {
-  .img-align-right,
-  .img-align-left {
-    margin-top: 0;
-    width: calc(50% - 2rem);
-  }
-
-  .img-align-left {
-    float: left;
-    margin-right: 2rem;
-  }
-
-  .img-align-right {
-    float: right;
-    margin-left: 2rem;
-  }
-}
-
-.content {
-
-  blockquote {
-    margin: 1rem 0;
-    padding: 1rem;
-    border-left: 3px currentColor solid;
-    background-color: whitesmoke;
-  }
-}
-
-.multietch-wordmark {
-  white-space: nowrap;
-  word-break: keep-all;
-
-  .registered {
-    vertical-align: super;
-    margin: 0 -0.15rem;
-    font-size: 70%;
-  }
-}
+@import 'components/alerts';
+@import 'components/forms';
+@import 'components/comments';
+@import 'components/code';
+// @import "components/syntax";
 

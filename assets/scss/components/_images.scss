@@ -48,10 +48,45 @@ figure.wide .figure-caption {
   }
 }
 
+@include media-breakpoint-up(sm) {
+  .img-align-right,
+  .img-align-left {
+    margin-top: 0;
+    width: calc(50% - 2rem);
+  }
+
+  .img-align-left {
+    float: left;
+    margin-right: 2rem;
+  }
+
+  .img-align-right {
+    float: right;
+    margin-left: 2rem;
+  }
+}
+
 .blur-up {
   filter: blur(5px);
 }
 
 .blur-up.lazyloaded {
   filter: unset;
+}
+
+svg {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-top;
+}
+
+.simpleicons {
+  width: 20px;
+  height: 20px;
+}
+
+.inline-icon {
+  vertical-align: text-top;
+  margin-top: 0.45rem;
 }

@@ -31,3 +31,7 @@ pre code {
 code a {
   border-bottom-color: $gray-200;
 }
+
+.monospace {
+  font-family: $font-family-code;
+}

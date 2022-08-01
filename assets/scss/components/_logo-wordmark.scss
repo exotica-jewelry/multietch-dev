@@ -1,0 +1,12 @@
+// Multi-Etch logo image styles and the Multi-Etch® wordmark
+
+.multietch-wordmark {
+  white-space: nowrap;
+  word-break: keep-all;
+
+  .registered {
+    vertical-align: super;
+    margin: 0 -0.15rem;
+    font-size: 70%;
+  }
+}

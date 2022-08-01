@@ -1,0 +1,15 @@
+// Note some styles for base HTMl tags are also set in common/_global.scss
+
+.content {
+  p {
+    margin: 1.5rem 0;
+    text-align: left;
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 3px currentColor solid;
+    background-color: whitesmoke;
+  }
+}
