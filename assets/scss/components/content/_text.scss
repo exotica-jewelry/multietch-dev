@@ -19,4 +19,38 @@
   h6 {
     font-style: italic;
   }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+
+    .anchor {
+      position: absolute;
+      left: calc(-1ch - (var(--spacing) / 3));
+      top: 15%;
+      padding-right: var(--spacing);
+      opacity: 0;
+      pointer-events: none;
+      text-decoration: none;
+      font-size: 75%;
+      transition: opacity;
+      @include motion(transition-duration, 500ms);
+
+      @include media-breakpoint-up(md) {
+        top: calc(15% - var(--spacing));
+        left: calc(-1ch - (3 * var(--spacing)));
+        padding: var(--spacing) calc(var(--spacing) * 2);
+      }
+    }
+
+    @include is-on {
+      .anchor {
+        opacity: 1;
+        pointer-events: initial;
+      }
+    }
+  }
 }
