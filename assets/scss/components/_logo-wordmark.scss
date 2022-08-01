@@ -6,8 +6,12 @@
 
   .registered {
     vertical-align: super;
-    margin: 0 -0.15rem;
+    margin: 0 -0.05rem 0 -0.1rem;
     font-size: 70%;
     font-weight: 400;
+
+    .btn & {
+      font-weight: 800;
+    }
   }
 }
