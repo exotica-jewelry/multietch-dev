@@ -34,9 +34,9 @@ Our detailed instructions are aimed at small users trying out titanium etching a
 
 Multi-Etch can be used while heated (125&#8211;150°F) or at room temperature (70°F). **Heated Multi-Etch will act much more quickly.**
 
-{{< button relref="/" text="Instructions for heated Multi-Etch" level="primary" >}}
+{{< button relref="/" text="Instructions for heated Multi-Etch" level="primary" width="90%" >}}
 
-{{< button relref="/" text="Instructions for room-temperature Multi-Etch" level="secondary" >}}
+{{< button relref="/" text="Instructions for room-temperature Multi-Etch" level="secondary" width="90%" >}}
 
 You can [download a Multi-Etch Data Sheet (PDF)](/files/s/20-0165-Multietch-data-sheet-111920.pdf) with an overview of the product, and browse our [frequently asked questions and troubleshooting process](/faq).
 
