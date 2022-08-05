@@ -2,15 +2,27 @@
 
 USAGE
 
+Basic image:
+< img src="foo.jpg" alt="A picture of foo" >
+
+Image with caption:
+< img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" >
+
+Aligned image with caption:
 < img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" align="right" >
 
+Image with specified width and caption:
+< img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" width="50%" >
+
 */}}
-{{ $src := .Get "src" }}
-{{ $alt := .Get "alt" }}
-{{ $caption := .Get "caption" }}
-{{ $align := .Get "align" }}
-{{ $image := "" -}}
-{{ if (urls.Parse $src).IsAbs }}
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $caption := .Get "caption" -}}
+{{- $align := .Get "align" -}}
+{{- $width := .Get "width" -}}
+{{- $image := "" -}}
+
+{{- if (urls.Parse $src).IsAbs }}
   {{ $image = resources.GetRemote $src -}}
 {{ else -}}
   {{ $image = .Page.Resources.GetMatch $src -}}
@@ -34,13 +46,52 @@ USAGE
   {{ $imgSrcSet = (delimit $imgSrcSet ",") -}}
 
   {{ if gt $image.Width site.Params.smallLimit -}}
-    <figure class="figure {{ with $align }}img-align-{{ . }}{{ end }}">
-      <img class="figure-img img-fluid lazyload blur-up" data-sizes="auto" src="{{ $lqip.Permalink }}" data-srcset="{{ $imgSrcSet }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}">
-      <noscript><img class="figure-img img-fluid" sizes="100vw" srcset="{{ $imgSrcSet }}" src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}"></noscript>
-      {{ with $caption }}<figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>{{ end -}}
+    <figure
+      class="
+        figure
+        {{ with $align }}img-align-{{ . }}{{ end }}
+      "
+      {{ with $width -}}
+        style="width: {{ . }};"
+      {{- end }}
+    >
+      <img
+        class="figure-img img-fluid lazyload blur-up"
+        data-sizes="auto"
+        src="{{ $lqip.Permalink }}"
+        data-srcset="{{ $imgSrcSet }}"
+        width="{{ $image.Width }}"
+        height="{{ $image.Height }}"
+        alt="{{ $alt }}"
+      >
+      <noscript><img
+        class="figure-img img-fluid"
+        sizes="100vw"
+        srcset="{{ $imgSrcSet }}"
+        src="{{ $image.Permalink }}"
+        width="{{ $image.Width }}"
+        height="{{ $image.Height }}"
+        alt="{{ $alt }}"
+      ></noscript>
+      {{ with $caption -}}
+        <figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>
+      {{- end }}
     </figure>
   {{ else -}}
-    <img class="img-fluid lazyload blur-up" src="{{ $lqip.Permalink }}" data-src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}">
+    <img
+      class="img-fluid lazyload blur-up"
+      src="{{ $lqip.Permalink }}"
+      data-src="{{ $image.Permalink }}"
+      width="{{ $image.Width }}"
+      height="{{ $image.Height }}"
+      alt="{{ $alt }}"
+      {{ with $caption -}}
+        title="{{ . }}"
+      {{- end }}
+      {{ with $width -}}
+        style="width: {{ . }};"
+      {{- end }}
+    >
   {{ end -}}
 {{ else -}}
   {{ erroridf "image-not-found" "Image not found" -}}
