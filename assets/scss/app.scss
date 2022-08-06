@@ -8,7 +8,7 @@
 @import 'bootstrap/scss/bootstrap';
 
 /** Import config values */
-$gridDefaultCount: '{{ site.Params.grid.defaultCount }}';
+$gridDefaultColumns: '{{ site.Params.grid.defaultColumns }}';
 $gridDefaultItemWidth: '{{ site.Params.grid.defaultItemWidth }}';
 $gridDefaultItemGap: '{{ site.Params.grid.defaultItemGap }}';
 $gridDefaultItemMargin: '{{ site.Params.grid.defaultItemMargin }}';

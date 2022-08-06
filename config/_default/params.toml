@@ -72,7 +72,7 @@ alertDismissable = true
 
 # Grid containers
 [grid]
-  defaultCount = "3"
+  defaultColumns = "3"
   defaultItemWidth = "200px"
   defaultItemGap = "1rem"
   defaultItemMargin = "0"

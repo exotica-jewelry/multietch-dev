@@ -14,25 +14,37 @@ items:
 </ grid >
 
 Set number of columns to 2; use defaults for other values:
-< grid 2 >
+< grid cols="2" >
   [items]
 </ grid >
 
 Set number of columns to 2, min-width to 500px, gap to 5rem, and margins on
 items to '1rem 0':
-< grid 2 500px 5rem "1rem 0" >
+< grid cols="2" width="500px" gap="5rem" margin="1rem 0" >
+  [items]
+</ grid >
+
+Set number of columns to 4, and set child images to be perfect squares (using
+'cover', allowing for clipping):
+< grid cols="4" sq="true" >
   [items]
 </ grid >
 
 */}}
-{{- $itemCount := .Get 0 -}}
-{{- $itemWidth := .Get 1 -}}
-{{- $itemGap := .Get 2 -}}
-{{- $itemMargin := .Get 3 -}}
+{{- $columns := .Get "cols" -}}
+{{- $itemWidth := .Get "width" -}}
+{{- $itemGap := .Get "gap" -}}
+{{- $itemMargin := .Get "margin" -}}
+{{- $itemSquare := .Get "sq" -}}
 <div
-  class="grid-container"
+  class="
+    grid-container
+    {{ with $itemSquare -}}
+      grid-container--square
+    {{- end -}}
+  "
   style="
-    {{- with $itemCount -}}
+    {{- with $columns -}}
       --grid-column-count: {{ . }};
     {{- end -}}
     {{- with $itemWidth -}}

@@ -3,7 +3,7 @@
    * Default values set in `config/_default/params.toml`. Also used by the
    * `grid` shortcode.
    */
-  --grid-column-count: #{$gridDefaultCount};
+  --grid-column-count: #{$gridDefaultColumns};
   --grid-layout-gap: #{$gridDefaultItemGap};
   --grid-item--min-width: #{$gridDefaultItemWidth};
   --grid-item--margin: #{$gridDefaultItemMargin};
@@ -30,5 +30,12 @@
 
   > * {
     margin: var(--grid-item--margin);
+  }
+
+  &--square {
+    img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
   }
 }
