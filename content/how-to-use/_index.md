@@ -7,21 +7,20 @@ draft: false
 images: []
 ---
 
-## Etch safely with Multi-Etch
-
 Our detailed instructions are aimed at small users trying out titanium etching and anodizing for the first time. But the principles are the same for larger users with a dedicated production line, similar to those made by [IPEC Global](http://ipecglobal.com).
 
-<div class="sidebar">
-
-  #### Large production
-
+{{< grid cols="2" gap="3rem" width="325px" >}}
+<div>
+  <h4>Large production</h4>
   {{< img src="large-lab-setup_IPEC.jpg" alt="IPEC Global lab" caption="IPEC Global" >}}
-
-  #### Small production
-
-  {{< img src="small-lab-setup_Exotica.jpg" alt="A typical small-user setup" caption="A typical small-user setup" >}}
-
 </div>
+<div>
+  <h4>Small production</h4>
+  {{< img src="small-lab-setup_Exotica.jpg" alt="A typical small-user setup" caption="A typical small-user setup" >}}
+</div>
+{{</ grid >}}
+
+## Etch safely with Multi-Etch
 
 1. **Mix the Multi‑Etch:** Shipped to you as a dry powder for ease of storage.
    Just add water!
