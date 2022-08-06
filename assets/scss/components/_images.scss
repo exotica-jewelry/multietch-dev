@@ -30,6 +30,11 @@ figure {
     margin: var(--cap-pad-top) var(--cap-pad-sides) var(--cap-pad-btm);
   }
 
+  &.img-constrained {
+    display: block;
+    margin: var(--text-space-y) auto;
+  }
+
   &.wide {
     --size: 2;
     --extra: 1.5;

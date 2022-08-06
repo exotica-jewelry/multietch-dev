@@ -49,7 +49,12 @@ Image with specified width and caption:
     <figure
       class="
         figure
-        {{ with $align }}img-align-{{ . }}{{ end }}
+        {{- with $align }}
+          img-align-{{ . }}
+        {{- end }}
+        {{ with $width -}}
+          img-constrained
+        {{- end }}
       "
       {{ with $width -}}
         style="width: {{ . }};"
