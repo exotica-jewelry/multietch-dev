@@ -7,6 +7,12 @@
 /** Import Bootstrap */
 @import 'bootstrap/scss/bootstrap';
 
+/** Import config values */
+$gridDefaultCount: '{{ site.Params.grid.defaultCount }}';
+$gridDefaultItemWidth: '{{ site.Params.grid.defaultItemWidth }}';
+$gridDefaultItemGap: '{{ site.Params.grid.defaultItemGap }}';
+$gridDefaultItemMargin: '{{ site.Params.grid.defaultItemMargin }}';
+
 /** Import theme styles */
 @import 'common/fonts';
 @import 'common/mixins';
@@ -26,6 +32,7 @@
 @import 'components/links';
 @import 'components/buttons';
 @import 'components/images';
+@import 'components/grid-container';
 
 @import 'components/alerts';
 @import 'components/comments';

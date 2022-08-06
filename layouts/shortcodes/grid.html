@@ -1,0 +1,50 @@
+{{/*
+
+USAGE: The grid shortcode sets the number of columns and minimum widths for each
+child item, allowing items to overflow to the next row if they can't fit within
+minimum-width values.
+
+Source:
+https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
+
+Use default values: 3 columns, 200px min-width of items, 1rem gap, 0 margin on
+items:
+< grid >
+  [items]
+</ grid >
+
+Set number of columns to 2; use defaults for other values:
+< grid 2 >
+  [items]
+</ grid >
+
+Set number of columns to 2, min-width to 500px, gap to 5rem, and margins on
+items to '1rem 0':
+< grid 2 500px 5rem "1rem 0" >
+  [items]
+</ grid >
+
+*/}}
+{{- $itemCount := .Get 0 -}}
+{{- $itemWidth := .Get 1 -}}
+{{- $itemGap := .Get 2 -}}
+{{- $itemMargin := .Get 3 -}}
+<div
+  class="grid-container"
+  style="
+    {{- with $itemCount -}}
+      --grid-column-count: {{ . }};
+    {{- end -}}
+    {{- with $itemWidth -}}
+      --grid-item--min-width: {{ . }};
+    {{- end -}}
+    {{- with $itemGap -}}
+      --grid-layout-gap: {{ . }};
+    {{- end -}}
+    {{- with $itemMargin -}}
+      --grid-item--margin: {{ . }};
+    {{- end -}}
+  "
+>
+  {{ .Inner }}
+</div>

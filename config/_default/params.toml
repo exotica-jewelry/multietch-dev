@@ -69,3 +69,10 @@ copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"
 alert = false
 alertDismissable = true
 # alertText = ""
+
+# Grid containers
+[grid]
+  defaultCount = "3"
+  defaultItemWidth = "200px"
+  defaultItemGap = "1rem"
+  defaultItemMargin = "0"
