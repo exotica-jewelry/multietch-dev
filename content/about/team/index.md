@@ -8,9 +8,9 @@ draft: false
 images: [multietch-founders.jpg]
 ---
 
-{{< img src="multietch-founders.jpg" alt="Chris and Sandy Boothe, founders of Multi-Etch" caption="Chris and Sandy Boothe, founders of Multi-Etch" align="left" >}}
-
 ### Chris & Sandy Boothe
+
+{{< img src="multietch-founders.jpg" alt="Chris and Sandy Boothe, founders of Multi-Etch" caption="Chris and Sandy Boothe, founders of Multi-Etch" align="right" >}}
 
 Growing up Chris always had an affinity for art and science; he’s proud to say he had a science fair project during many of his school years. In high school he spent most of his senior year in the art department, crafting jewelry. Little did he know that his passion for both science and art would culminate in the creation of Multi-Etch!
 
