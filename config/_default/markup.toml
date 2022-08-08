@@ -7,8 +7,8 @@ defaultMarkdownHandler = "goldmark"
     autoHeadingID = true
     autoHeadingIDType = "github"
     [goldmark.parser.attribute]
-      block = true
-      title = true
+      block = true # default false
+      title = true # default true
   [goldmark.renderer]
     unsafe = true
 
