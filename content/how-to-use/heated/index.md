@@ -39,7 +39,7 @@ Inner containers made of plastics marked 5 or 7 should be OK sitting right on th
 
 Once the setup is complete, you can put on your protective gear: Safety goggles, gloves and a lab coat!
 
-### Step 3: Prepare Multi-Etch
+### Step 3: Prepare Multi-Etch {.clear}
 
 Prepare your Multi-Etch for use. Add water with the help of a funnel.
 
@@ -51,7 +51,7 @@ For regular strength, you will add one gallon of de-ionized or distilled water; 
 
 Shake vigorously and leave overnight, or, if using sooner, shake again right before use.
 
-### Step 4: Heat Multi-Etch
+### Step 4: Heat Multi-Etch {.clear}
 
 {{< img src="double-boiler-fume-hood.jpg" alt="Double boiler placed beneath a fume hood in laboratory" align="right" >}}
 
@@ -61,7 +61,7 @@ Pour into a double boiler only as much Multi-Etch as you need for this session, 
 
 While waiting for the Multi-Etch solution to reach the desired temperature, clean your titanium parts with Simple Green.
 
-### Step 5: Etch your metal
+### Step 5: Etch your metal {.clear}
 
 {{< img src="anodizer-with-bath.jpg" alt="Anodizing machine set-up next to a bucket of clear liquid labeled anodizing bath" align="left" >}}
 
