@@ -1,23 +1,25 @@
 ---
-title: "How to use heated Multi-Etch"
-description: "Step-by-step directions on how to use Multi-Etch for anodizing metals. We recommend using your Multi-Etch heated because it’s the faster method."
+title: "How to use room-temperature Multi-Etch"
+description: "Step-by-step instructions on how to use Multi-Etch at room temperature (70 degrees F) for anodizing metals."
 date: 2022-08-05T14:15:27-07:00
 lastmod: 2022-08-05T14:15:27-07:00
 draft: false
 images: []
 ---
 
-We recommend using your Multi-Etch heated because it’s MUCH faster.
+We recommend using your [Multi-Etch heated](/how-to-use/heated/) because it’s MUCH faster — typically 7–15 seconds. When using it at room temperature (70°F), etching time will initially be 2+ MINUTES but will speed up the older the bath is. In a one-year old bath your etching time would be reduced to about one minute.
 
 Your first order will come in a jug with the Multi-Etch powder at the bottom. This container can be used to dissolve and mix your Multi-Etch for your first and future orders. Store and use Multi-Etch in plastic containers, never in metal or glass.
 
 Subsequent orders will come in a bag with just the Multi-Etch Powder. Because the ingredients are not blended, you must mix the entire package.
 
-{{< youtube 5m1KUzaAGiQ >}}
+{{< youtube BW1g_MTE25Q >}}
 
 ### Step 1: Equipment setup
 
-Arrange your etching equipment near your fume hood. Here's one possible setup:
+**In order to use Multi-Etch at room temperature — 70°F — the etch bath must be mixed double strength and heated one time.** You can do this in a crock pot or a simple double boiler. Then the etchant can be used right away and at room temperature after it cools.
+
+When heating the Multi-Etch, use proper indoor ventilation or do it outdoors. Here's one possible setup:
 
 {{< img src="anodizing-lab-setup_Exotica.jpg" alt="An example of a small anodizing lab set-up" caption="An example of a small anodizing lab set-up, with a double boiler beneath a fume hood, jug of Multi-Etch, a rinse bowl, cleaning solution, anodizing machine next to anodizing bath, bowl for anodizing rinse and a storage tank marked for de-ionized or distilled water." >}}
 
@@ -41,35 +43,37 @@ Once the setup is complete, you can put on your protective gear: Safety goggles,
 
 ### Step 3: Prepare Multi-Etch
 
-Prepare your Multi-Etch for use. Add water with the help of a funnel.
+Mark the jug "double strength." With the help of a funnel, pour 1/2 gallon of distilled or deionized water into the jug. Shake vigorously and pour the entire 1/2 gallon into the inner container of the double boiler.
 
-{{< img src="black-funnel.jpg" alt="Black funnel placed on table with skinny end facing up" width="50%" >}}
+{{< grid sq="true" cols="2" gap="4rem" >}}
+  {{< img src="black-funnel.jpg" alt="Black funnel placed on table with skinny end facing up" >}}
+  {{< img src="jug-distilled-water.jpg" alt="Jug of distilled water" >}}
+{{</ grid >}}
 
-For regular strength, you will add one gallon of de-ionized or distilled water; for double strength, add 1/2 gallon.
-
-{{< img src="jug-distilled-water.jpg" alt="Jug of distilled water" width="50%" >}}
-
-Shake vigorously and leave overnight, or, if using sooner, shake again right before use.
+Fill the outer container of the double boiler with tap water so that the water level is below the lip of the inner container.
 
 ### Step 4: Heat Multi-Etch
 
-{{< img src="double-boiler-fume-hood.jpg" alt="Double boiler placed beneath a fume hood in laboratory" align="right" >}}
+{{< img src="double-boiler-fume-hood.jpg" alt="Double boiler placed beneath a fume hood in laboratory" align="left" >}}
 
-At this stage turn on your fume hood.
+If using a fume hood, turn it on.
 
-Pour into a double boiler only as much Multi-Etch as you need for this session, keeping the rest capped in the bottle. Heat until you see fine bubbles, or the temperature of Multi-Etch is 125–150°F.
+Heat the Multi-Etch to 150°F; use a probe thermometer or, if unavailable, look for the tiny bubbles to appear and then continue heating for about 10 minutes.
 
 While waiting for the Multi-Etch solution to reach the desired temperature, clean your titanium parts with Simple Green.
 
 ### Step 5: Etch your metal
 
-{{< img src="anodizer-with-bath.jpg" alt="Anodizing machine set-up next to a bucket of clear liquid labeled anodizing bath" align="left" >}}
+{{< img src="anodizer-with-bath.jpg" alt="Anodizing machine set-up next to a bucket of clear liquid labeled anodizing bath" align="right" >}}
 
-Swish or swirl your titanium pieces in Multi-Etch for 7–10 seconds. If your holder will touch the heated Multi-Etch, make sure it’s made of plastic, titanium, or niobium.
+Rinse and submerge your titanium piece in the Multi-Etch bath.
+
+- If the bath is still hot, submerge for 10 seconds.
+- If the bath has cooled to room temperature, submerge for at least 2 minutes.
 
 Rinse in distilled or de-ionized water.
 
-Anodize right away, or store in distilled or de-ionized water to prevent re-formation of the natural oxide layer.
+Anodize right away, or store in distilled or de-ionized water to prevent re-formation of the natural oxide layer. If the color is unsatisfactory, etch for a longer time.
 
 For more guides, check out our [**resource videos**](/how-to-use/videos-resources)!
 
