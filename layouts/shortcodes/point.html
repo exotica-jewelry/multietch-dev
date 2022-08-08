@@ -2,24 +2,32 @@
 
 USAGE
 
-< point href="https://example.com/" text="Follow this link" >
+< point "Go home" "/" >
+
+< point "Follow this link" "https://example.com/" >
+
+< point "This is link text" "https://example.com/" "This is title text" >
 
 */}}
-{{ $text := .Get "text" }}
-{{ $ref := .Get "href" }}
-{{ $rel := "" }}
-{{ with $ref }}
-  {{ $rel = "noreferrer" }}
-{{ end }}
-{{ with .Get "relref" }}
-  {{ $ref = relref $ . }}
-{{ end }}
+{{- $text := .Get 0 }}
+{{- $ref := .Get 1 }}
+{{- $title := .Get 2 }}
+{{- $rel := "" }}
+
+{{- if strings.HasPrefix $ref "http" }}
+  {{- $rel = "noreferrer" }}
+{{- else }}
+  {{- $ref = relref $ $ref }}
+{{- end }}
   <a
     {{ with $ref }}
       href="{{ . }}"
     {{ end }}
     {{ with $rel }}
       rel="{{ . }}"
+    {{ end }}
+    {{ with $title }}
+      title="{{ . }}"
     {{ end }}
     class="link-point"
   >{{- $text | safeHTML -}}&nbsp;→</a>
