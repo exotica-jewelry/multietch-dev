@@ -3,14 +3,14 @@
   <div class="col-md-12 col-lg-10 col-xl-8">
     <article>
       <h1>{{ dict
-          "Content" .Title
-          "Wordmark" .Site.Params.wordmark
+          "content" .Title
+          "siteParams" .Site.Params
         | partial "function/content.html"
         | safeHTML
       }}</h1>
       {{ dict
-          "Content" .Content
-          "Wordmark" .Site.Params.wordmark
+          "content" .Content
+          "siteParams" .Site.Params
         | partial "function/content.html"
         | safeHTML
       }}

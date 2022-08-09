@@ -1,6 +1,7 @@
-{{- $content := .Content -}}
+{{- $siteParams := .siteParams -}}
+{{- $content := .content -}}
 
-{{- if .Wordmark -}}
+{{- if $siteParams.Wordmark -}}
   {{- $content = partial "function/wordmark.html" $content -}}
 {{- end -}}
 
