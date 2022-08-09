@@ -42,7 +42,7 @@ Alternatively, use `npm run build:preview` to preview the production mode:
 
 For example, `npm run create foo.md` will create a file at `content/foo.md`.
 
-All instances of "Multi-Etch" are automatically replaced with a version that a) includes the `®` character, and b) won't break on the hyphens when wrapping. This is done behind the scenes; just write `Multi-Etch` as normal and Hugo will do the work :)
+All instances of "Multi-Etch" in content are automatically replaced with a version that a) includes the `®` character, and b) won't break on the hyphens when wrapping, so you can just write `Multi-Etch` and let it do its work. See the `wordmark` parameter in [`params.toml`](https://github.com/exotica-jewelry/multietch-dev/blob/main/config/_default/params.toml) and the [`wordmark.html` function](https://github.com/exotica-jewelry/multietch-dev/blob/main/layouts/partials/function/wordmark.html).
 
 ### Editing site variables
 
