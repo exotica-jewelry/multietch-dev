@@ -6,9 +6,6 @@ titleSeparator = "|"
 titleAddition = "A Safer Alternative to Hydrofluoric Acid"
 description = "Multi-Etch® is a low-acid (pH 6.8) alternative to hydrofluoric acid and can be used to optimize titanium and other metals for welding and anodizing."
 
-## Brand
-wordmark = true # If enabled, replaces all instances of 'Multi-Etch' in content and titles with 'Multi-Etch®' and prevents line-breaks within the wordmark.
-
 ## Open Graph
 images = ["multietch-share-image.png"]
 ogLocale = "en_US"
@@ -72,6 +69,13 @@ copyRight = "Copyright (c) 2022, All Rights Reserved, Multi-Etch, LLC"
 alert = false
 alertDismissable = true
 # alertText = ""
+
+# Filters
+#
+# Filters act on content text (title and body) with different transformations.
+# Setting each filter to true turns it on.
+[filters]
+  wordmark = true # Adds ® to every instance of 'Multi-Etch'; prevents line-breaks.
 
 # Grid containers
 [grid]

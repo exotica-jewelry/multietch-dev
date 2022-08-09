@@ -1,8 +1,3 @@
-{{- $siteParams := .siteParams -}}
-{{- $content := .content -}}
-
-{{- if $siteParams.Wordmark -}}
-  {{- $content = partial "function/wordmark.html" $content -}}
-{{- end -}}
-
-{{- return $content -}}
+{{- $siteParams := .siteParams -}} {{- $content := .content -}} {{- if
+$siteParams.filters.wordmark -}} {{- $content = partial "function/wordmark.html"
+$content -}} {{- end -}} {{- return $content -}}
