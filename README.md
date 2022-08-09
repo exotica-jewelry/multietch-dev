@@ -5,16 +5,84 @@ using the [Hyas](https://gethyas.com/)
 [child theme](https://github.com/h-enk/hyas-child-theme) forked into this repo.
 The original Hyas child theme readme is located at [`hyas.md`](hyas.md).
 
+## Prerequisites
+
+[Node v16.x](https://nodejs.org/en/download/) (currently LTS) must be installed.
+The project installs Hugo itself, so Node is all you need to install manually.
+
+## Quick-start for adding and editing content
+
+1. Clone the repo and enter the directory.
+2. `npm install` to get Hugo and other dependencies set up.
+3. `npm start` to begin serving the website. Once it spins up, you can load the
+   site in your web browser at `http://localhost:1313/`
+4. All pages and posts are located in the `content` directory, which represents
+   the root of the website -- i.e. `content/about/` will appear on the website
+   at `https://www.multietch.com//about/`, `content/about/team/` will appear at
+   `https://www.multietch.com//about/team/`, etc.
+5. Page content is written in
+   [Markdown](https://www.markdownguide.org/getting-started), which takes a
+   small amount of learning but then is much easier to write than HTML. Each
+   file begins with
+   [front matter](https://gohugo.io/content-management/front-matter/) that
+   establishes things like the page's title.
+6. As you edit pages, the website in your browser will automatically reload.
+7. To add an image to a page, put the image in the same folder as the page and
+   then
+   [reference the image in Markdown](https://www.markdownguide.org/basic-syntax/#images).
+   For instance, to add an image called `image.jpg` to the page
+   `content/contact`, save the image as `content/contact/image.jpg` and then in
+   the `content/contact/image.md` file write: `![image alt text](image.jpg)`
+8. To create a new page, run `npm create new` followed by the web path and
+   `/index.md`. For instance, to create a page at
+   `https://www.multietch.com/hello`, run `npm create new hello/index.md`. To
+   create the same page below the existing `/about/` page, run
+   `npm create new about/hello/index.md`.
+9. When finished, commit your changes and push the repo. GitHub Actions will
+   automatically rebuild the site.
+
+See [local development](#local-development) for details.
+
+## Features
+
+Apart from the general design of the website, there are several built-in
+features to note:
+
+### Image minification and modern format generation (in development)
+
+Images will be automatically minified and transformed into modern formats like
+[WebP](https://en.wikipedia.org/wiki/Webp) and
+[AVIF](https://en.wikipedia.org/wiki/AVIF) for browsers that support them. Save
+your images as normal in JPEG, PNG or GIF format and the site will do the rest.
+
+### Content filters
+
+These filters act automatically on all content (title and page body):
+
+- All instances of "Multi-Etch" in are replaced with a version that includes the
+  `®` character, and won't break on the hyphens when wrapping. See the
+  `wordmark` parameter in
+  [`params.toml`](https://github.com/exotica-jewelry/multietch-dev/blob/main/config/_default/params.toml)
+  and the
+  [`wordmark.html` function](https://github.com/exotica-jewelry/multietch-dev/blob/main/layouts/partials/function/wordmark.html).
+- Fractions written in long form, like "1/2" are replaced with HTML entities
+  like "½" when possible, and if not then formatted to look similar.
+
 ## Local development
 
 This theme requires Node to run, and has been tested with Node 16.x. It does not
 appear to work with Yarn.
 
-### Installation
+### Local installation
 
+- `git clone` the repo
 - `npm install`
 
-### Serving the development site
+The latest version of Hugo "extended" is installed as part of `npm install`, so
+you don't need to install it separately. (If it's already installed on your
+machine, this project will nonetheless use its own version.)
+
+### Viewing the development site locally
 
 - `npm start` (or `npm run start`)
 
@@ -24,53 +92,68 @@ Serves the site with LiveReload, accessible in the browser at
 Because the theme makes use of Hugo's `.Scratch` function, `fastRender` is
 turned off.
 
-By default, the site is served in development mode:
+**By default, the site is served in development mode:**
 
-- Drafts are included
-- Future-scheduled posts are included
-- Asset fingerprinting, CDNs and comment systems are disabled
+- Drafts are shown
+- Future-scheduled posts are shown
+- Asset fingerprinting, CDNs and third-party embedded apps like commenting are
+  disabled
 
-Alternatively, use `npm run build:preview` to preview the production mode:
+Alternatively, use `npm run build:preview` to see the site exactly as it will
+appear on the web:
 
-- Drafts are not included
-- Future-scheduled posts are not included
-- Asset fingerprinting, CDNs and comment systems are enabled.
+- Drafts are **not shown**
+- Future-scheduled posts are **not shown**
+- Asset fingerprinting, CDNs and third-party embedded apps like commenting are
+  **enabled** (though note third-party systems like commenting may not work
+  locally).
 
-### Creating a new post
+### Editing an existing page
 
-`npm run create [path]`
+Pages in Hugo are contained in the `content` directory, which maps to the root
+of the website domain.
+
+We use [Hugo Page Bundles](https://gohugo.io/content-management/page-bundles/),
+so a page and its assets (most commonly images) are contained in the same
+directory.
+
+If a page has no children, its content file is `index.md`; e.g. the `about/team`
+page's content file is located at `content/about/team/index.md`. If the page has
+children of its own, then its content file is `_index.md` (note leading
+underscore), e.g. the `about` page's content file is located at
+`content/about/_index.md`.
+
+### Creating a new page
+
+`npm run create [web-path]`
 
 For example, `npm run create about/foo/index.md` will create a file at
-`content/about/foo/index.md`. Because we use
-[Hugo's Page Bundles](https://gohugo.io/content-management/page-bundles/), we
-want to use the `dir/page/index.md` format rather than `dir/page.md` format;
-unfortunately it requires a little extra typing in the command.
-
-All instances of "Multi-Etch" in content are automatically replaced with a
-version that a) includes the `®` character, and b) won't break on the hyphens
-when wrapping, so you can just write `Multi-Etch` and let it do its work. See
-the `wordmark` parameter in
-[`params.toml`](https://github.com/exotica-jewelry/multietch-dev/blob/main/config/_default/params.toml)
-and the
-[`wordmark.html` function](https://github.com/exotica-jewelry/multietch-dev/blob/main/layouts/partials/function/wordmark.html).
+`content/about/foo/index.md`. Because we use Page Bundles, we must use the
+`dir/page/index.md` format rather than `dir/page.md` format; unfortunately it
+requires a little extra typing in the command.
 
 ### Editing site variables
 
-- `hugo/config/_default/config.toml`: main configuration and Hugo setup
-- `hugo/config/_default/params.toml`: site information and Hyas theme options
-- `hugo/config/_default/markup.toml`: Markdown rendering options
-- `hugo/config/_default/menus.toml`: navigation menus
+- `config/_default/config.toml`: main configuration and Hugo setup
+- `config/_default/params.toml`: site information and Hyas theme options
+- `config/_default/markup.toml`: Markdown rendering options
+- `config/_default/menus.toml`: navigation menus
 
 ### Editing the theme
 
-Customizing a theme is done by
+CSS (Sass) and Javascript files are located in the `assets` directory. The
+`app.*` files load the other partial files into one object, so be sure to update
+them if adding new files.
+
+Customizing the Hugo theme layer is done by
 [overriding theme files](https://gohugo.io/hugo-modules/theme-components/).
 Consult the [main Hyas theme](https://github.com/h-enk/hyas) to see what theme
 files exist (and therefore can be overridden) and their initial contents.
 
-Add notes at the top of any overridden files using Go comments (`{{/* */}}`) to
-note what has been changed -- this vastly eases integrating new changes to the
-overridden files from upstream, which unfortunately has to be done manually.
+Add notes at the top of any overridden files using Go template comments
+(`{{/* */}}`) to note what has been changed -- this vastly eases integrating new
+changes to the overridden files from upstream, which unfortunately has to be
+done manually.
 
 ## Generating the site for production
 
