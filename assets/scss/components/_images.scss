@@ -49,7 +49,7 @@ figure {
 
     figcaption,
     .figure-caption {
-      margin-inline: calc(var(--bs-gutter-x) * .5);
+      margin-inline: calc(var(--bs-gutter-x) * 0.5);
 
       @include media-breakpoint-up(sm) {
         margin-inline: 0;
