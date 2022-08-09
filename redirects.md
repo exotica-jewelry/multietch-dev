@@ -8,6 +8,7 @@
 - `privacy-policy` to `about/privacy`
 - `keep-etch-times-consistent` to `how-to-use/get-consistent-etch-times`
 - `removing-color` to `how-to-use/removing-color`
-- etch rate pages should all be organized under `etch-rates`, e.g. `etch-rates/gold`
+- etch rate pages should all be organized under `etch-rates`, e.g.
+  `etch-rates/gold`
 
 Also search for all instances of `multietch-dev` and replace with `multietch`.

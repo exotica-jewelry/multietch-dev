@@ -40,9 +40,19 @@ Alternatively, use `npm run build:preview` to preview the production mode:
 
 `npm run create [path]`
 
-For example, `npm run create about/foo/index.md` will create a file at `content/about/foo/index.md`. Because we use [Hugo's Page Bundles](https://gohugo.io/content-management/page-bundles/), we want to use the `dir/page/index.md` format rather than `dir/page.md` format; unfortunately it requires a little extra typing in the command.
+For example, `npm run create about/foo/index.md` will create a file at
+`content/about/foo/index.md`. Because we use
+[Hugo's Page Bundles](https://gohugo.io/content-management/page-bundles/), we
+want to use the `dir/page/index.md` format rather than `dir/page.md` format;
+unfortunately it requires a little extra typing in the command.
 
-All instances of "Multi-Etch" in content are automatically replaced with a version that a) includes the `®` character, and b) won't break on the hyphens when wrapping, so you can just write `Multi-Etch` and let it do its work. See the `wordmark` parameter in [`params.toml`](https://github.com/exotica-jewelry/multietch-dev/blob/main/config/_default/params.toml) and the [`wordmark.html` function](https://github.com/exotica-jewelry/multietch-dev/blob/main/layouts/partials/function/wordmark.html).
+All instances of "Multi-Etch" in content are automatically replaced with a
+version that a) includes the `®` character, and b) won't break on the hyphens
+when wrapping, so you can just write `Multi-Etch` and let it do its work. See
+the `wordmark` parameter in
+[`params.toml`](https://github.com/exotica-jewelry/multietch-dev/blob/main/config/_default/params.toml)
+and the
+[`wordmark.html` function](https://github.com/exotica-jewelry/multietch-dev/blob/main/layouts/partials/function/wordmark.html).
 
 ### Editing site variables
 
@@ -69,7 +79,8 @@ overridden files from upstream, which unfortunately has to be done manually.
 This will generate the Hugo site in `public` with minification turned on.
 
 Note that `public` is excluded from the repo in `.gitignore`, so this command
-should be run from a GitHub Action or other CI to build the site. To build a version optimized for GitHub Pages, run:
+should be run from a GitHub Action or other CI to build the site. To build a
+version optimized for GitHub Pages, run:
 
 `npm run build:gh-pages`
 
