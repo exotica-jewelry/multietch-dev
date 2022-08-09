@@ -1,7 +1,12 @@
 {{- $siteParams := .siteParams -}}
 {{- $content := .content -}}
+
 {{- if $siteParams.filters.wordmark -}}
   {{- $content = partial "function/wordmark.html" $content -}}
+{{- end -}}
+
+{{- if $siteParams.filters.fractions -}}
+  {{- $content = partial "function/fractions.html" $content -}}
 {{- end -}}
 
 {{- return $content -}}

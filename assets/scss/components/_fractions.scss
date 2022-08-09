@@ -1,0 +1,26 @@
+// Fractions
+//
+// The filters.fractions param turns functionality on and off (see
+// layouts/partials/function/fractions.html) that auto-formats fractions written
+// in long form like "1/2" into its HTML entity (if available) or a formatted
+// super/subscript with the fractional divider entity. These styles apply
+// additional font-size tweaks.
+
+.frac {
+  font-size: 95%;
+
+  &--entity {
+    font-weight: 500; // When available in variable weight fonts, darken slightly.
+  }
+
+  &--formatted {
+    sup,
+    sub {
+      font-size: 65%;
+    }
+
+    sup {
+      padding-right: 0.1em;
+    }
+  }
+}

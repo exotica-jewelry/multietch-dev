@@ -76,6 +76,7 @@ alertDismissable = true
 # Setting each filter to true turns it on.
 [filters]
   wordmark = true # Adds ® to every instance of 'Multi-Etch'; prevents line-breaks.
+  fractions = true # Changes a fraction written like "1/2" into "½".
 
 # Grid containers
 [grid]
