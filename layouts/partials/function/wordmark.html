@@ -1,0 +1,7 @@
+{{- /*
+  Replace all instances of 'Multi-Etch' with a span-wrapped 'Multi-Etch®',
+  allowing us to additionally prevent line-breaks with CSS on the class.
+ */ -}}
+{{- $in := "Multi-Etch" -}}
+{{- $out := "<span class='multietch-wordmark'>Multi&#8209;Etch<span class='registered'>&#174;</span></span>" -}}
+{{- return replace . $in $out -}}

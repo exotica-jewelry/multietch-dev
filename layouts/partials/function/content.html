@@ -1,0 +1,7 @@
+{{- $content := .Content -}}
+
+{{- if .Wordmark -}}
+  {{- $content = partial "function/wordmark.html" $content -}}
+{{- end -}}
+
+{{- return $content -}}
