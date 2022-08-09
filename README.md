@@ -10,7 +10,7 @@ The original Hyas child theme readme is located at [`hyas.md`](hyas.md).
 [Node v16.x](https://nodejs.org/en/download/) (currently LTS) must be installed.
 The project installs Hugo itself, so Node is all you need to install manually.
 
-## Quick-start for adding and editing content
+## Quick-start for editing and adding content
 
 1. Clone the repo and enter the directory.
 2. `npm install` to get Hugo and other dependencies set up.
@@ -60,8 +60,8 @@ your images as normal in JPEG, PNG or GIF format and the site will do the rest.
 These filters act automatically on all content (title and page body):
 
 - All instances of "Multi-Etch" in are replaced with a version that includes the
-  `®` character, and won't break on the hyphens when wrapping. See the
-  `wordmark` parameter in
+  `®` character, and won't break on the hyphen when wrapping. See the `wordmark`
+  parameter in
   [`params.toml`](https://github.com/exotica-jewelry/multietch-dev/blob/main/config/_default/params.toml)
   and the
   [`wordmark.html` function](https://github.com/exotica-jewelry/multietch-dev/blob/main/layouts/partials/function/wordmark.html).
@@ -99,14 +99,14 @@ turned off.
 - Asset fingerprinting, CDNs and third-party embedded apps like commenting are
   disabled
 
-Alternatively, use `npm run build:preview` to see the site exactly as it will
-appear on the web:
+Alternatively, use `npm run build:preview` to see the site **exactly as it will
+appear on the web**:
 
 - Drafts are **not shown**
 - Future-scheduled posts are **not shown**
 - Asset fingerprinting, CDNs and third-party embedded apps like commenting are
   **enabled** (though note third-party systems like commenting may not work
-  locally).
+  locally)
 
 ### Editing an existing page
 
@@ -162,8 +162,9 @@ done manually.
 This will generate the Hugo site in `public` with minification turned on.
 
 Note that `public` is excluded from the repo in `.gitignore`, so this command
-should be run from a GitHub Action or other CI to build the site. To build a
-version optimized for GitHub Pages, run:
+should be run from a GitHub Action or other CI to build the site.
+
+To build a version optimized for GitHub Pages, run:
 
 `npm run build:gh-pages`
 
