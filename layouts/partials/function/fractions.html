@@ -4,9 +4,29 @@
   Replace fractions written like "1/2" with known HTML entities when possible.
   */
 -}}
-{{- $in := "1/2" -}}
-{{- $out := `<span class="frac frac--entity">&frac12;</span>` -}}
-{{- $haystack = replace $haystack $in $out -}}
+
+{{- $fractionEntities := dict
+  "1/2" "&frac12;"
+  "1/4" "&frac14;"
+  "3/4" "&frac34;"
+  "1/5" "&frac15;"
+  "2/5" "&frac25;"
+  "3/5" "&frac35;"
+  "4/5" "&frac45;"
+  "1/8" "&frac18;"
+  "3/8" "&frac38;"
+  "5/8" "&frac58;"
+  "7/8" "&frac78;"
+-}}
+{{/* Some fonts also have thirds, sixths, sevenths, ninths and tenths, but
+  they're not widely-supported enough to include here.
+*/}}
+
+{{ range $key, $value := $fractionEntities }}
+  {{- $in := $key -}}
+  {{- $out := printf "%s" `</span>` | printf "%s%s" $value | printf "%s%s" `<span class="frac frac--entity">` | printf "%s" -}}
+  {{- $haystack = replace $haystack $in $out -}}
+{{ end }}
 
 {{- /*
   When an HTML entity doesn't exist, wrap in super/subscript and use the

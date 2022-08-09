@@ -16,11 +16,17 @@
   &--formatted {
     sup,
     sub {
-      font-size: 65%;
+      font-size: 63.5%;
     }
 
     sup {
+      top: -0.3333em;
       padding-right: 0.1em;
+    }
+
+    sub {
+      bottom: 0;
+      padding-left: 0.2em;
     }
   }
 }
