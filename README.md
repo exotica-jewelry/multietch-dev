@@ -108,7 +108,7 @@ appear on the web**:
   **enabled** (though note third-party systems like commenting may not work
   locally)
 
-### Editing an existing page
+### Editing existing pages and adding new ones
 
 Pages in Hugo are contained in the `content` directory, which maps to the root
 of the website domain.
@@ -117,20 +117,24 @@ We use [Hugo Page Bundles](https://gohugo.io/content-management/page-bundles/),
 so a page and its assets (most commonly images) are contained in the same
 directory.
 
-If a page has no children, its content file is `index.md`; e.g. the `about/team`
-page's content file is located at `content/about/team/index.md`. If the page has
-children of its own, then its content file is `_index.md` (note leading
-underscore), e.g. the `about` page's content file is located at
-`content/about/_index.md`.
-
-### Creating a new page
+To create a new page, run:
 
 `npm run create [web-path]`
 
-For example, `npm run create about/foo/index.md` will create a file at
-`content/about/foo/index.md`. Because we use Page Bundles, we must use the
-`dir/page/index.md` format rather than `dir/page.md` format; unfortunately it
-requires a little extra typing in the command.
+For example, `npm run create about/us/index.md` will create a file at
+`content/about/us/index.md` and visible on the web at
+`https://www.multietch.com/about/us`.
+
+If a page has no children, its content file is `index.md`; e.g. the `about/team`
+page's content file is located at `content/about/team/index.md`.
+
+If the page has children of its own, then its content file is `_index.md` (note
+leading underscore), e.g. the `about` page's content file is located at
+`content/about/_index.md`.
+
+Because we use Page Bundles, we must use the `index.md`/`_index.md` format
+rather than the `page.md` format; unfortunately it requires a little extra
+typing in the command.
 
 ### Editing site variables
 
