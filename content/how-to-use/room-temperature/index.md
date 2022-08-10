@@ -23,7 +23,7 @@ metal or glass.
 Subsequent orders will come in a bag with just the Multi-Etch Powder. Because
 the ingredients are not blended, you must mix the entire package.
 
-{{< video "videos/multietch-room-temperature.mp4" "controls" "16x9" "https://www.youtube.com/watch?v=BW1g_MTE25Q" >}}
+{{< video src="videos/multietch-room-temperature.mp4" cover="videos/multietch-room-temperature.jpg" attrs="controls" ratio="16x9" link="https://www.youtube.com/watch?v=BW1g_MTE25Q" caps="true" >}}
 
 ### Step 1: Equipment setup
 
