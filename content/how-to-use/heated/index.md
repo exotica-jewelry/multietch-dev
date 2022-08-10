@@ -19,7 +19,7 @@ metal or glass.
 Subsequent orders will come in a bag with just the Multi-Etch Powder. Because
 the ingredients are not blended, you must mix the entire package.
 
-{{< youtube 5m1KUzaAGiQ >}}
+{{< video "videos/multietch-basics.mp4" "controls" "16x9" "https://www.youtube.com/watch?v=5m1KUzaAGiQ" >}}
 
 ### Step 1: Equipment setup
 
