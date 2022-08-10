@@ -13,6 +13,8 @@ In addition to using Multi-Etch to prepare reactive metals like titanium and
 niobium for anodizing, you can use Multi-Etch to remove existing anodized colors
 from the metals.
 
+{{< video src="videos/reverse-anodizing-with-multietch.webm" attrs="autoplay muted loop" ratio="4x3" width="50%" >}}
+
 ## Removing color from titanium
 
 {{< img src="removing-color-titanium.jpg" alt="" caption="After anodizing, the left half of this piece was covered with tape. The whole piece was then dipped in Multi-Etch to remove the color on the right half." align="right" >}}
