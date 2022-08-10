@@ -1,12 +1,49 @@
-{{/* Sourced from Doks */}}
-<div class="ratio ratio-{{ with .Get "ratio" }}{{.}}{{ end }}">
-  <video{{ with .Get "attributes" }} {{ . | safeHTMLAttr }}{{ end }}>
-    {{ with .Get "webm-src" -}}
-    <source src="{{ . | relURL }}" type="video/webm">
-    {{ end -}}
-    {{ with .Get "mp4-src" -}}
-    <source src="{{ . | relURL }}" type="video/mp4">
-    {{ end -}}
-    Sorry, your browser doesn't support embedded videos.
-  </video>
+{{/* USAGE: video "path" "attributes" "ratio" "YouTube link"
+
+  - path: Relative to the site root, NOT Page Bundles.
+  - attributes: Note if "controls" is not used, the video can't be manually started or stopped. For a full list of attributes, see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+  - ratio: Optional; accepts 1x1 | 4x3 | 16x9 | 21x9. Omitting ratio will result in a 100vw video and may cause overflow.
+  - YouTube link: Includes a link for captioning purposes
+
+  Basic video (no controls visible):
+  < video "videos/myvideo.mp4" >
+
+  Basic video (with browser controls):
+  < video "videos/myvideo.mp4" "controls" >
+
+  Basic video with autoplay on mute at 16x9 ratio:
+  < video "videos/myvideo.mp4" "controls autoplay mute" "16x9" >
+
+  Basic video with autoplay at 1x1 ratio and a link to a YouTube version:
+  < video "videos/myvideo.mp4" "controls autoplay mute" "1x1" "https://www.youtube.com/watch?v=aabbcc">
+*/}}
+{{- $src := .Get 0 }}
+{{- $attrs := .Get 1 }}
+{{- $ratio := .Get 2 }}
+{{- $yt := .Get 3 }}
+<div class="video">
+  <div
+    {{- with $ratio }}
+      class="ratio ratio-{{ . }}"
+    {{- end -}}
+  >
+    <video
+      {{- with $attrs }}
+        {{ . | safeHTMLAttr }}
+      {{- end }}
+    >
+      <source
+        src="{{ $src | relURL }}"
+        {{- if in $src ".webm" }}type="video/webm"{{ end -}}
+        {{- if in $src ".mp4" }}type="video/mp4"{{ end -}}
+      />
+      <p>
+        Sorry, your browser doesn't support embedded videos.
+        <a href="{{ $src | relURL }}">Download this video.</a>
+      </p>
+    </video>
+  </div>
+  {{- with $yt }}
+    <p><a href="{{ . }}">Watch this video with captions on YouTube.</a></p>
+  {{- end }}
 </div>
