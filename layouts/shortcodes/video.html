@@ -4,6 +4,7 @@
   - attrs: Note if "controls" is not used, the video can't be manually started or stopped. If "autoplay" is set, "muted" must also be set or the video won't autoplay in most browsers. For a full list of attributes, see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
   - ratio: Optional; accepts 1x1 | 4x3 | 16x9 | 21x9. Omitting ratio will result in a 100vw video and may cause overflow.
   - width: Set a constraining width in % of the parent container.
+  - align: Position the video to the left or right of content. Only effective when combined with a width less than 100%.
   - cover: Provide an image to use while the video is paused; otherwise the first frame of the video is used.
   - link: Include a link to a hosted version of this video.
   - caps: Indicate that the hosted link has captions available.
@@ -24,6 +25,7 @@
 {{- $attrs := .Get "attrs" }}
 {{- $ratio := .Get "ratio" }}
 {{- $width := .Get "width" }}
+{{- $align := .Get "align" }}
 {{- $cover := .Get "cover" }}
 {{- $link := .Get "link" }}
 {{- $caps := .Get "caps" }}
@@ -31,11 +33,15 @@
   class="
   video
   {{- with $width }}
-    video-constrained
+    video--constrained
+  {{- end -}}
+  {{- with $align }}
+    video--aligned
+    video--aligned-{{ . }}
   {{- end -}}
 "
   {{ with $width -}}
-    style="width: {{ . }};"
+    style="--width: {{ . }}"
   {{- end }}
 >
   <div
@@ -64,7 +70,7 @@
     </video>
   </div>
   {{- with $link }}
-    <p>
+    <p class="link-text">
       <a href="{{ . }}"
         >Watch this video {{ with $caps }}with captions{{ end }} on YouTube.</a
       >

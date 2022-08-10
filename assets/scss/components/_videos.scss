@@ -1,10 +1,32 @@
 .video {
-  &.video-constrained {
-    display: block;
+  &--constrained,
+  &--aligned {
     margin: var(--text-space-y) auto;
   }
 
-  > p {
+  &--constrained {
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: var(--width);
+    }
+  }
+
+  &--aligned-left {
+    @include media-breakpoint-up(md) {
+      float: left;
+      margin-right: calc(var(--spacer) * 2);
+    }
+  }
+
+  &--aligned-right {
+    @include media-breakpoint-up(md) {
+      float: right;
+      margin-left: calc(var(--spacer) * 2);
+    }
+  }
+
+  .link-text {
     margin-top: 1px;
     font-size: $font-size-sm;
   }
