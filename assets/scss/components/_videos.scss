@@ -1,4 +1,9 @@
 .video {
+  &.video-constrained {
+    display: block;
+    margin: var(--text-space-y) auto;
+  }
+
   > p {
     margin-top: 1px;
     font-size: $font-size-sm;
