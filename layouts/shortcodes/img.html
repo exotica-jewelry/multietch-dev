@@ -1,19 +1,16 @@
-{{/*
+{{/* USAGE
 
-USAGE
+  Basic image:
+  < img src="foo.jpg" alt="A picture of foo" >
 
-Basic image:
-< img src="foo.jpg" alt="A picture of foo" >
+  Image with caption:
+  < img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" >
 
-Image with caption:
-< img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" >
+  Aligned image with caption:
+  < img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" align="right" >
 
-Aligned image with caption:
-< img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" align="right" >
-
-Image with specified width and caption:
-< img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" width="50%" >
-
+  Image with specified width and caption:
+  < img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" width="50%" >
 */}}
 {{- $src := .Get "src" -}}
 {{- $alt := .Get "alt" -}}
@@ -49,15 +46,16 @@ Image with specified width and caption:
     <figure
       class="
         figure
-        {{- with $align }}
-          img-align-{{ . }}
-        {{- end }}
         {{ with $width -}}
-          img-constrained
-        {{- end }}
+        figure--constrained
+      {{- end }}
+        {{- with $align }}
+        figure--aligned
+        figure--aligned-{{ . }}
+      {{- end }}
       "
       {{ with $width -}}
-        style="width: {{ . }};"
+        style="--width: {{ . }}"
       {{- end }}
     >
       <img
@@ -68,16 +66,17 @@ Image with specified width and caption:
         width="{{ $image.Width }}"
         height="{{ $image.Height }}"
         alt="{{ $alt }}"
-      >
-      <noscript><img
-        class="figure-img img-fluid"
-        sizes="100vw"
-        srcset="{{ $imgSrcSet }}"
-        src="{{ $image.Permalink }}"
-        width="{{ $image.Width }}"
-        height="{{ $image.Height }}"
-        alt="{{ $alt }}"
-      ></noscript>
+      />
+      <noscript
+        ><img
+          class="figure-img img-fluid"
+          sizes="100vw"
+          srcset="{{ $imgSrcSet }}"
+          src="{{ $image.Permalink }}"
+          width="{{ $image.Width }}"
+          height="{{ $image.Height }}"
+          alt="{{ $alt }}"
+      /></noscript>
       {{ with $caption -}}
         <figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>
       {{- end }}
@@ -96,7 +95,7 @@ Image with specified width and caption:
       {{ with $width -}}
         style="width: {{ . }};"
       {{- end }}
-    >
+    />
   {{ end -}}
 {{ else -}}
   {{ erroridf "image-not-found" "Image not found" -}}

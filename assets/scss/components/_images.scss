@@ -9,30 +9,43 @@
   --cap-pad-btm: calc(var(--spacing) * 0.75);
 }
 
-figure {
+figure,
+.figure {
   display: inline-block;
   margin: var(--text-space-y) calc(var(--extra) * -1rem);
 
-  img {
-    margin-bottom: (var(--spacer) / 2);
-    line-height: 1;
-    max-width: 100%;
-    height: auto;
-  }
-
-  figcaption {
-    font-size: 87.5%;
-    color: #6c757d;
-  }
-
-  figcaption,
-  .figure-caption {
-    margin: var(--cap-pad-top) var(--cap-pad-sides) var(--cap-pad-btm);
-  }
-
-  &.img-constrained {
-    display: block;
+  &--constrained,
+  &--aligned {
     margin: var(--text-space-y) auto;
+  }
+
+  &--constrained {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: var(--width);
+    }
+  }
+
+  &--aligned-left,
+  &--aligned-right {
+    @include media-breakpoint-up(sm) {
+      width: calc(50% - calc(var(--spacer) * 2));
+    }
+  }
+
+  &--aligned-left {
+    @include media-breakpoint-up(sm) {
+      float: left;
+      margin-right: calc(var(--spacer) * 2);
+    }
+  }
+
+  &--aligned-right {
+    @include media-breakpoint-up(sm) {
+      float: right;
+      margin-left: calc(var(--spacer) * 2);
+    }
   }
 
   &.wide {
@@ -56,27 +69,22 @@ figure {
       }
     }
   }
-}
 
-.img-align-right,
-.img-align-left {
-  @include media-breakpoint-up(sm) {
-    width: calc(50% - calc(var(--spacer) * 2));
-    margin-top: calc(var(--spacer) / 2);
+  img {
+    margin-bottom: (var(--spacer) / 2);
+    line-height: 1;
+    max-width: 100%;
+    height: auto;
   }
-}
 
-.img-align-left {
-  @include media-breakpoint-up(sm) {
-    float: left;
-    margin-right: calc(var(--spacer) * 2);
+  figcaption {
+    font-size: 87.5%;
+    color: #6c757d;
   }
-}
 
-.img-align-right {
-  @include media-breakpoint-up(sm) {
-    float: right;
-    margin-left: calc(var(--spacer) * 2);
+  figcaption,
+  .figure-caption {
+    margin: var(--cap-pad-top) var(--cap-pad-sides) var(--cap-pad-btm);
   }
 }
 
