@@ -6,7 +6,7 @@
   Image with caption:
   < img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" >
 
-  Aligned image with caption:
+  Right-aligned image with caption:
   < img src="foo.jpg" alt="A picture of foo" caption="Credit: Bar" align="right" >
 
   Image with specified width and caption:
@@ -93,7 +93,9 @@
         title="{{ . }}"
       {{- end }}
       {{ with $width -}}
-        style="width: {{ . }};"
+        style="--width: {{ . }}"
+      {{- else }}
+        style="--width: initial"
       {{- end }}
     />
   {{ end -}}

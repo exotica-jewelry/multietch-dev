@@ -88,6 +88,10 @@ figure,
   }
 }
 
+.img-fluid {
+  width: var(--width);
+}
+
 .blur-up {
   filter: blur(5px);
 }
