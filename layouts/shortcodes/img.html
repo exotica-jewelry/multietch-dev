@@ -17,6 +17,16 @@
 {{- $caption := .Get "caption" -}}
 {{- $align := .Get "align" -}}
 {{- $width := .Get "width" -}}
+
+{{- $link := .Get "link" -}}
+{{/* The following is pretty much only to satisfy Prettier and other linters that choke on conditional open/close tags. */}}
+{{- $openwrap := "" -}}
+{{- $closewrap := "" -}}
+{{- with $link -}}
+  {{- $openwrap = printf "%s" `">` | printf "%s%s" $link | printf "%s%s" `<a href="` | printf "%s" -}}
+  {{- $closewrap = "</a>" -}}
+{{- end -}}
+
 {{- $image := "" -}}
 
 {{- if (urls.Parse $src).IsAbs }}
@@ -42,6 +52,7 @@
   {{ end -}}
   {{ $imgSrcSet = (delimit $imgSrcSet ",") -}}
 
+  {{ $openwrap | safeHTML -}}
   {{ if gt $image.Width site.Params.smallLimit -}}
     <figure
       class="
@@ -81,7 +92,7 @@
         <figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>
       {{- end }}
     </figure>
-  {{ else -}}
+  {{- else -}}
     <img
       class="img-fluid lazyload blur-up"
       src="{{ $lqip.Permalink }}"
@@ -98,7 +109,8 @@
         style="--width: initial"
       {{- end }}
     />
-  {{ end -}}
+  {{- end -}}
+  {{- $closewrap | safeHTML }}
 {{ else -}}
   {{ erroridf "image-not-found" "Image not found" -}}
 {{ end -}}
