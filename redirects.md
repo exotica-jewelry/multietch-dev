@@ -8,6 +8,7 @@
 - `privacy-policy` to `about/privacy`
 - `keep-etch-times-consistent` to `how-to-use/get-consistent-etch-times`
 - `removing-color` to `how-to-use/removing-color`
+- `disposal` to `how-to-use/disposal`
 - etch rate pages should all be organized under `etch-rates`, e.g.
   `etch-rates/gold`
 
