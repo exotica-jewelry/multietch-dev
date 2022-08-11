@@ -94,7 +94,16 @@
     </figure>
   {{- else -}}
     <img
-      class="img-fluid lazyload blur-up"
+      class="
+        img-fluid lazyload blur-up
+        {{ with $width -}}
+        image--constrained
+      {{- end }}
+        {{- with $align }}
+        image--aligned
+        image--aligned-{{ . }}
+      {{- end }}
+      "
       src="{{ $lqip.Permalink }}"
       data-src="{{ $image.Permalink }}"
       width="{{ $image.Width }}"

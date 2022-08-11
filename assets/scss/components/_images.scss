@@ -14,40 +14,6 @@ figure,
   display: inline-block;
   margin: var(--text-space-y) calc(var(--extra) * -1rem);
 
-  &--constrained,
-  &--aligned {
-    margin: var(--text-space-y) auto;
-  }
-
-  &--constrained {
-    width: 100%;
-
-    @include media-breakpoint-up(sm) {
-      width: var(--width);
-    }
-  }
-
-  &--aligned-left,
-  &--aligned-right {
-    @include media-breakpoint-up(sm) {
-      width: calc(50% - calc(var(--spacer) * 2));
-    }
-  }
-
-  &--aligned-left {
-    @include media-breakpoint-up(sm) {
-      float: left;
-      margin-right: calc(var(--spacer) * 2);
-    }
-  }
-
-  &--aligned-right {
-    @include media-breakpoint-up(sm) {
-      float: right;
-      margin-left: calc(var(--spacer) * 2);
-    }
-  }
-
   &.wide {
     --size: 2;
     --extra: 1.5;
@@ -88,8 +54,71 @@ figure,
   }
 }
 
-.img-fluid {
-  width: var(--width);
+.figure {
+  &--constrained,
+  &--aligned {
+    margin: var(--text-space-y) auto;
+  }
+
+  &--constrained {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: var(--width);
+
+      .img-fluid {
+        width: var(--width);
+      }
+    }
+  }
+
+  &--aligned-left,
+  &--aligned-right {
+    @include media-breakpoint-up(sm) {
+      width: calc(50% - calc(var(--spacer) * 2));
+    }
+  }
+
+  &--aligned-left {
+    @include media-breakpoint-up(sm) {
+      float: left;
+      margin-right: calc(var(--spacer) * 2);
+    }
+  }
+
+  &--aligned-right {
+    @include media-breakpoint-up(sm) {
+      float: right;
+      margin-left: calc(var(--spacer) * 2);
+    }
+  }
+}
+
+.image {
+  &--constrained {
+    width: var(--width);
+  }
+
+  &--aligned-left,
+  &--aligned-right {
+    @include media-breakpoint-up(sm) {
+      width: calc(50% - calc(var(--spacer) * 2));
+    }
+  }
+
+  &--aligned-left {
+    @include media-breakpoint-up(sm) {
+      float: left;
+      margin-right: calc(var(--spacer) * 2);
+    }
+  }
+
+  &--aligned-right {
+    @include media-breakpoint-up(sm) {
+      float: right;
+      margin-left: calc(var(--spacer) * 2);
+    }
+  }
 }
 
 .blur-up {
