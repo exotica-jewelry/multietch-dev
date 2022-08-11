@@ -10,5 +10,6 @@
 - `privacy-policy` to `about/privacy`
 - etch rate pages should all be organized under `etch-rates`, e.g.
   `etch-rates/gold`
+- SDS PDFs from old location to new location
 
 Also search for all instances of `multietch-dev` and replace with `multietch`.
