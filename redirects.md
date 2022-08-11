@@ -4,11 +4,10 @@
 - `contactus` to `contact`
 - `multietch-blog` to `blog`
 - `multietch-how-to-videos-resources` to `how-to-use/videos-resources`
-- `faq` to `how-to-use/faq`
-- `privacy-policy` to `about/privacy`
 - `keep-etch-times-consistent` to `how-to-use/get-consistent-etch-times`
-- `removing-color` to `how-to-use/removing-color`
-- `disposal` to `how-to-use/disposal`
+- all other children of `how-to-use` under that directory, e.g. `faq` to
+  `how-to-use/faq`
+- `privacy-policy` to `about/privacy`
 - etch rate pages should all be organized under `etch-rates`, e.g.
   `etch-rates/gold`
 
