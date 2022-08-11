@@ -3,18 +3,6 @@
 .content {
   line-height: calc(var(--bs-body-line-height) * 1.1);
 
-  p {
-    margin: $text-space;
-    text-align: left;
-  }
-
-  blockquote {
-    margin: $text-space;
-    padding: ($spacer / 2) ($spacer * 2);
-    border-left: 3px currentColor solid;
-    background-color: whitesmoke;
-  }
-
   h4,
   h6 {
     font-style: italic;
@@ -55,6 +43,26 @@
         opacity: 1;
         pointer-events: initial;
       }
+    }
+  }
+
+  p {
+    margin: $text-space;
+    text-align: left;
+  }
+
+  blockquote {
+    margin: $text-space;
+    padding: ($spacer / 2) ($spacer * 2);
+    border-left: 3px currentColor solid;
+    background-color: whitesmoke;
+  }
+
+  dl {
+    dt {
+      font-family: $headings-font-family;
+      font-size: $h4-font-size;
+      font-weight: bold;
     }
   }
 }
