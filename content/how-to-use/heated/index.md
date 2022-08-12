@@ -94,7 +94,7 @@ Anodize right away, or store in distilled or de-ionized water to prevent
 re-formation of the natural oxide layer.
 
 For more guides, check out our
-[**resource videos**](/how-to-use/videos-resources)!
+[**resource videos**](/how-to-use/videos-resources/)!
 
 ---
 

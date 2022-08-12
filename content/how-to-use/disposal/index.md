@@ -11,10 +11,12 @@ draft: false # Set to false to publish
 images: []
 ---
 
-As we say in the [safety data sheet (SDS)](/safety/#sds), Multi-Etch users must
-comply with all federal, state, and local wastewater regulations. But how can
-you find out what is allowed? The best way is to check with the wastewater
-manager of your town and provide them with the [SDS](/safety/#sds).
+As we say in the
+[safety data sheet (SDS)](/safety/#multi-etch-safety-data-sheets-sds),
+Multi-Etch users must comply with all federal, state, and local wastewater
+regulations. But how can you find out what is allowed? The best way is to check
+with the wastewater manager of your town and provide them with the
+[SDS](/safety/#multi-etch-safety-data-sheets-sds).
 
 **Consult the wastewater expert where you live to determine what is allowed, and
 check back here for updates.**

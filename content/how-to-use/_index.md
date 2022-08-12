@@ -58,15 +58,15 @@ can be used on [a variety of metals](/etch-rates/) for many uses:
 
 - [Using Multi-Etch to prepare titanium for welding](/welding)
 - [Removing anodized color from titanium, niobium and more](/removing-color)
-- [Removing drill bits from gold](/etching-gold-multietch)
+- [Removing drill bits from gold](/etch-rates/gold/)
 
 ### Disposal
 
 When finished with your batch, we have a guide on
-[**disposing Multi-Etch safely**](/disposal).
+[**disposing Multi-Etch safely**](/disposal/).
 
 ## Video demonstrations
 
 If you’re more of a visual learner, be sure to check out our
-[**Multi-Etch how-to videos**](/multietch-how-to-videos-resources) for step by
-step demonstrations.
+[**Multi-Etch how-to videos**](/how-to-use/videos-resources/) for step by step
+demonstrations.

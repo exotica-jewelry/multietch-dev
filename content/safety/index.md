@@ -63,6 +63,6 @@ provide better safety for employees and a safer environment for us all. See
 As we say in the safety data sheet (SDS), Multi-Etch users must comply with all
 federal, state, and local wastewater regulations. But how can you find out what
 is allowed? The best way is to check with the wastewater manager of your town
-and provide them with the [SDS](#sds).
+and provide them with the [SDS](#multi-etch-safety-data-sheets-sds).
 
 **[Read more about disposing spent Multi-Etch](/how-to-use/disposal/)**

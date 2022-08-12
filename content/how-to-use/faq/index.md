@@ -50,7 +50,7 @@ holder from a wire made of titanium or niobium.
 This varies based on federal, state, and local wastewater regulations, but is
 generally much easier than disposing of hydrofluoric acid. Consult a wastewater
 expert where you live to determine what is allowed, or
-**[read our disposal page](/disposal)** for details.
+**[read our disposal page](/disposal/)** for details.
 
 ### Troubleshooting with Multi-Etch
 
