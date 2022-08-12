@@ -60,12 +60,9 @@ provide better safety for employees and a safer environment for us all. See
 
 ## Disposal of used Multi-Etch
 
-For disposal, always check state and local regulations in your area. In some
-places, it is permissible to sewer neutralized Multi-Etch using copious amounts
-of water.
-
-Hydrofluoric acid requires professional hazmat waste services, which is harder
-to obtain today due to the fact that fewer companies are willing to pick up
-hydrofluoric acid waste than in the past.
+As we say in the safety data sheet (SDS), Multi-Etch users must comply with all
+federal, state, and local wastewater regulations. But how can you find out what
+is allowed? The best way is to check with the wastewater manager of your town
+and provide them with the [SDS](#sds).
 
 **[Read more about disposing spent Multi-Etch](/how-to-use/disposal/)**
