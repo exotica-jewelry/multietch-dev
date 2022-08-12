@@ -34,7 +34,7 @@
   */
 -}}
 {{- $REin := `([0-9]+)/([0-9]+)` -}}
-{{- $REout := `<span class="frac frac--formatted"><sup>$1</sup>&frasl;<sub>$2</sub></span>` -}}
+{{- $REout := `<span class="frac frac--formatted">$1&frasl;$2</span>` -}}
 {{- $haystack = replaceRE $REin $REout $haystack -}}
 
 {{- return $haystack -}}
