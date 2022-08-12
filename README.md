@@ -136,6 +136,20 @@ Because we use Page Bundles, we must use the `index.md`/`_index.md` format
 rather than the `page.md` format; unfortunately it requires a little extra
 typing in the command.
 
+### Etch rates pages
+
+**Editing existing etch rates:** See the `data/etch-rates.yaml` file for the
+bulk of the content on each page, and the `content/etch-rates/` subdirectories
+for the introductory text and featured images for each page.
+
+**Adding a new etch rate page:** `npm run create:rate [metal]` will create a
+stub directory in `content/etch-rates/[metal]` using the name of the metal you
+supply, set to draft by default. Use this Markdown file to set the introductory
+text, and save the featured image in the `images` subdirectory. Add the
+necessary data to the `data/etch-rates.yaml` file, and once you're satisfied
+with the result, change the `draft` status on the Markdown file to `false` to
+publish the page. Menu listings will automatically be updated.
+
 ### Editing site variables
 
 - `config/_default/config.toml`: main configuration and Hugo setup
