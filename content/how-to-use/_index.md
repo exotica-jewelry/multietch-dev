@@ -47,8 +47,8 @@ Multi-Etch can be used while heated (125&#8211;150°F) or at room temperature
 {{< button relref="/" text="Instructions for room-temperature Multi-Etch" level="secondary" width="90%" >}}
 
 You can
-[download a Multi-Etch Data Sheet (PDF)](/files/s/20-0165-Multietch-data-sheet-111920.pdf)
-with an overview of the product, and browse our
+[download a Multi-Etch Data Sheet (PDF)](multietch-data-sheet-20201119.pdf) with
+an overview of the product, and browse our
 [frequently asked questions and troubleshooting process](/faq).
 
 ### Using Multi-Etch for more than anodizing
