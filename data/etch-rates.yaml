@@ -1,0 +1,657 @@
+# Used in the https://www.multietch.com/etch-rates/ section.
+
+titanium:
+  preparing:
+    label: 'for anodizing or welding'
+    subtype:
+      label: 'grade'
+      'all':
+        - process: '150–160°F regular strength'
+          time: '7–10 seconds'
+          surface: 'brightens'
+        - process: '70°F double strength'
+          time: '2 minutes'
+          surface: 'brightens'
+  removing_color:
+    note:
+      'Times are for removing high-voltage green completely; lower voltage
+      colors will take less time to remove.'
+    subtype:
+      label: 'grade'
+      '1 (CP)':
+        - process: '150–160°F regular strength'
+          time: '30 seconds'
+          surface: 'brightens/matte'
+        - process: '150–160°F double strength'
+          time: '30 seconds'
+          surface: 'brightens/matte'
+        - process: '70°F double strength'
+          time: '6 minutes'
+          surface: 'brightens/matte'
+      '2 (CP)':
+        - process: '150–160°F regular strength'
+          time: '2 minutes'
+          surface: 'brightens/matte'
+        - process: '150–160°F double strength'
+          time: '75 seconds'
+          surface: 'brightens/matte'
+        - process: '70°F double strength'
+          time: '24 minutes'
+          surface: 'brightens/matte'
+      '4 (CP)':
+        - process: '150–160°F regular strength'
+          time: '50 seconds'
+          surface: 'brightens/matte'
+        - process: '150–160°F double strength'
+          time: '40 seconds'
+          surface: 'brightens/matte'
+        - process: '70°F double strength'
+          time: '8 minutes'
+          surface: 'brightens/matte'
+      '5 (6/4 aircraft grade)':
+        - process: '150–160°F regular strength'
+          time: '1 minute 40 seconds'
+          surface: 'brightens/matte'
+        - process: '150–160°F double strength'
+          time: '1 minute'
+          surface: 'brightens/matte'
+        - process: '70°F double strength'
+          time: '40 minutes'
+          surface: 'brightens/matte'
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches, cumulative total)'
+    subtype:
+      label: 'grade'
+      '1 (CP)':
+        process:
+          '150–160°F regular strength':
+            - time: 1
+              depth: 0.00012
+              surface: 'brightens/matte'
+            - time: 2
+              depth: 0.00023
+              surface: 'brightens/matte'
+            - time: 3
+              depth: 0.0004
+              surface: 'brightens/matte'
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.00023
+              surface: 'brightens/matte'
+            - time: 2
+              depth: 0.0006
+              surface: 'brightens/matte'
+            - time: 3
+              depth: 0.0008
+              surface: 'brightens/matte'
+      '2 (CP)':
+        process:
+          '150–160°F regular strength':
+            - time: 1
+              depth: 0.00016
+              surface: 'brightens/matte'
+            - time: 2
+              depth: 0.00036
+              surface: 'brightens/matte'
+            - time: 3
+              depth: 0.00046
+              surface: 'brightens/matte'
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.00045
+              surface: 'brightens/matte'
+            - time: 2
+              depth: 0.00092
+              surface: 'brightens/matte'
+            - time: 3
+              depth: 0.00115
+              surface: 'brightens/matte'
+      '4 (CP)':
+        process:
+          '150–160°F regular strength':
+            - time: 1
+              depth: 0.00015
+              surface: 'brightens/matte'
+            - time: 2
+              depth: 0.0003
+              surface: 'brightens/matte'
+            - time: 3
+              depth: 0.00035
+              surface: 'brightens/matte'
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.00025
+              surface: 'brightens/matte'
+            - time: 2
+              depth: 0.001
+              surface: 'brightens/matte'
+            - time: 3
+              depth: 0.0012
+              surface: 'brightens/matte'
+      '5 (6/4 aircraft grade)':
+        process:
+          '150–160°F double strength':
+            - time: 1
+              depth: 'no change'
+              surface: 'brightens/matte'
+            - time: 2
+              depth: 0.000084
+              surface: 'brightens/matte'
+            - time: 3
+              depth: 0.00022
+              surface: 'brightens/matte'
+            - time: 4
+              depth: 0.00043
+              surface: 'brightens/matte'
+
+alumninum:
+  alloy: '3003'
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches, cumulative total)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.00033
+              surface: 'matte, white'
+            - time: 2
+              depth: 0.00081
+              surface: 'matte, white'
+            - time: 3
+              depth: 0.00098
+              surface: 'matte, white'
+
+brass:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 15
+              depth: 0.004
+              surface: 'matte'
+            - time: 188
+              depth: 0.05
+              surface: 'matte'
+
+bronze:
+  etching:
+    time_suffix: ''
+    depth_suffix: '(inches)'
+    subtype:
+      label: 'type'
+      'Bronze PMC':
+        process:
+          '135°F regular strength':
+            - time: '3 minutes'
+              depth: 0.0025
+              surface: 'brightened, no smut'
+      'Fast Bronze PMC':
+        process:
+          '135°F regular strength':
+            - time: '3 minutes'
+              depth: 0.003
+              surface: 'reveals more grain structure'
+      ? 'Ancient bronze (a [Rio
+        Grande](https://www.riogrande.com/Product/ancient-bronze-casting-grain/706051)
+        zinc-free alloy)'
+      : process:
+          '135°F regular strength':
+            - time: '20–30 seconds'
+              depth: 'no change'
+              surface: 'brightened, no smut'
+
+copper:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: 'type'
+      'Copper':
+        process:
+          '135°F regular strength':
+            - time: 15
+              depth: 0.008
+              surface: 'matte'
+            - time: 94
+              depth: 0.05
+              surface: 'matte'
+      'Copper (PMC)':
+        process:
+          '135°F regular strength':
+            - time: 3
+              depth: 0.002
+              surface: 'matte, dark brown smut'
+
+gold:
+  drill_bits:
+    note:
+      '3 minutes will remove enough to be picked out; etch longer to dissolve
+      whole bit.'
+    time_suffix: '(minutes)'
+    process:
+      '135°F regular strength':
+        - time: '3+'
+          surface: 'none'
+
+hafnium:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches, cumulative total)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.0006
+              surface: 'none'
+            - time: 2
+              depth: 0.0015
+              surface: 'matte, dark gray'
+            - time: 3
+              depth: 0.002
+              surface: 'matte, dark gray'
+
+magnesium:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 3
+              depth: 0.001
+              surface: 'chalky white smut'
+
+meteorite:
+  alloy: 'Gibeon'
+  etching:
+    note:
+      'The combination of different metals enables Multi-Etch to reveal the
+      crystals called [Widmanstätten
+      structures](https://en.wikipedia.org/wiki/Widmanst%C3%A4tten_pattern).'
+    time_suffix: '(minutes)'
+    depth_suffix: ''
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 3
+              depth: 0.002
+              surface:
+                'Crystal grain revealed; black smut. Leaving in longer will make
+                the crystal grain more pronounced.'
+
+mokume:
+  alloy: 'Ti + Nb'
+  preparing:
+    label: 'for anodizing'
+    subtype:
+      label: ''
+      'none':
+        - process: '150–160°F regular strength'
+          time: '7–10 seconds'
+          surface: 'brightens; anodizing reveals patterns'
+        - process: '70°F double strength'
+          time: '2 minutes'
+          surface: 'brightens; anodizing reveals patterns'
+  removing_color:
+    note:
+      'Times are for removing high-voltage green completely; lower voltage
+      colors will take less time to remove.'
+    subtype:
+      label: ''
+      'none':
+        - process: '150–160°F regular strength'
+          time: '4.5 minutes'
+          surface: 'Titanium: matte. Niobium: none.'
+          notes: 'Titanium will lose color before niobium.'
+        - process: '150–160°F double strength'
+          time: '3.5 minutes'
+          surface: 'Titanium: matte. Niobium: slightly matte.'
+          notes: 'Titanium will lose color before niobium'
+        - process: '70°F double strength'
+          time: '6 minutes'
+          surface: 'Trend toward matte.'
+          notes: 'Will remove color from titanium only.'
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: ''
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 5
+              depth: 'variable'
+              surface: 'Patterns revealed by various depths.'
+
+nickel:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 5
+              depth: 0.00025
+              surface: 'matte'
+
+niobium:
+  removing_color:
+    note:
+      'Times are for removing high-voltage green completely; lower voltage
+      colors will take less time to remove.'
+    subtype:
+      label: ''
+      'none':
+        - process: '150–160°F regular strength'
+          time: '4.5 minutes'
+          surface: 'none'
+        - process: '150–160°F double strength'
+          time: '3.5 minutes'
+          surface: 'slightly matte'
+        - process: '70°F double strength'
+          time: 'not practical'
+          surface: ''
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches, cumulative total)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '150–160°F regular strength':
+            - time: 1
+              depth: 0.00006
+              surface: 'trending toward matte'
+            - time: 2
+              depth: 0.00015
+              surface: 'matte'
+            - time: 3
+              depth: 0.00023
+              surface: 'matte'
+  drill_bits:
+    note:
+      '3 minutes will remove enough to be picked out; etch longer to dissolve
+      whole bit.'
+    time_suffix: '(minutes)'
+    process:
+      '135°F regular strength':
+        - time: '3+'
+          surface: 'trend toward matte'
+  custom:
+    label: 'Preparing niobium for electron beam welding using Multi‑Etch'
+    time_suffix: '(minutes)'
+    depth_suffix: ''
+    process:
+      '135°F double strength':
+        - time: 1
+          depth: 'no change'
+          surface: 'polish will turn slightly matte'
+
+nitinol:
+  etching_oxide:
+    time_suffix: '(minutes)'
+    process:
+      '150–160°F double strength':
+        - time: 3
+  etching:
+    note: 'Sample degreased with Simple Green.'
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches, cumulative total)'
+    depth_2_suffix: '(millimeters, cumulative total)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.00012
+              depth_2: 0.003
+            - time: 2
+              depth: 0.00033
+              depth_2: 0.0083
+            - time: 3
+              depth: 0.00073
+              depth_2: 0.0186
+            - time: 4
+              depth: 0.00133
+              depth_2: 0.0339
+            - time: 5
+              depth: 0.00223
+              depth_2: 0.0566
+            - time: 6
+              depth: 0.00345
+              depth_2: 0.0876
+            - time: 7
+              depth: 0.00484
+              depth_2: 0.1229
+            - time: 8
+              depth: 0.00643
+              depth_2: 0.1632
+            - time: 9
+              depth: 0.00828
+              depth_2: 0.2102
+            - time: 10
+              depth: 0.01024
+              depth_2: 0.2602
+
+palladium:
+  preparing:
+    label: 'for welding or soldering'
+    note:
+      'Although Multi-Etch will not etch palladium, it can be used to remove all
+      steel ions prior to welding or soldering.'
+    subtype:
+      label: ''
+      'none':
+        - process: '135°F regular strength'
+          time: '15 seconds'
+          surface: 'none'
+  drill_bits:
+    note:
+      '3 minutes will remove enough to be picked out; etch longer to dissolve
+      whole bit.'
+    time_suffix: '(minutes)'
+    process:
+      '135°F regular strength':
+        - time: '3+'
+          surface: 'none'
+
+pewter:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 15
+              depth: 0.002
+              surface: 'none'
+            - time: 375
+              depth: 0.05
+              surface: 'none'
+
+platinum:
+  preparing:
+    label: 'for welding or soldering'
+    note:
+      'Although Multi-Etch will not etch platinum, it can be used to remove all
+      steel ions prior to welding or soldering. Rather than using the standard
+      protocols involving a 15-minute dip in nitric acid, a 15-**second** dip in
+      Multi-Etch is just as effective.'
+    subtype:
+      label: ''
+      'none':
+        - process: '135°F regular strength'
+          time: '15 seconds'
+          surface: 'none'
+  drill_bits:
+    note:
+      '3 minutes will remove enough to be picked out; etch longer to dissolve
+      whole bit.'
+    time_suffix: '(minutes)'
+    process:
+      '135°F regular strength':
+        - time: '3+'
+          surface: 'none'
+
+rhodium:
+  custom:
+    label: 'Remove iron contamination from rhodium using Multi‑Etch'
+    note: 'Removes iron contamination without removing any rhodium ions.'
+    time_suffix: '(minutes)'
+    depth_suffix: ''
+    process:
+      '135°F regular strength':
+        - time: 1
+          depth: 'no change'
+          surface: 'contamination removed'
+
+stainless_steel:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 3
+              depth: 0.001
+              surface: 'matte with dark grey smut'
+
+silver:
+  custom:
+    label: 'Remove light firescale from silver using Multi‑Etch'
+    time_suffix: '(minutes)'
+    depth_suffix: ''
+    process:
+      '135°F regular strength':
+        - time: 3
+          depth: 'no change'
+          surface: 'light firescale removed'
+  drill_bits:
+    note:
+      '3 minutes will remove enough to be picked out; etch longer to dissolve
+      whole bit.'
+    time_suffix: '(minutes)'
+    process:
+      '135°F regular strength':
+        - time: '3+'
+          surface: 'slightly matte'
+
+tantalum:
+  removing_color:
+    note:
+      'Times are for removing high-voltage green completely; lower voltage
+      colors will take less time to remove.'
+    subtype:
+      label: ''
+      'none':
+        - process: '150–160°F double strength'
+          time: '64 minutes'
+          surface: 'matte'
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches, cumulative total)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.00003
+              surface: 'none'
+            - time: 2
+              depth: 0.00004
+              surface: 'slightly matte'
+            - time: 3
+              depth: 0.00006
+              surface: 'slightly matte'
+
+tool_steel:
+  alloy: '01'
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 15
+              depth: 0.008
+              surface: 'frosted finish'
+            - time: 94
+              depth: 0.05
+              surface: 'frosted finish'
+
+zinc:
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '135°F regular strength':
+            - time: 3
+              depth: 0.0005
+              surface: 'black smut'
+
+zirconium:
+  preparing:
+    label: 'for anodizing'
+    note:
+      'Etching zirconium prior to anodizing will result in slightly better
+      colors.'
+    subtype:
+      label: ''
+      'none':
+        - process: '150–160°F double strength'
+          time: '1 minute'
+          surface: 'no change'
+  removing_color:
+    note:
+      'Times are for removing high-voltage green completely; lower voltage
+      colors will take less time to remove.'
+    subtype:
+      label: ''
+      'none':
+        - process: '150–160°F double strength'
+          time: '3 minutes'
+          surface: 'pitted'
+  etching:
+    time_suffix: '(minutes)'
+    depth_suffix: '(inches, cumulative total)'
+    subtype:
+      label: ''
+      'none':
+        process:
+          '150–160°F double strength':
+            - time: 1
+              depth: 0.00068
+              surface: 'none'
+            - time: 2
+              depth: 0.00093
+              surface: 'trend toward pitting'
+            - time: 3
+              depth: 0.00133
+              surface: 'trend toward pitting'
