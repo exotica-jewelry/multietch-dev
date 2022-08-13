@@ -1,0 +1,39 @@
+{{- $pctx := .pctx }}
+{{- $metal := .metal }}
+{{- $data := .data }}
+
+{{- with $data.preparing }}
+  <table class="table">
+    <caption class="table__caption">
+      Preparing {{ $metal }} {{ .label }} using
+      <span class="multietch-wordmark"
+        >Multi&#8209;Etch<span class="registered">&#174;</span></span
+      >
+    </caption>
+    <thead class="table__head">
+      <tr class="table__row">
+        <th class="table__cell table__cell--head" scope="col">
+          {{ .subtype.label | title }}
+        </th>
+        <th class="table__cell table__cell--head" scope="col">Process</th>
+        <th class="table__cell table__cell--head" scope="col">Etch time</th>
+        <th class="table__cell table__cell--head" scope="col">
+          Surface change
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      <tr class="table__row">
+        <th
+          class="table__cell table__cell--head table__cell--head3"
+          data-title="{{ $.subtype.label | title }}"
+        >
+          All grades
+        </th>
+        <th class="table__cell table__cell--head table__cell--head3"></th>
+        <th class="table__cell table__cell--head table__cell--head3"></th>
+        <th class="table__cell table__cell--head table__cell--head3"></th>
+      </tr>
+    </tbody>
+  </table>
+{{- end -}}

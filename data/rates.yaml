@@ -5,7 +5,7 @@ titanium:
     label: 'for anodizing or welding'
     subtype:
       label: 'grade'
-      'all':
+      'All grades':
         - process: '150–160°F regular strength'
           time: '7–10 seconds'
           surface: 'brightens'

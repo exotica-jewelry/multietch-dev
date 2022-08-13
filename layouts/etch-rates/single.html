@@ -1,26 +1,47 @@
-{{ define "main" }}
+{{- define "main" }}
+  {{- $pctx := . }}
+  {{- $metal := .Title }}
+  {{- $data := index $.Site.Data.rates $metal -}}
   <div class="row justify-content-center">
     <div class="col-md-12 col-lg-10 col-xl-8">
       <article>
         <h1>
-          Etching {{ .Title }} with
+          Etching {{ $metal }} with
           <span class="multietch-wordmark"
             >Multi&#8209;Etch<span class="registered">&#174;</span></span
           >
         </h1>
         {{ partial "content/image.html" (dict
-          "pctx" .
+          "pctx" $pctx
           "file" .Params.featured_image.file
           "caption" .Params.featured_image.caption
           )
         }}
-        {{ dict
-          "content" .Content
-          "siteParams" .Site.Params
-          | partial "function/content.html"
-          | safeHTML
-        }}
+        <h2>
+          How to etch {{ $metal }} with Multi-Etch
+          {{- if eq $metal "titanium" -}}
+            , the safer alternative to hydrofluoric acid
+          {{- end -}}
+        </h2>
+        <div class="rate-intro">
+          {{ dict
+            "content" .Content
+            "siteParams" .Site.Params
+            | partial "function/content.html"
+            | safeHTML
+          }}
+        </div>
+        {{- with $data }}
+          <div class="rate-tables">
+            {{ partial "partials/data/rate-table" (dict
+              "pctx" $pctx
+              "metal" $metal
+              "data" .
+              )
+            }}
+          </div>
+        {{- end -}}
       </article>
     </div>
   </div>
-{{ end }}
+{{- end }}
