@@ -3,6 +3,7 @@
 {{- $data := .data }}
 
 {{- with $data.preparing }}
+  {{- $subtypeLabel := .subtype.label | title }}
   <table class="table">
     <caption class="table__caption">
       Preparing {{ $metal }} {{ .label }} using
@@ -13,7 +14,7 @@
     <thead class="table__head">
       <tr class="table__row">
         <th class="table__cell table__cell--head" scope="col">
-          {{ .subtype.label | title }}
+          {{- $subtypeLabel -}}
         </th>
         <th class="table__cell table__cell--head" scope="col">Process</th>
         <th class="table__cell table__cell--head" scope="col">Etch time</th>
@@ -23,17 +24,35 @@
       </tr>
     </thead>
     <tbody class="table__body">
-      <tr class="table__row">
-        <th
-          class="table__cell table__cell--head table__cell--head3"
-          data-title="{{ $.subtype.label | title }}"
-        >
-          All grades
-        </th>
-        <th class="table__cell table__cell--head table__cell--head3"></th>
-        <th class="table__cell table__cell--head table__cell--head3"></th>
-        <th class="table__cell table__cell--head table__cell--head3"></th>
-      </tr>
+      {{ range $key, $value := .subtype }}
+        {{ if ne $key "label" }}
+          <tr class="table__row">
+            <th
+              class="table__cell table__cell--head table__cell--head3"
+              data-title="{{ $subtypeLabel }}"
+            >
+              {{ $key }}
+            </th>
+            <th class="table__cell table__cell--head table__cell--head3"></th>
+            <th class="table__cell table__cell--head table__cell--head3"></th>
+            <th class="table__cell table__cell--head table__cell--head3"></th>
+          </tr>
+          {{ range . }}
+            <tr class="table__row">
+              <td class="table__cell" data-title="{{ $subtypeLabel }}"></td>
+              <td class="table__cell" data-title="Process">
+                {{- index . "process" -}}
+              </td>
+              <td class="table__cell" data-title="Etch time">
+                {{- index . "time" -}}
+              </td>
+              <td class="table__cell" data-title="Surface change">
+                {{- index . "surface" -}}
+              </td>
+            </tr>
+          {{ end }}
+        {{ end }}
+      {{ end }}
     </tbody>
   </table>
 {{- end -}}
