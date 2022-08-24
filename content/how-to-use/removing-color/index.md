@@ -72,7 +72,7 @@ take about an hour in double strength solution. See the
 ---
 
 We hope these steps helped you use our amazing product! If you had any issues
-please check out our Frequently Asked Questions or feel free to email us at
-[**Info@MultiEtch.com**](mailto:info@multietch.com) with any concerns.
+please check out our Frequently Asked Questions or feel free to
+**[contact us](/contact)** with any concerns.
 
 {{< button relref="/" text="Frequently Asked Questions" level="primary" >}}
