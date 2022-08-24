@@ -11,6 +11,11 @@ images: []
 
 We recommend using your Multi-Etch heated because it’s MUCH faster.
 
+Our detailed instructions are aimed at small users trying out titanium etching
+and anodizing for the first time. But the principles are the same for larger
+users with a dedicated production line, similar to those made by
+[IPEC Global](http://ipecglobal.com).
+
 Your first order will come in a jug with the Multi-Etch powder at the bottom.
 This container can be used to dissolve and mix your Multi-Etch for your first
 and future orders. Store and use Multi-Etch in plastic containers, never in
