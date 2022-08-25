@@ -145,7 +145,7 @@ titanium:
               depth: 0.00043
               surface: 'brightens/matte'
 
-alumninum:
+aluminum:
   alloy: '3003'
   etching:
     time_suffix: '(minutes)'
