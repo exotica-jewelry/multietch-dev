@@ -57,7 +57,9 @@
         alt="{{ .Title }}"
     /></noscript>
     {{ with $caption }}
-      <figcaption class="figure-caption">{{ . | safeHTML }}</figcaption>
+      <figcaption class="figure-caption">
+        {{ . | safeHTML | markdownify }}
+      </figcaption>
     {{ end -}}
   </figure>
 {{ else -}}
