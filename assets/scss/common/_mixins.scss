@@ -40,6 +40,18 @@
   }
 }
 
+// Print: Provide an easier to remember print directive
+
+@mixin print() {
+  @at-root {
+    @media print {
+      & {
+        @content;
+      }
+    }
+  }
+}
+
 // Hiding
 //
 // Classes and mixins to hide content selectively.

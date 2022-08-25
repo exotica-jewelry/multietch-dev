@@ -51,6 +51,7 @@ $font-size-xl: $font-size-base * 1.675;
 $font-size-lg: $font-size-base * 1.375;
 $font-size-md: $font-size-base * 1.25;
 $font-size-sm: $font-size-base * 1;
+$font-size-xs: $font-size-base * 0.8;
 $font-weight-bold: 500;
 $line-height-base: 1.5;
 $headings-font-family: $font-family-serif;
@@ -109,3 +110,26 @@ $link-hover-color: shift-color($link-color, $link-shade-percentage);
 $link-hover-decoration: underline;
 $stretched-link-pseudo-element: after;
 $stretched-link-z-index: 1;
+
+// Data tables
+
+$table-margin: $text-space-y;
+$table-padding: $spacer;
+$table-border: 2px;
+$table-bg: $gray;
+$table-heading-font: $headings-font-family;
+$table-heading-size: $h3-font-size;
+$table-heading-weight: $headings-font-weight;
+$table-heading-line-height: $headings-line-height;
+$table-heading-color: $gray-darker;
+$table-head-space-y: ($spacer * 0.25);
+$table-head-space-x: ($spacer * 0.75);
+$table-head-space: $table-head-space-y $table-head-space-x;
+$table-cell-bg: $white;
+$table-cell-color: $black;
+$table-cell-bg-on: $gray-200;
+$table-cell-space-y: ($spacer * 0.75);
+$table-cell-space-x: $table-head-space-x;
+$table-cell-space: $table-cell-space-y $table-cell-space-x;
+$table-cell-size: $font-size-sm;
+$table-cell-line-height: $headings-line-height;

@@ -1,0 +1,202 @@
+.rate-tables {
+  .table {
+    width: 100%;
+    margin: $table-margin 0;
+    background-color: $table-bg;
+    border-collapse: separate;
+    border-spacing: $table-border;
+    position: relative;
+
+    &__caption {
+      padding-bottom: $table-padding;
+      caption-side: top;
+      text-align: left;
+      font-family: $table-heading-font;
+      font-size: $table-heading-size;
+      font-weight: $table-heading-weight;
+      line-height: $table-heading-line-height;
+      color: $table-heading-color;
+    }
+
+    &__head {
+      display: none;
+      visibility: hidden;
+      position: sticky;
+      top: 0;
+      vertical-align: bottom;
+
+      @include media-breakpoint-up(md) {
+        visibility: visible;
+        width: 100%;
+        display: table-header-group;
+      }
+
+      @include print {
+        visibility: visible;
+        width: 100%;
+        display: table-header-group;
+      }
+
+      .table__row {
+        background-color: $table-cell-color;
+
+        .table__cell {
+          padding: $table-head-space;
+          font-size: $font-size-sm;
+          background-color: $table-cell-color;
+          color: $table-cell-bg;
+
+          &.table__note {
+            padding: $table-cell-space;
+            background-color: $table-cell-bg;
+            color: $table-cell-color;
+            font-size: $font-size-sm;
+            font-style: italic;
+
+            em {
+              font-weight: bold;
+              font-style: italic;
+            }
+
+            strong {
+              font-weight: bold;
+              font-style: normal;
+            }
+          }
+        }
+      }
+    }
+
+    &__body,
+    &__row,
+    &__cell {
+      display: block;
+      border: 0;
+      padding: 0;
+      text-align: left;
+      white-space: normal;
+
+      @include media-breakpoint-up(md) {
+        padding: $table-cell-space;
+        font-size: $table-cell-size;
+        line-height: $table-cell-line-height;
+      }
+
+      @include print {
+        padding: $table-cell-space;
+        font-size: $table-cell-size;
+        line-height: $table-cell-line-height;
+      }
+    }
+
+    &__body {
+      display: table-row-group;
+    }
+
+    &__row {
+      margin-bottom: $table-border;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include media-breakpoint-up(md) {
+        display: table-row;
+        width: 100%;
+
+        .table__cell {
+          display: table-cell;
+
+          @include is-on {
+            &:not(:empty):not(.table__note):not(.table__cell--head):not(.table__cell--head2):not(.table__cell--head3) {
+              background-color: $table-cell-bg-on;
+            }
+          }
+        }
+      }
+
+      @include print {
+        display: table-row;
+        width: 100%;
+
+        .table__cell {
+          display: table-cell;
+        }
+      }
+    }
+
+    &__cell {
+      padding: $table-cell-space;
+      vertical-align: text-top;
+      text-align: left;
+      background-color: $table-cell-bg;
+      color: $table-cell-color;
+
+      &:empty {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: table-cell;
+        }
+
+        @include print {
+          display: table-cell;
+        }
+      }
+
+      &[data-title]::before {
+        display: inline-block;
+        content: attr(data-title) ': ';
+        padding-right: 1ex;
+        font-weight: bold;
+
+        @include media-breakpoint-up(md) {
+          display: none;
+          content: '';
+        }
+
+        @include print {
+          display: none;
+          content: '';
+        }
+      }
+
+      &--head {
+        &[data-title]::before {
+          @include media-breakpoint-up(md) {
+            display: none;
+            content: '';
+          }
+
+          @include print {
+            display: none;
+            content: '';
+          }
+        }
+      }
+
+      &--head2 {
+        font-weight: bold;
+        border-bottom: $table-border solid $table-cell-color;
+      }
+
+      &--head3 {
+        background-color: $table-bg;
+        font-size: $font-size-md;
+        font-weight: bold;
+
+        @include media-breakpoint-up(md) {
+          font-size: $font-size-sm;
+        }
+
+        @include print {
+          font-size: $font-size-sm;
+        }
+      }
+
+      &--process {
+        font-weight: bold;
+      }
+    }
+  }
+}
