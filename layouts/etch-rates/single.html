@@ -44,6 +44,115 @@
             }}
           </div>
         {{- end -}}
+        <div class="rate-footer">
+          {{- $ti := "" -}}
+          {{- if eq $metal "titanium" -}}
+            {{- $ti = $metal -}}
+          {{- end -}}
+          <h3>
+            Step-by-step guides on etching {{ $ti }} with
+            <span class="multietch-wordmark"
+              >Multi&#8209;Etch<span class="registered">&#174;</span></span
+            >
+          </h3>
+          <ul>
+            <li>
+              <a href="/how-to-use/videos-resources/"
+                >Video guides on using
+                <span class="multietch-wordmark"
+                  >Multi&#8209;Etch<span class="registered">&#174;</span></span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="/how-to-use/heated/"
+                >Etching {{ $ti }} using heated
+                <span class="multietch-wordmark"
+                  >Multi&#8209;Etch<span class="registered">&#174;</span></span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="/how-to-use/room-temperature/"
+                >Etching {{ $ti }} using room-temperature
+                <span class="multietch-wordmark"
+                  >Multi&#8209;Etch<span class="registered">&#174;</span></span
+                ></a
+              >
+            </li>
+          </ul>
+          <h3>
+            Tips and tricks when etching {{ $ti }} with
+            <span class="multietch-wordmark"
+              >Multi&#8209;Etch<span class="registered">&#174;</span></span
+            >
+          </h3>
+          <ul>
+            {{- with $ti }}
+              <li>
+                <a href="/how-to-use/removing-color/"
+                  >Removing anodized color from titanium with
+                  <span class="multietch-wordmark"
+                    >Multi&#8209;Etch<span class="registered"
+                      >&#174;</span
+                    ></span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="/how-to-use/welding/"
+                  >Preparing titanium for welding using
+                  <span class="multietch-wordmark"
+                    >Multi&#8209;Etch<span class="registered"
+                      >&#174;</span
+                    ></span
+                  ></a
+                >
+              </li>
+            {{- end }}
+            <li>
+              <a href="/how-to-use/get-consistent-etch-times/"
+                >Tips on keeping etch times consistent</a
+              >
+            </li>
+            <li>
+              <a href="/etch-rates/"
+                >Etching rates for all metals using
+                <span class="multietch-wordmark"
+                  >Multi&#8209;Etch<span class="registered">&#174;</span></span
+                ></a
+              >
+            </li>
+          </ul>
+          <h2>
+            Ordering
+            <span class="multietch-wordmark"
+              >Multi&#8209;Etch<span class="registered">&#174;</span></span
+            >
+          </h2>
+          <p>
+            <strong
+              ><a
+                class="btn btn--shortcode btn-lg btn-bold btn-primary"
+                href="https://orders.multietch.com/"
+                ><span class="multietch-wordmark"
+                  >Multi&#8209;Etch<span class="registered">&#174;</span></span
+                >
+                can be ordered throughout the world!</a
+              ></strong
+            >
+          </p>
+          <p>
+            <strong>Questions?</strong> You can
+            <a href="/contact/"
+              >contact
+              <span class="multietch-wordmark"
+                >Multi&#8209;Etch<span class="registered">&#174;</span></span
+              ></a
+            >
+            by phone or email.
+          </p>
+        </div>
       </article>
     </div>
   </div>
