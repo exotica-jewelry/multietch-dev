@@ -177,7 +177,17 @@
 
       &--head2 {
         font-weight: bold;
-        border-bottom: $table-border solid $table-cell-color;
+        font-size: $font-size-lg;
+        background-color: $table-head2-bg;
+        color: $table-head2-color;
+
+        @include media-breakpoint-up(md) {
+          font-size: $font-size-md;
+        }
+
+        @include print {
+          font-size: $font-size-md;
+        }
       }
 
       &--head3 {
