@@ -49,7 +49,7 @@
               class="table__cell table__cell--head table__cell--head2"
               data-title="{{ $subtypeLabel }}"
             >
-              {{- $key -}}
+              {{- $key | markdownify -}}
             </th>
           </tr>
           {{- range . }}
@@ -115,7 +115,7 @@
               class="table__cell table__cell--head table__cell--head2"
               data-title="{{ $subtypeLabel }}"
             >
-              {{- $key -}}
+              {{- $key | markdownify -}}
             </th>
           </tr>
           {{- range . }}
@@ -198,7 +198,7 @@
                 class="table__cell table__cell--head table__cell--head2"
                 data-title="{{ . }}"
               >
-                {{- $key -}}
+                {{- $key | markdownify -}}
               </th>
             </tr>
           {{- end }}
