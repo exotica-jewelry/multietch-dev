@@ -237,13 +237,7 @@
                   class="table__cell"
                   data-title="Etch depth{{ with $depthSuffix }}{{ . }}{{ end }}"
                 >
-                  {{- $depth := index . "depth" -}}
-                  {{- $depthType := printf "%#T" $depth }}
-                  {{- if eq $depthType "float64" -}}
-                    {{- lang.NumFmt 6 $depth -}}
-                  {{- else -}}
-                    {{- $depth -}}
-                  {{- end -}}
+                  {{- index . "depth" | string -}}
                 </td>
                 <td class="table__cell" data-title="Surface change">
                   {{- index . "surface" -}}
