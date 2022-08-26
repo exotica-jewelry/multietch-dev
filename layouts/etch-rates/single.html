@@ -55,6 +55,14 @@
               >Multi&#8209;Etch<span class="registered">&#174;</span></span
             >
           </h3>
+          {{- if ne $metal "titanium" -}}
+            <p>
+              <em
+                >The guides below demonstrate etching with titanium, but the
+                order of steps are the same for etching {{ $metal }}.</em
+              >
+            </p>
+          {{- end -}}
           <ul>
             <li>
               <a href="/how-to-use/videos-resources/"
