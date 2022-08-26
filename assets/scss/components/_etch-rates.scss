@@ -173,6 +173,11 @@
             content: '';
           }
         }
+
+        a {
+          color: currentColor;
+          text-decoration-style: dotted;
+        }
       }
 
       &--head2 {
