@@ -18,6 +18,9 @@ resources/_gen
 resources/_gen/*
 .hugo_build.lock
 
+# Other Hugo files that get mangled
+archetypes/*
+
 # Package files, since these will be auto-generated
 package.json
 package*.json
