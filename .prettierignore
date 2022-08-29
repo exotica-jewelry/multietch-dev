@@ -8,13 +8,10 @@ LICENSE*
 LICENSE*.*
 
 # Hugo builds
-public
 public/*
 
 # Hugo caches
-_vendor
 _vendor/*
-resources/_gen
 resources/_gen/*
 .hugo_build.lock
 
