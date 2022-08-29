@@ -10,7 +10,6 @@ description = "Multi-Etch® is a low-acid (pH 6.8) alternative to hydrofluoric a
 images = ["multietch-share-image.png"]
 ogLocale = "en_US"
 domainTLD = "multietch.com"
-titleHome = "Multi-Etch® | A Safer Alternative to Hydrofluoric Acid"
 
 ## Twitter Cards
 twitterSite = "@multietch"

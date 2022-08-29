@@ -1,0 +1,440 @@
+{{/* Setting common variables */}}
+
+{{- $title := .Title -}}
+{{- if .IsHome -}}
+  {{- $title = .Site.Params.title -}}
+{{- else if eq .Type "etch-rates" -}}
+  {{- $title = printf "%s" .Site.Params.title | printf "%s%s" " with " | printf "%s%s" (.Title | title) | printf "%s%s" "Etching " | printf "%s" -}}
+{{- end -}}
+
+{{- $desc := .Description -}}
+{{- if eq .Description "" -}}
+  {{- $desc = .Site.Params.description -}}
+{{- end -}}
+{{- if .IsPage -}}
+  {{- $desc = .Summary -}}
+{{- end -}}
+{{- if eq .Type "etch-rates" -}}
+  {{- $desc = printf "%s" ", a low-acid, safer alternative to hydrofluoric and other etchants." | printf "%s%s" .Site.Params.title | printf "%s%s" " using " | printf "%s%s" (.Title | lower) | printf "%s%s" "Etch rates for " | printf "%s" -}}
+{{- end -}}
+
+{{- $etchImage := "" -}}
+{{- $etchImageCap := "" -}}
+{{- with .Params.featured_image.file -}}
+  {{- $etchImage = . | absURL -}}
+{{- end -}}
+{{- with .Params.featured_image.caption -}}
+  {{- $etchImageCap = . | markdownify | plainify -}}
+{{- end -}}
+
+{{/* Robots */}}
+
+{{- if eq .Kind "404" -}}
+  <meta name="robots" content="noindex, follow" />
+{{ else -}}
+  {{ with .Params.robots -}}
+    <meta name="robots" content="{{ . }}" />
+  {{ else -}}
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta
+      name="bingbot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+  {{ end -}}
+{{ end -}}
+
+{{/* Title */}}
+
+{{- if .IsHome -}}
+  <title>
+    {{- $title }}
+    {{ .Site.Params.titleSeparator }}
+    {{ .Site.Params.titleAddition -}}
+  </title>
+{{- else -}}
+  <title>
+    {{- $title }} {{ .Site.Params.titleSeparator }}
+    {{ .Site.Params.title -}}
+  </title>
+{{- end -}}
+
+{{/* Description */}}
+
+{{ with $desc -}}
+  <meta name="description" content="{{ $desc }}" />
+{{ end -}}
+
+{{/* Canonical links and paging */}}
+
+{{ if $.Scratch.Get "paginator" }}
+  <link rel="canonical" href="{{ .Paginator.URL | absURL }}" />
+  {{ if .Paginator.HasPrev -}}
+    <link rel="prev" href="{{ .Paginator.Prev.URL | absURL }}" />
+  {{ end -}}
+  {{ if .Paginator.HasNext -}}
+    <link rel="next" href="{{ .Paginator.Next.URL | absURL }}" />
+  {{ end -}}
+{{ else -}}
+  <link rel="canonical" href="{{ .Permalink }}" />
+{{ end -}}
+
+{{/* OpenGraph */}}
+
+
+<meta property="og:locale" content="{{ .Site.Params.ogLocale }}" />
+<meta
+  property="og:type"
+  content="{{ if .IsPage }}
+    article
+  {{ else }}
+    website
+  {{ end }}"
+/>
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $desc }}" />
+{{ if $.Scratch.Get "paginator" -}}
+  {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "blog" ) -}}
+  <meta property="og:url" content="{{ .Paginator.URL | absURL }}" />
+{{ else -}}
+  <meta property="og:url" content="{{ .Permalink }}" />
+{{ end -}}
+{{ with .Site.Params.title -}}
+  <meta property="og:site_name" content="{{ . }}" />
+{{ end -}}
+
+{{ $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{ if .IsPage -}}
+  {{ if not .PublishDate.IsZero -}}
+    <meta
+      property="article:published_time"
+      {{ .PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}
+    />
+  {{ else if not .Date.IsZero -}}
+    <meta
+      property="article:published_time"
+      {{ .Date.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}
+    />
+  {{ end -}}
+  {{ if not .Lastmod.IsZero -}}
+    <meta
+      property="article:modified_time"
+      {{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}
+    />
+  {{ end -}}
+{{ else -}}
+  {{ if not .Date.IsZero -}}
+    <meta
+      property="og:updated_time"
+      {{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}
+    />
+  {{ end -}}
+{{ end -}}
+
+{{ with $.Params.images -}}
+  {{ range first 6 . -}}
+    <meta property="og:image" content="{{ $.Permalink }}{{ . }}" />
+  {{ end -}}
+{{ else -}}
+  {{ $images := $.Resources.ByType "image" -}}
+  {{ $featured := $images.GetMatch "*feature*" -}}
+  {{ if not $featured -}}
+    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}
+  {{ end -}}
+  {{ with $featured -}}
+    <meta property="og:image" content="{{ $featured.Permalink }}" />
+  {{ end -}}
+  {{ with $etchImage -}}
+    <meta property="og:image" content="{{ . }}" />
+    {{ with $etchImageCap -}}
+      <meta property="og:image:alt" content="{{ . }}" />
+    {{ end -}}
+  {{ else -}}
+    {{ with $.Site.Params.images -}}
+      <meta property="og:image" content="{{ index . 0 | absURL }}" />
+      <meta property="og:image:alt" content="{{ $.Site.Params.title }}" />
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
+
+{{ with $.Site.Params.images -}}
+  {{ $.Scratch.Set "primaryImage" (index . 0 | absURL) -}}
+{{ end -}}
+{{ with $etchImage -}}
+  {{ $.Scratch.Set "primaryImage" . -}}
+{{ end -}}
+{{ with $etchImageCap -}}
+  {{ $.Scratch.Set "primaryImageCap" . -}}
+{{ else -}}
+  {{ $.Scratch.Set "primaryImageCap" $title -}}
+{{ end -}}
+
+{{ with .Params.audio -}}
+  <meta property="og:audio" content="{{ . | absURL }}" />
+{{ end -}}
+
+{{ with .Params.videos -}}
+  {{ range . -}}
+    <meta property="og:video" content="{{ . | absURL }}" />
+  {{ end -}}
+{{ end -}}
+
+{{/* Twitter */}}
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="{{ .Site.Params.twitterSite }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.twitterCreator }}" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $desc }}" />
+{{ with $.Params.images -}}
+  <meta name="twitter:image" content="{{ $.Permalink }}{{ index . 0 }}" />
+{{ else -}}
+  {{ $images := $.Resources.ByType "image" -}}
+  {{ $featured := $images.GetMatch "*feature*" -}}
+  {{ if not $featured -}}
+    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" -}}
+  {{ end -}}
+  {{ with $featured -}}
+    <meta name="twitter:image" content="{{ $featured.Permalink }}" />
+    <meta name="twitter:image:alt" content="{{ $title }}" />
+  {{ end -}}
+  {{ with $etchImage -}}
+    <meta name="twitter:image" content="{{ . }}" />
+    {{ with $etchImageCap -}}
+      <meta name="twitter:image:alt" content="{{ . }}" />
+    {{ end -}}
+  {{ else -}}
+    {{ with $.Site.Params.images -}}
+      <meta name="twitter:image" content="{{ index . 0 | absURL }}" />
+      <meta name="twitter:image:alt" content="{{ $title }}" />
+    {{ else -}}
+      <meta name="twitter:card" content="summary" />
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
+
+{{/* Feeds and other formats */}}
+
+{{ range .AlternativeOutputFormats -}}
+  <link
+    rel="{{ .Rel }}"
+    type="{{ .MediaType.Type }}"
+    href="{{ .Permalink | safeURL }}"
+  />
+{{ end -}}
+
+{{/* Structured data */}}
+
+{{- $baseURL := "/" | absURL -}}
+
+{{- $dot := . -}}
+{{- $dot.Scratch.Set "path" "" -}}
+{{- $dot.Scratch.Set "breadcrumb" slice -}}
+
+{{- $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" -}}
+{{- $.Scratch.Add "path" .Site.BaseURL -}}
+
+{{- $.Scratch.Add "breadcrumb" (slice (dict "url" .Site.BaseURL "name" "home" "position" 1 )) -}}
+{{- range $index, $element := split $url "/" -}}
+  {{- $dot.Scratch.Add "path" $element -}}
+  {{- $.Scratch.Add "path" "/" -}}
+  {{- if ne $element "" -}}
+    {{- $.Scratch.Add "breadcrumb" (slice (dict "url" ($.Scratch.Get "path") "name" . "position" (add $index 2))) -}}
+  {{- end -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      {{ if eq .Site.Params.schemaType "Organization" -}}
+        "@type": "Organization",
+        "@id": {{ print $baseURL "#/schema/organization/1" }},
+      {{ else -}}
+        "@type": "Person",
+        "@id": {{ print $baseURL "#/schema/person/1" }},
+      {{ end -}}
+      "name": "{{ .Site.Params.schemaName }}",
+      "url": {{ print $baseURL }},
+      "sameAs": [
+        {{ with .Site.Params.schemaTwitter -}}
+        {{ . }}
+        {{ end -}}
+        {{ with .Site.Params.schemaLinkedIn -}}
+        , {{ . }}
+        {{ end -}}
+        {{ with .Site.Params.schemaGitHub -}}
+        , {{ . }}
+        {{ end -}}
+      ],
+      {{ if eq .Site.Params.schemaType "Organization" -}}
+        "logo": {
+          "@type": "ImageObject",
+          "@id": {{ print $baseURL "#/schema/image/1"}},
+          "url": {{ print $baseURL .Site.Params.schemaLogo }},
+          "width": {{ .Site.Params.schemaLogoWidth }},
+          "height": {{ .Site.Params.schemaLogoHeight }},
+          "caption": "{{ .Site.Params.schemaName }}"
+        },
+        "image": {
+          "@id": {{ print $baseURL "#/schema/image/1" }}
+        }
+      {{ else -}}
+        "image": {
+          "@type": "ImageObject",
+          "@id": {{ print $baseURL "#/schema/image/1"}},
+          "url": {{ print $baseURL .Site.Params.schemaImage }},
+          "width": {{ .Site.Params.schemaImageWidth }},
+          "height": {{ .Site.Params.schemaImageHeight }},
+          "caption": "{{ .Site.Params.schemaName }}"
+        }
+      {{ end -}}
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ print $baseURL "#/schema/website/1" }},
+      "url": {{ print $baseURL }},
+      "name": "{{ .Site.Params.title }}",
+      "description": "{{ .Site.Params.description }}",
+      {{ if eq .Site.Params.schemaType "Organization" -}}
+        "publisher": {
+          "@id": {{ print $baseURL "#/schema/organization/1" }}
+        }
+      {{ else -}}
+        "publisher": {
+          "@id": {{ print $baseURL "#/schema/person/1" }}
+        }
+      {{ end -}}
+    },
+    {
+      {{ if and (ne .Kind "taxonomy") (ne .Kind "term") -}}
+        "@type": "WebPage",
+      {{ else -}}
+        "@type": "CollectionPage",
+      {{ end -}}
+      "@id": {{ .Permalink }},
+      "url": {{ .Permalink }},
+      "name": "{{ $title }}",
+      "description": "{{ $desc }}",
+      "isPartOf": {
+        "@id": {{ print $baseURL "#/schema/website/1" }}
+      },
+      {{ if eq .Site.Params.schemaType "Organization" -}}
+        "about": {
+          "@id": {{ print $baseURL "#/schema/organization/1" }}
+        },
+      {{ else -}}
+        "about": {
+          "@id": {{ print $baseURL "#/schema/person/1" }}
+        },
+      {{ end -}}
+      "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05CET" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05CET" }}",
+      "breadcrumb": {
+        "@id": {{ print .Permalink "#/schema/breadcrumb/1" }}
+      },
+      "primaryImageOfPage": {
+        "@id": {{ print .Permalink "#/schema/image/2" }}
+      },
+      "inLanguage": "{{ .Site.Params.schemaLocale }}",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": [{{ .Permalink }}]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": {{ print .Permalink "#/schema/breadcrumb/1" }},
+      "name": "Breadcrumbs",
+      "itemListElement": [{{ $list := $.Scratch.Get "breadcrumb" }}{{ $len := (len $list) }}{{ range $index, $element := $list }}{{ if ne .position 1 }},{{ end }}{
+        "@type": "ListItem",
+        "position": {{ .position }},
+        "item": {
+          {{ if ne (add $index 1) $len -}}
+          "@type": "WebPage",
+          "@id": {{ .url }},
+          "url": {{ .url }},
+          "name": "{{ .name | humanize | title }}"
+          {{ else -}}
+          "@id": {{ .url }}
+          {{ end -}}
+        }
+        }{{ end }}]
+    },
+
+    {{ if and (eq .Kind "page") (or (eq .Section "blog") (eq .Section "docs") (eq .Section "tutorial") (eq .Section "showcase") (eq .Section "etch-rates")) -}}
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": {{ print $baseURL "#/schema/article/1" }},
+          "headline": "{{ $title }}",
+          "description": "{{ $desc }}",
+          "isPartOf": {
+            "@id": {{ .Permalink }}
+          },
+          "mainEntityOfPage": {
+            "@id": {{ .Permalink }}
+          },
+          "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05CET" }}",
+          "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05CET" }}",
+          "author": {
+            "@id": {{ print $baseURL "#/schema/person/2" }}
+          },
+          {{ if eq .Site.Params.schemaType "Organization" -}}
+            "publisher": {
+              "@id": {{ print $baseURL "#/schema/organization/1" }}
+            },
+          {{ else -}}
+            "publisher": {
+              "@id": {{ print $baseURL "#/schema/person/1" }}
+            },
+          {{ end -}}
+          "image": {
+            "@id": {{ print .Permalink "#/schema/image/2" }}
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": {{ print $baseURL "#/schema/person/2" }},
+          "name": {{ .Site.Params.schemaAuthor }},
+          "sameAs": [
+            {{ with .Site.Params.schemaAuthorTwitter -}}
+            {{ . }}
+            {{ end -}}
+            {{ with .Site.Params.schemaAuthorLinkedIn -}}
+            , {{ . }}
+            {{ end -}}
+            {{ with .Site.Params.schemaAuthorGitHub -}}
+            , {{ . }}
+            {{ end -}}
+          ]
+        }
+      ]
+    },
+    {{ end -}}
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": {{ print .Permalink "#/schema/image/2" }},
+          "url": {{ $.Scratch.Get "primaryImage" }},
+          "contentUrl": {{ $.Scratch.Get "primaryImage" }},
+          "caption": "{{ $.Scratch.Get "primaryImageCap" }}"
+        }
+      ]
+    }
+  ]
+}
+</script>
