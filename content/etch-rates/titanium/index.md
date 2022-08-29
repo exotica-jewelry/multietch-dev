@@ -1,14 +1,13 @@
 ---
-title: 'titanium'
+title: titanium
 date: 2022-08-12T15:13:28-07:00
 lastmod: 2022-08-12T15:13:28-07:00
-draft: true # Set to false to publish
+draft: false # Set to false to publish
 
 featured_image:
   file: 'images/titanium.jpg'
-  caption:
-    'An anodized piece of titanium treated with Multi-Etch (top) and without
-    (bottom).'
+  caption: 'An anodized piece of titanium treated with Multi-Etch (top) and
+    without (bottom).' # Markdown can be included here
 # Content below this line will be used as introductory text on the page.
 ---
 
