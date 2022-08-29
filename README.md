@@ -18,8 +18,8 @@ The project installs Hugo itself, so Node is all you need to install manually.
    site in your web browser at `http://localhost:1313/`
 4. All pages and posts are located in the `content` directory, which represents
    the root of the website -- i.e. `content/about/` will appear on the website
-   at `https://www.multietch.com//about/`, `content/about/team/` will appear at
-   `https://www.multietch.com//about/team/`, etc.
+   at `https://www.multietch.com/about/`, `content/about/team/` will appear at
+   `https://www.multietch.com/about/team/`, etc.
 5. Page content is written in
    [Markdown](https://www.markdownguide.org/getting-started), which takes a
    small amount of learning but then is much easier to write than HTML. Each
@@ -35,9 +35,9 @@ The project installs Hugo itself, so Node is all you need to install manually.
    the `content/contact/image.md` file write: `![image alt text](image.jpg)`
 8. To create a new page, run `npm create new` followed by the web path and
    `/index.md`. For instance, to create a page at
-   `https://www.multietch.com/hello`, run `npm create new hello/index.md`. To
+   `https://www.multietch.com/safety`, run `npm create new safety/index.md`. To
    create the same page below the existing `/about/` page, run
-   `npm create new about/hello/index.md`.
+   `npm create new about/safety/index.md`.
 9. When finished, commit your changes and push the repo. GitHub Actions will
    automatically rebuild the site.
 
@@ -121,9 +121,9 @@ To create a new page, run:
 
 `npm run create [web-path]`
 
-For example, `npm run create about/us/index.md` will create a file at
-`content/about/us/index.md` and visible on the web at
-`https://www.multietch.com/about/us`.
+For example, `npm run create about/team/index.md` will create a file at
+`content/about/team/index.md` and visible on the web at
+`https://www.multietch.com/about/team`.
 
 If a page has no children, its content file is `index.md`; e.g. the `about/team`
 page's content file is located at `content/about/team/index.md`.
