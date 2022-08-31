@@ -315,16 +315,17 @@ mokume:
       'none':
         - process: '150–160°F regular strength'
           time: '4.5 minutes'
-          surface: 'Titanium: matte. Niobium: none.'
-          notes: 'Titanium will lose color before niobium.'
+          surface:
+            'Titanium: matte. Niobium: none. (Titanium will lose color before
+            niobium.)'
         - process: '150–160°F double strength'
           time: '3.5 minutes'
-          surface: 'Titanium: matte. Niobium: slightly matte.'
-          notes: 'Titanium will lose color before niobium'
+          surface:
+            'Titanium: matte. Niobium: slightly matte. (Titanium will lose color
+            before niobium.)'
         - process: '70°F double strength'
           time: '6 minutes'
-          surface: 'Trend toward matte.'
-          notes: 'Will remove color from titanium only.'
+          surface: 'Trend toward matte. (Will remove color from titanium only.)'
   etching:
     time_suffix: '(minutes)'
     depth_suffix: ''
