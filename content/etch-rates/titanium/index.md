@@ -15,7 +15,7 @@ hf: true # Set to true to describe Multi-Etch as an alternative to hydrofluoric 
 ---
 
 **How much titanium will one gallon of Multi-Etch etch?** Approximately 1,500
-square inches of titanium when dipped for three seconds at 120–150°F. As you
+square inches of titanium when dipped for three seconds at 120–160°F. As you
 etch, the etchant gradually becomes ineffective and contaminated with titanium
 ions that can re-plate to the metal, causing uneven anodizing.
 
