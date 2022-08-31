@@ -43,6 +43,7 @@ figure,
     height: auto;
   }
 
+  // Also see p.image-caption for image captions not wrapped in a <figure> element
   figcaption {
     font-size: 87.5%;
     color: #6c757d;
@@ -119,6 +120,13 @@ figure,
       margin-left: calc(var(--spacer) * 2);
     }
   }
+}
+
+// Captions for images not wrapped in <figure> elements
+p.image-caption {
+  margin: 0;
+  font-size: 87.5%;
+  color: #6c757d;
 }
 
 .blur-up {

@@ -93,31 +93,33 @@
       {{- end }}
     </figure>
   {{- else -}}
-    <img
-      class="
+    <span class="image-unwrapper"
+      ><img
+        class="
         img-fluid lazyload blur-up
         {{ with $width -}}
-        image--constrained
-      {{- end }}
+          image--constrained
+        {{- end }}
         {{- with $align }}
-        image--aligned
-        image--aligned-{{ . }}
-      {{- end }}
+          image--aligned
+          image--aligned-{{ . }}
+        {{- end }}
       "
-      src="{{ $lqip.Permalink }}"
-      data-src="{{ $image.Permalink }}"
-      width="{{ $image.Width }}"
-      height="{{ $image.Height }}"
-      alt="{{ $alt }}"
+        src="{{ $lqip.Permalink }}"
+        data-src="{{ $image.Permalink }}"
+        width="{{ $image.Width }}"
+        height="{{ $image.Height }}"
+        alt="{{ $alt }}"
+        {{ with $width -}}
+          style="--width: {{ . }}"
+        {{- else }}
+          style="--width: initial"
+        {{- end }}
+      />
       {{ with $caption -}}
-        title="{{ . }}"
+        <p class="image-caption">{{ . | safeHTML }}</p>
       {{- end }}
-      {{ with $width -}}
-        style="--width: {{ . }}"
-      {{- else }}
-        style="--width: initial"
-      {{- end }}
-    />
+    </span>
   {{- end -}}
   {{- $closewrap | safeHTML }}
 {{ else -}}
