@@ -110,18 +110,18 @@
         margin-bottom: 0;
       }
 
+      @include is-on {
+        .table__cell:not(.table__cell--head) {
+          background-color: $table-cell-bg-on;
+        }
+      }
+
       @include media-breakpoint-up(md) {
         display: table-row;
         width: 100%;
 
         .table__cell {
           display: table-cell;
-
-          @include is-on {
-            &:not(:empty):not(.table__note):not(.table__cell--head):not(.table__cell--head2):not(.table__cell--head3) {
-              background-color: $table-cell-bg-on;
-            }
-          }
         }
       }
 
