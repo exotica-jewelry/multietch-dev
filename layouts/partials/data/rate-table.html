@@ -83,9 +83,9 @@
     </caption>
     <thead class="table__head">
       <tr class="table__row">
-        <th class="table__cell table__cell--head" scope="col">
-          {{- $subtypeLabel -}}
-        </th>
+        {{- with $subtypeLabel -}}
+          <th class="table__cell table__cell--head" scope="col">{{ . }}</th>
+        {{- end -}}
         <th class="table__cell table__cell--head" scope="col">Process</th>
         <th class="table__cell table__cell--head" scope="col">Etch time</th>
         <th class="table__cell table__cell--head" scope="col">
@@ -96,19 +96,23 @@
     <tbody class="table__body">
       {{- range $key, $value := .subtype }}
         {{- if ne $key "label" }}
-          <tr class="table__row">
-            <th
-              colspan="{{ $cols }}"
-              scope="colgroup"
-              class="table__cell table__cell--head table__cell--head2"
-              data-title="{{ $subtypeLabel }}"
-            >
-              {{- $key | markdownify -}}
-            </th>
-          </tr>
+          {{- with $subtypeLabel -}}
+            <tr class="table__row">
+              <th
+                colspan="{{ $cols }}"
+                scope="colgroup"
+                class="table__cell table__cell--head table__cell--head2"
+                data-title="{{ . }}"
+              >
+                {{- $key | markdownify -}}
+              </th>
+            </tr>
+          {{- end -}}
           {{- range . }}
             <tr class="table__row">
-              <td class="table__cell" data-title="{{ $subtypeLabel }}"></td>
+              {{- with $subtypeLabel -}}
+                <td class="table__cell" data-title="{{ . }}"></td>
+              {{- end -}}
               <td class="table__cell table__cell--process" data-title="Process">
                 {{- index . "process" -}}
               </td>
@@ -143,9 +147,9 @@
     </caption>
     <thead class="table__head">
       <tr class="table__row">
-        <th class="table__cell table__cell--head" scope="col">
-          {{- $subtypeLabel -}}
-        </th>
+        {{- with $subtypeLabel -}}
+          <th class="table__cell table__cell--head" scope="col">{{ . }}</th>
+        {{- end -}}
         <th class="table__cell table__cell--head" scope="col">Process</th>
         <th class="table__cell table__cell--head" scope="col">Etch time</th>
         <th class="table__cell table__cell--head" scope="col">
@@ -156,19 +160,23 @@
     <tbody class="table__body">
       {{- range $key, $value := .subtype }}
         {{- if ne $key "label" }}
-          <tr class="table__row">
-            <th
-              colspan="{{ $cols }}"
-              scope="colgroup"
-              class="table__cell table__cell--head table__cell--head2"
-              data-title="{{ $subtypeLabel }}"
-            >
-              {{- $key | markdownify -}}
-            </th>
-          </tr>
+          {{- with $subtypeLabel -}}
+            <tr class="table__row">
+              <th
+                colspan="{{ $cols }}"
+                scope="colgroup"
+                class="table__cell table__cell--head table__cell--head2"
+                data-title="{{ . }}"
+              >
+                {{- $key | markdownify -}}
+              </th>
+            </tr>
+          {{- end -}}
           {{- range . }}
             <tr class="table__row">
-              <td class="table__cell" data-title="{{ $subtypeLabel }}"></td>
+              {{- with $subtypeLabel -}}
+                <td class="table__cell" data-title="{{ . }}"></td>
+              {{- end -}}
               <td class="table__cell table__cell--process" data-title="Process">
                 {{- index . "process" -}}
               </td>
