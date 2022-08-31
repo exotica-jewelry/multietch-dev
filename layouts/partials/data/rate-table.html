@@ -58,7 +58,7 @@
             </td>
             <td
               class="table__cell"
-              data-title="Etch time{{ with $timeSuffix }}{{ . }}{{ end }}"
+              data-title="Etch time {{ with $timeSuffix }}{{ . }}{{ end }}"
             >
               {{- index . "time" -}}
             </td>
@@ -295,13 +295,15 @@
                 </td>
                 <td
                   class="table__cell"
-                  data-title="Etch time{{ with $timeSuffix }}{{ . }}{{ end }}"
+                  data-title="Etch time {{ with $timeSuffix }}{{ . }}{{ end }}"
                 >
                   {{- index . "time" -}}
                 </td>
                 <td
                   class="table__cell"
-                  data-title="Etch depth{{ with $depthSuffix }}{{ . }}{{ end }}"
+                  data-title="Etch depth {{ with $depthSuffix }}
+                    {{ . }}
+                  {{ end }}"
                 >
                   {{- index . "depth" | string -}}
                 </td>
