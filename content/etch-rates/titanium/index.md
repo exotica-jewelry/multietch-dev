@@ -8,10 +8,11 @@ featured_image:
   file: 'images/titanium.jpg'
   caption: 'An anodized piece of titanium treated with Multi-Etch (top) and
     without (bottom).' # Markdown can be included here
+
+hf: true # Set to true to describe Multi-Etch as an alternative to hydrofluoric acid for this metal.
+
 # Content below this line will be used as introductory text on the page.
 ---
-
-##### Multi-Etch was originally developed for use on titanium, and is a perfect low acid (pH 6.8) alternative to hazardous hydrofluoric (HF) acid
 
 **How much titanium will one gallon of Multi-Etch etch?** Approximately 1,500
 square inches of titanium when dipped for three seconds at 120–150°F. As you
