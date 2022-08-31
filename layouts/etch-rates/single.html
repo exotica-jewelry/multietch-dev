@@ -22,10 +22,17 @@
           <span class="multietch-wordmark"
             >Multi&#8209;Etch<span class="registered">&#174;</span></span
           >
-          {{- if eq $metal "titanium" -}}
+          {{- with .Params.hf -}}
             , the safer alternative to hydrofluoric acid
           {{- end -}}
         </h2>
+        {{- with .Params.hf -}}
+          <h5>
+            Multi-Etch was originally developed for use on titanium, and is a
+            perfect low-acid (pH 6.8) alternative to hazardous hydrofluoric (HF)
+            acid {{ if ne $metal "titanium" }}for etching {{ $metal }}{{ end }}
+          </h5>
+        {{- end -}}
         <div class="rate-intro">
           {{ dict
             "content" .Content
