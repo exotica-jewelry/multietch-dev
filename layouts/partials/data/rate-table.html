@@ -11,23 +11,17 @@
   {{- $cols = 3 }}
   <table class="table">
     <caption class="table__caption">
-      How to remove drill bits from {{ $metal }} using
-      <span class="multietch-wordmark"
-        >Multi&#8209;Etch<span class="registered">&#174;</span></span
-      >
+      <h3 class="table__title">
+        How to remove drill bits from {{ $metal }} using
+        <span class="multietch-wordmark"
+          >Multi&#8209;Etch<span class="registered">&#174;</span></span
+        >
+      </h3>
+      {{- with .note }}
+        <p class="table__note">{{- . -}}</p>
+      {{- end }}
     </caption>
     <thead class="table__head">
-      {{- with .note }}
-        <tr class="table__row">
-          <td
-            class="table__cell table__note"
-            colspan="{{ $cols }}"
-            scope="colgroup"
-          >
-            {{- . -}}
-          </td>
-        </tr>
-      {{- end }}
       <tr class="table__row">
         <th class="table__cell table__cell--head" scope="col">Process</th>
         <th class="table__cell table__cell--head" scope="col">
@@ -77,23 +71,17 @@
   {{- $cols = 4 }}
   <table class="table">
     <caption class="table__caption">
-      Preparing {{ $metal }} {{ .label }} using
-      <span class="multietch-wordmark"
-        >Multi&#8209;Etch<span class="registered">&#174;</span></span
-      >
+      <h3 class="table__title">
+        Preparing {{ $metal }} {{ .label }} using
+        <span class="multietch-wordmark"
+          >Multi&#8209;Etch<span class="registered">&#174;</span></span
+        >
+      </h3>
+      {{- with .note }}
+        <p class="table__note">{{- . -}}</p>
+      {{- end }}
     </caption>
     <thead class="table__head">
-      {{- with .note }}
-        <tr class="table__row">
-          <td
-            class="table__cell table__note"
-            colspan="{{ $cols }}"
-            scope="colgroup"
-          >
-            {{- . -}}
-          </td>
-        </tr>
-      {{- end }}
       <tr class="table__row">
         <th class="table__cell table__cell--head" scope="col">
           {{- $subtypeLabel -}}
@@ -143,23 +131,17 @@
   {{- $cols = 4 }}
   <table class="table">
     <caption class="table__caption">
-      Removing color from {{ $metal }} using
-      <span class="multietch-wordmark"
-        >Multi&#8209;Etch<span class="registered">&#174;</span></span
-      >
+      <h3 class="table__title">
+        Removing color from {{ $metal }} using
+        <span class="multietch-wordmark"
+          >Multi&#8209;Etch<span class="registered">&#174;</span></span
+        >
+      </h3>
+      {{- with .note }}
+        <p class="table__note">{{- . -}}</p>
+      {{- end }}
     </caption>
     <thead class="table__head">
-      {{- with .note }}
-        <tr class="table__row">
-          <td
-            class="table__cell table__note"
-            colspan="{{ $cols }}"
-            scope="colgroup"
-          >
-            {{- . -}}
-          </td>
-        </tr>
-      {{- end }}
       <tr class="table__row">
         <th class="table__cell table__cell--head" scope="col">
           {{- $subtypeLabel -}}
@@ -214,23 +196,17 @@
   {{- end }}
   <table class="table">
     <caption class="table__caption">
-      Etch rates for {{ $metal }} using
-      <span class="multietch-wordmark"
-        >Multi&#8209;Etch<span class="registered">&#174;</span></span
-      >
+      <h3 class="table__title">
+        Etch rates for {{ $metal }} using
+        <span class="multietch-wordmark"
+          >Multi&#8209;Etch<span class="registered">&#174;</span></span
+        >
+      </h3>
+      {{- with .note }}
+        <p class="table__note">{{- . -}}</p>
+      {{- end }}
     </caption>
     <thead class="table__head">
-      {{- with .note }}
-        <tr class="table__row">
-          <td
-            class="table__cell table__note"
-            colspan="{{ $cols }}"
-            scope="colgroup"
-          >
-            {{- . -}}
-          </td>
-        </tr>
-      {{- end }}
       <tr class="table__row">
         {{- with $subtypeLabel -}}
           <th class="table__cell table__cell--head" scope="col">{{ . }}</th>

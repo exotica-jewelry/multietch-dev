@@ -8,14 +8,24 @@
     position: relative;
 
     &__caption {
-      padding-bottom: $table-padding;
       caption-side: top;
+      padding-bottom: 0;
       text-align: left;
-      font-family: $table-heading-font;
-      font-size: $table-heading-size;
-      font-weight: $table-heading-weight;
-      line-height: $table-heading-line-height;
-      color: $table-heading-color;
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+
+    &__note {
+      margin: 0;
+      padding: $table-head-space;
+      font-size: $table-cell-size;
+      line-height: $table-cell-line-height;
+      font-style: italic;
+      color: $table-cell-color;
+      border: $table-border $table-bg solid;
+      border-bottom-width: 0;
     }
 
     &__head {
@@ -162,6 +172,8 @@
       }
 
       &--head {
+        font-weight: bold;
+
         &[data-title]::before {
           @include media-breakpoint-up(md) {
             display: none;
@@ -181,10 +193,9 @@
       }
 
       &--head2 {
-        font-weight: bold;
-        font-size: $font-size-lg;
         background-color: $table-head2-bg;
         color: $table-head2-color;
+        font-size: $font-size-lg;
 
         @include media-breakpoint-up(md) {
           font-size: $font-size-md;
@@ -198,7 +209,6 @@
       &--head3 {
         background-color: $table-bg;
         font-size: $font-size-md;
-        font-weight: bold;
 
         @include media-breakpoint-up(md) {
           font-size: $font-size-sm;
