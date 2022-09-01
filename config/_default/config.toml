@@ -10,6 +10,10 @@ languageCode = "en-US"
 paginate = 7
 rssLimit = 1000
 
+# raise timeout from default 30s to accommodate video processing
+# https://gohugo.io/getting-started/configuration/#timeout
+timeout = "60s"
+
 # add redirects/headers
 [outputs]
   home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
