@@ -375,7 +375,7 @@ niobium:
       label: ''
       'none':
         process:
-          '150–160°F regular strength':
+          '150–160°F double strength':
             - time: 1
               depth: 0.00006
               surface: 'trending toward matte'
