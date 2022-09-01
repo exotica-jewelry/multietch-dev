@@ -302,3 +302,72 @@
     </tbody>
   </table>
 {{- end -}}
+
+{{- with $data.custom }}
+  {{- $label := .label | markdownify }}
+  {{- $timeSuffix := .time_suffix }}
+  {{- $depthSuffix := .depth_suffix }}
+  {{- $cols = .columns }}
+  <table class="table">
+    <caption class="table__caption">
+      <h3 class="table__title">{{ $label }}</h3>
+      {{- with .note }}
+        <p class="table__note">Note: {{ . | markdownify }}</p>
+      {{- end }}
+    </caption>
+    <thead class="table__head">
+      <tr class="table__row">
+        <th class="table__cell table__cell--head" scope="col">Process</th>
+        <th class="table__cell table__cell--head" scope="col">
+          Etch time
+          {{ with $timeSuffix }}
+            {{ . }}
+          {{ end }}
+        </th>
+        <th class="table__cell table__cell--head" scope="col">
+          Etch depth
+          {{ with $depthSuffix }}
+            {{ . }}
+          {{ end }}
+        </th>
+        <th class="table__cell table__cell--head" scope="col">
+          Surface change
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      {{- range $key, $value := .process }}
+        <tr class="table__row">
+          <th
+            class="table__cell table__cell--head table__cell--head3"
+            data-title="Process"
+          >
+            {{- $key -}}
+          </th>
+        </tr>
+        {{- range . }}
+          <tr class="table__row">
+            <td class="table__cell table__cell--process" data-title="Process">
+              {{- index . "process" -}}
+            </td>
+            <td
+              class="table__cell"
+              data-title="Etch time {{ with $timeSuffix }}{{ . }}{{ end }}"
+            >
+              {{- index . "time" -}}
+            </td>
+            <td
+              class="table__cell"
+              data-title="Etch depth {{ with $depthSuffix }}
+                {{ . }}
+              {{ end }}"
+            ></td>
+            <td class="table__cell" data-title="Surface change">
+              {{- index . "surface" -}}
+            </td>
+          </tr>
+        {{- end }}
+      {{- end }}
+    </tbody>
+  </table>
+{{- end -}}
