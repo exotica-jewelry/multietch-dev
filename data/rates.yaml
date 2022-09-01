@@ -395,7 +395,11 @@ niobium:
         - time: '3+'
           surface: 'trend toward matte'
   custom:
-    label: 'Preparing niobium for electron beam welding using Multi‑Etch'
+    label:
+      'Preparing niobium for electron beam welding using <span
+      class="multietch-wordmark">Multi&#8209;Etch<span
+      class="registered">&#174;</span></span>'
+    columns: 4
     time_suffix: '(minutes)'
     depth_suffix: ''
     process:
