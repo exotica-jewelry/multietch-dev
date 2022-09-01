@@ -1,7 +1,7 @@
 {{- define "main" }}
   {{- $pctx := . }}
   {{- $metal := .Title }}
-  {{- $data := index $.Site.Data.rates $metal -}}
+  {{- $data := index $.Site.Data.rates ($metal | lower) -}}
   <div class="row justify-content-center">
     <div class="col-md-12 col-lg-10 col-xl-8">
       <article>
@@ -30,7 +30,8 @@
           <h5>
             Multi-Etch was originally developed for use on titanium, and is a
             perfect low-acid (pH 6.8) alternative to hazardous hydrofluoric (HF)
-            acid {{ if ne $metal "titanium" }}for etching {{ $metal }}{{ end }}
+            acid
+            {{ if ne $metal "titanium" }}for etching {{ $metal }}{{ end }}
           </h5>
         {{- end -}}
         <div class="rate-intro">
