@@ -395,11 +395,8 @@ niobium:
         - time: '3+'
           surface: 'trend toward matte'
   custom:
-    label:
-      'Preparing niobium for electron beam welding using <span
-      class="multietch-wordmark">Multi&#8209;Etch<span
-      class="registered">&#174;</span></span>'
-    position: 'top'
+    label: 'Preparing niobium for electron beam welding'
+    position: 'bottom'
     columns:
       - 0: 'Process'
       - 1: 'Etch time (minutes)'
@@ -410,17 +407,17 @@ niobium:
         - 1: 1
         - 2: 'no change'
         - 3: 'polish will turn slightly matte'
-      - - 0: 'FAKE 135°F regular strength'
-        - 1: 1
-        - 2: 'no change'
-        - 3: 'polish will turn slightly matte'
 
 nitinol:
-  etching_oxide:
-    time_suffix: '(minutes)'
-    process:
-      '150–160°F double strength':
-        - time: 3
+  custom:
+    label: 'Etch rates for oxide removal from NiTinol'
+    position: 'top'
+    columns:
+      - 0: 'Process'
+      - 1: 'Etch time (minutes)'
+    items:
+      - - 0: '150–160°F double strength'
+        - 1: 3
   etching:
     note:
       'Sample degreased with Simple Green and treated for oxide removal (see
