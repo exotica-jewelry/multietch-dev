@@ -527,13 +527,17 @@ rhodium:
   custom:
     label: 'Remove iron contamination from rhodium using Multi‑Etch'
     note: 'Removes iron contamination without removing any rhodium ions.'
-    time_suffix: '(minutes)'
-    depth_suffix: ''
-    process:
-      '135°F regular strength':
-        - time: 1
-          depth: 'no change'
-          surface: 'contamination removed'
+    position: 'top'
+    columns:
+      - 0: 'Process'
+      - 1: 'Etch time (minutes)'
+      - 2: 'Etch depth'
+      - 3: 'Surface change'
+    items:
+      - - 0: '135°F regular strength'
+        - 1: 1
+        - 2: 'no change'
+        - 3: 'contamination removed'
 
 stainless_steel:
   etching:
