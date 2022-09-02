@@ -9,7 +9,7 @@
 {{- with $data.preparing }}
   {{- $subtypeLabel := .subtype.label | title }}
   {{- $cols = 4 }}
-  <table class="table">
+  <table class="table table--preparing">
     <caption class="table__caption">
       <h3 class="table__title">
         Preparing {{ $metal }} {{ .label }} using
@@ -73,7 +73,7 @@
 {{- with $data.removing_color }}
   {{- $subtypeLabel := .subtype.label | title }}
   {{- $cols = 4 }}
-  <table class="table">
+  <table class="table table--removing_color">
     <caption class="table__caption">
       <h3 class="table__title">
         Removing color from {{ $metal }} using
@@ -134,6 +134,62 @@
   </table>
 {{- end -}}
 
+{{- with $data.etching_oxide }}
+  {{- $timeSuffix := .time_suffix }}
+  {{- $cols = 2 }}
+  <table class="table">
+    <caption class="table__caption">
+      <h3 class="table__title">
+        Etch rates for {{ $metal }}, oxide removal, using
+        <span class="multietch-wordmark"
+          >Multi&#8209;Etch<span class="registered">&#174;</span></span
+        >
+      </h3>
+      {{- with .note }}
+        <p class="table__note">Note: {{ . | markdownify }}</p>
+      {{- end }}
+    </caption>
+    <thead class="table__head">
+      <tr class="table__row">
+        <th class="table__cell table__cell--head" scope="col">Process</th>
+        <th class="table__cell table__cell--head" scope="col">
+          Etch time
+          {{ with $timeSuffix }}
+            {{ . }}
+          {{ end }}
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      {{- range $key, $value := .process }}
+        <tr class="table__row">
+          <th
+            colspan="{{ $cols }}"
+            scope="colgroup"
+            class="table__cell table__cell--head table__cell--head3"
+            data-title="Process"
+          >
+            {{- $key -}}
+          </th>
+        </tr>
+        {{- range . }}
+          <tr class="table__row">
+            <td class="table__cell table__cell--process" data-title="Process">
+              {{- index . "process" -}}
+            </td>
+            <td
+              class="table__cell"
+              data-title="Etch time {{ with $timeSuffix }}{{ . }}{{ end }}"
+            >
+              {{- index . "time" -}}
+            </td>
+          </tr>
+        {{- end }}
+      {{- end }}
+    </tbody>
+  </table>
+{{- end -}}
+
 {{- with $data.etching }}
   {{- $subtypeLabel := .subtype.label | title }}
   {{- $timeSuffix := .time_suffix }}
@@ -142,7 +198,7 @@
   {{- if eq $subtypeLabel "" }}
     {{- $cols = sub $cols 1 }}
   {{- end }}
-  <table class="table">
+  <table class="table table--etching">
     <caption class="table__caption">
       <h3 class="table__title">
         Etch rates for {{ $metal }} using
@@ -248,7 +304,7 @@
 {{- with $data.drill_bits }}
   {{- $timeSuffix := .time_suffix }}
   {{- $cols = 3 }}
-  <table class="table">
+  <table class="table table--drill_bits">
     <caption class="table__caption">
       <h3 class="table__title">
         How to remove drill bits from {{ $metal }} using
@@ -309,10 +365,12 @@
 
 {{- with $data.custom }}
   {{- $label := .label | markdownify }}
-  {{- $timeSuffix := .time_suffix }}
-  {{- $depthSuffix := .depth_suffix }}
-  {{- $cols = .columns }}
-  <table class="table">
+  {{- $cols = len .columns }}
+  {{- $columns := .columns }}
+  {{- $items := .items }}
+
+
+  <table class="table table--custom">
     <caption class="table__caption">
       <h3 class="table__title">{{ $label }}</h3>
       {{- with .note }}
@@ -321,58 +379,27 @@
     </caption>
     <thead class="table__head">
       <tr class="table__row">
-        <th class="table__cell table__cell--head" scope="col">Process</th>
-        <th class="table__cell table__cell--head" scope="col">
-          Etch time
-          {{ with $timeSuffix }}
-            {{ . }}
-          {{ end }}
-        </th>
-        <th class="table__cell table__cell--head" scope="col">
-          Etch depth
-          {{ with $depthSuffix }}
-            {{ . }}
-          {{ end }}
-        </th>
-        <th class="table__cell table__cell--head" scope="col">
-          Surface change
-        </th>
+        {{- range $key, $value := $columns }}
+          <th class="table__cell table__cell--head" scope="col">
+            {{- $column := index $columns $key -}}
+            {{- index $column ($key | string) -}}
+          </th>
+        {{- end }}
       </tr>
     </thead>
     <tbody class="table__body">
-      {{- range $key, $value := .process }}
+      {{- range $key, $value := $items }}
         <tr class="table__row">
-          <th
-            colspan="{{ $cols }}"
-            scope="colgroup"
-            class="table__cell table__cell--head table__cell--head3"
-            data-title="Process"
-          >
-            {{- $key -}}
-          </th>
-        </tr>
-        {{- range . }}
-          <tr class="table__row">
-            <td class="table__cell table__cell--process" data-title="Process">
-              {{- index . "process" -}}
-            </td>
+          {{- range $key, $value := . }}
+            {{- $column := index $columns $key }}
             <td
               class="table__cell"
-              data-title="Etch time {{ with $timeSuffix }}{{ . }}{{ end }}"
+              data-title="{{ index $column ($key | string) }}"
             >
-              {{- index . "time" -}}
+              {{ index $value ($key | string) }}
             </td>
-            <td
-              class="table__cell"
-              data-title="Etch depth {{ with $depthSuffix }}
-                {{ . }}
-              {{ end }}"
-            ></td>
-            <td class="table__cell" data-title="Surface change">
-              {{- index . "surface" -}}
-            </td>
-          </tr>
-        {{- end }}
+          {{- end }}
+        </tr>
       {{- end }}
     </tbody>
   </table>

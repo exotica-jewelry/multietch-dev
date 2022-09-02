@@ -231,6 +231,14 @@
           font-weight: bold;
         }
       }
+
+      &--custom {
+        .table__cell {
+          &:first-of-type {
+            font-weight: bold;
+          }
+        }
+      }
     }
   }
 }

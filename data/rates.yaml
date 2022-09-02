@@ -399,14 +399,21 @@ niobium:
       'Preparing niobium for electron beam welding using <span
       class="multietch-wordmark">Multi&#8209;Etch<span
       class="registered">&#174;</span></span>'
-    columns: 4
-    time_suffix: '(minutes)'
-    depth_suffix: ''
-    process:
-      '135°F double strength':
-        - time: 1
-          depth: 'no change'
-          surface: 'polish will turn slightly matte'
+    position: 'top'
+    columns:
+      - 0: 'Process'
+      - 1: 'Etch time (minutes)'
+      - 2: 'Etch depth'
+      - 3: 'Surface change'
+    items:
+      - - 0: '135°F double strength'
+        - 1: 1
+        - 2: 'no change'
+        - 3: 'polish will turn slightly matte'
+      - - 0: 'FAKE 135°F regular strength'
+        - 1: 1
+        - 2: 'no change'
+        - 3: 'polish will turn slightly matte'
 
 nitinol:
   etching_oxide:
@@ -415,7 +422,9 @@ nitinol:
       '150–160°F double strength':
         - time: 3
   etching:
-    note: 'Sample degreased with Simple Green.'
+    note:
+      'Sample degreased with Simple Green and treated for oxide removal (see
+      previous table).'
     time_suffix: '(minutes)'
     depth_suffix: '(inches, cumulative total)'
     depth_2_suffix: '(millimeters, cumulative total)'
