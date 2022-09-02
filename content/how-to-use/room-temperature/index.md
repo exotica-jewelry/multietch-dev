@@ -83,8 +83,9 @@ level is below the lip of the inner container.
 
 If using a fume hood, turn it on.
 
-Heat the Multi-Etch to 150°F; use a probe thermometer or, if unavailable, look
-for the tiny bubbles to appear and then continue heating for about 10 minutes.
+Heat the Multi-Etch to 150&#8211;160°F; use a probe thermometer or, if
+unavailable, look for the tiny bubbles to appear and then continue heating for
+about 10 minutes.
 
 While waiting for the Multi-Etch solution to reach the desired temperature,
 clean your titanium parts with Simple Green.

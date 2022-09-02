@@ -9,19 +9,19 @@ draft: false
 images: []
 ---
 
-We recommend using your Multi-Etch heated because it’s MUCH faster.
+We recommend using Multi-Etch heated because it's MUCH faster.
 
 Our detailed instructions are aimed at small users trying out titanium etching
 and anodizing for the first time. But the principles are the same for larger
 users with a dedicated production line, similar to those made by
 [IPEC Global](http://ipecglobal.com).
 
-Your first order will come in a jug with the Multi-Etch powder at the bottom.
-This container can be used to dissolve and mix your Multi-Etch for your first
-and future orders. Store and use Multi-Etch in plastic containers, never in
-metal or glass.
+Your first order will come with a bag of powdered Multi-Etch and a jug. This jug
+is extra robust and perfect for mixing and storing Multi-Etch for your first and
+future orders. Always use plastic for using and storing Multi-Etch, never metal
+or glass.
 
-Subsequent orders will come in a bag with just the Multi-Etch Powder. Because
+In subsequent orders you will receive just the bag of Multi-Etch Powder. Because
 the ingredients are not blended, you must mix the entire package.
 
 {{< video src="videos/multietch-basics.mp4" cover="videos/multietch-basics.jpg" attrs="controls" ratio="16x9" link="https://www.youtube.com/watch?v=5m1KUzaAGiQ" caps="true" >}}
@@ -60,7 +60,8 @@ gloves and a lab coat!
 
 ### Step 3: Prepare Multi-Etch {.clear}
 
-Prepare your Multi-Etch for use. Add water with the help of a funnel.
+Prepare your Multi-Etch for use. Add the Multi-Etch powder and water with the
+help of a funnel.
 
 {{< img src="black-funnel.jpg" alt="Black funnel placed on table with skinny end facing up" width="50%" >}}
 
@@ -80,7 +81,7 @@ At this stage turn on your fume hood.
 
 Pour into a double boiler only as much Multi-Etch as you need for this session,
 keeping the rest capped in the bottle. Heat until you see fine bubbles, or the
-temperature of Multi-Etch is 125–150°F.
+temperature of Multi-Etch is 125–160°F.
 
 While waiting for the Multi-Etch solution to reach the desired temperature,
 clean your titanium parts with Simple Green.

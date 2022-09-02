@@ -30,7 +30,7 @@ the lifespan of the etch bath.
 
 For titanium, we have a rough guide that **a gallon of regular-strength
 Multi-Etch will clean approximately 1,500 square inches of titanium** when
-dipped for three seconds at 120–150°F.
+dipped for three seconds at 120&#8211;160°F.
 
 Other metals, and doing more substantial etching such as preparing for welding,
 will consume Multi-Etch at different rates. Read on for how best to determine

@@ -1,8 +1,6 @@
 ---
-title: 'Preparing for welding with Multi-Etch'
-description:
-  'Guide to using Multi-Etch as preparation for welding titanium and other
-  metals.'
+title: 'Preparing titanium for welding with Multi-Etch'
+description: 'Guide to using Multi-Etch as preparation for welding titanium.'
 date: 2022-08-08T14:58:37-07:00
 lastmod: 2022-08-08T14:58:37-07:00
 draft: false
@@ -11,15 +9,15 @@ images: []
 
 {{< img src="welding_Firefly-Bicycles.jpg" alt="" caption="A welder using Multi-Etch to prepare a titanium bicycle frame, courtesy Firefly Bicycles." align="right" >}}
 
-Multi-Etch can be used to prepare titanium and other metals for welding.
+Multi-Etch can be used to prepare titanium for welding.
 
 It’s a good idea to test using scrap material of the pieces that will be welded
 so you can determine your exact etching time.
 
 ### Using heated Multi-Etch
 
-We recommend using Multi-Etch heated to 150°F, as it works much faster than
-room-temperature solution.
+We recommend using Multi-Etch heated to 150&#8211;160°F, as it works much faster
+than room-temperature solution.
 
 {{< point "Read our setup and basic step-by-step instructions for using Multi-Etch" "/" "How to use heated Multi‑Etch" >}}
 

@@ -20,7 +20,7 @@ from the metals.
 {{< img src="removing-color-titanium.jpg" alt="" caption="After anodizing, the left half of this piece was covered with tape. The whole piece was then dipped in Multi-Etch to remove the color on the right half." align="right" >}}
 
 Removing color with Multi-Etch works much faster when the
-[Multi-Etch is heated](/how-to-use/heated/) to 150–160°F.
+[Multi-Etch is heated](/how-to-use/heated/) to 150&#8211;160°F.
 
 ### Reverse-anodizing colors
 

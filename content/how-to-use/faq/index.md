@@ -18,7 +18,7 @@ images: []
 #### How much titanium will one gallon of Multi-Etch etch?
 
 Approximately 1,500 square inches of titanium when dipped for three seconds at
-120–150°F. As you etch, the etchant gradually becomes ineffective and
+120&#8211;160°F. As you etch, the etchant gradually becomes ineffective and
 contaminated with titanium ions that can re-plate to the metal, causing uneven
 anodizing.
 
@@ -68,8 +68,8 @@ techniques to anodize since the 1970s, sometimes we still get our wires crossed!
    one gallon for regular strength.
 
 2. If you are using Multi-Etch [unheated](/how-to-use/room-temperature/), **you
-   must heat the entire solution one time**, 120–150°F — then you can use it
-   right away or wait for it to cool to room temperature, 70°F.
+   must heat the entire solution one time**, 120&#8211;160°F — then you can use
+   it right away or wait for it to cool to room temperature, 70°F.
 
    Make sure you mix double strength (1/2 gallon distilled or deionized water)
    and shake the container before heating.

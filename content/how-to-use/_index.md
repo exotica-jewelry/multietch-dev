@@ -39,7 +39,7 @@ users with a dedicated production line, similar to those made by
 
 ### Heated or room temperature solution?
 
-Multi-Etch can be used while heated (125&#8211;150°F) or at room temperature
+Multi-Etch can be used while heated (150&#8211;160°F) or at room temperature
 (70°F). **Heated Multi-Etch will act much more quickly.**
 
 {{< button relref="/" text="Instructions for heated Multi-Etch" level="primary" width="90%" >}}
