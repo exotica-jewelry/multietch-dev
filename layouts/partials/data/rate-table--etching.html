@@ -1,5 +1,5 @@
 {{- $pctx := .pctx }}
-{{- $metal := .metal }}
+{{- $name := .name }}
 {{- $data := .data }}
 
 {{- with $data }}
@@ -13,7 +13,7 @@
   <table class="table table--etching">
     <caption class="table__caption">
       <h3 class="table__title">
-        Etch rates for {{ $metal }} using
+        Etch rates for {{ $name }} using
         <span class="multietch-wordmark"
           >Multi&#8209;Etch<span class="registered">&#174;</span></span
         >

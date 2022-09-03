@@ -1,12 +1,13 @@
 {{- define "main" }}
   {{- $pctx := . }}
-  {{- $metal := .Title }}
-  {{- $data := index $.Site.Data.rates ($metal | lower) -}}
+  {{- $name := .Title }}
+  {{- $metal := (replace $name " " "_" | lower) }}
+  {{- $data := index $.Site.Data.rates $metal -}}
   <div class="row justify-content-center">
     <div class="col-md-12 col-lg-10 col-xl-8">
       <article>
         <h1>
-          Etching {{ $metal }} with
+          Etching {{ $name }} with
           <span class="multietch-wordmark"
             >Multi&#8209;Etch<span class="registered">&#174;</span></span
           >
@@ -18,7 +19,7 @@
           )
         }}
         <h2>
-          How to etch {{ $metal }} with
+          How to etch {{ $name }} with
           <span class="multietch-wordmark"
             >Multi&#8209;Etch<span class="registered">&#174;</span></span
           >
@@ -31,7 +32,7 @@
             Multi-Etch was originally developed for use on titanium, and is a
             perfect low-acid (pH 6.8) alternative to hazardous hydrofluoric (HF)
             acid
-            {{ if ne $metal "titanium" }}for etching {{ $metal }}{{ end }}
+            {{ if ne $metal "titanium" }}for etching {{ $name }}{{ end }}
           </h5>
         {{- end -}}
         <div class="rate-intro">
@@ -46,7 +47,7 @@
           <div class="rate-tables">
             {{ partial "partials/data/rate-table" (dict
               "pctx" $pctx
-              "metal" $metal
+              "name" $name
               "data" .
               )
             }}
@@ -67,7 +68,7 @@
             <p>
               <em
                 >The guides below demonstrate etching with titanium, but the
-                order of steps are the same for etching {{ $metal }}.</em
+                order of steps are the same for etching {{ $name }}.</em
               >
             </p>
           {{- end -}}

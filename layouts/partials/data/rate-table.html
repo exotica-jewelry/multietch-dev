@@ -1,15 +1,15 @@
 {{- $pctx := .pctx }}
-{{- $metal := .metal }}
+{{- $name := .name }}
 {{- $data := .data }}
 {{- with $data.alloy }}
-  {{ $metal = printf "%s" ")" | printf "%s%s" . | printf "%s%s" " (" | printf "%s%s" $metal | printf "%s" }}
+  {{ $name = printf "%s" ")" | printf "%s%s" . | printf "%s%s" " (" | printf "%s%s" $name | printf "%s" }}
 {{- end }}
 
 {{- with $data.custom }}
   {{- if eq .position "top" }}
     {{- partial "partials/data/rate-table--custom" (dict
       "pctx" $pctx
-      "metal" $metal
+      "name" $name
       "data" .
       )
     }}
@@ -19,7 +19,7 @@
 {{- with $data.preparing }}
   {{- partial "partials/data/rate-table--preparing" (dict
     "pctx" $pctx
-    "metal" $metal
+    "name" $name
     "data" .
     )
   }}
@@ -28,7 +28,7 @@
 {{- with $data.removing_color }}
   {{- partial "partials/data/rate-table--removing_color" (dict
     "pctx" $pctx
-    "metal" $metal
+    "name" $name
     "data" .
     )
   }}
@@ -37,7 +37,7 @@
 {{- with $data.etching }}
   {{- partial "partials/data/rate-table--etching" (dict
     "pctx" $pctx
-    "metal" $metal
+    "name" $name
     "data" .
     )
   }}
@@ -46,7 +46,7 @@
 {{- with $data.drill_bits }}
   {{- partial "partials/data/rate-table--drill_bits" (dict
     "pctx" $pctx
-    "metal" $metal
+    "name" $name
     "data" .
     )
   }}
@@ -56,7 +56,7 @@
   {{- if eq .position "bottom" }}
     {{- partial "partials/data/rate-table--custom" (dict
       "pctx" $pctx
-      "metal" $metal
+      "name" $name
       "data" .
       )
     }}
