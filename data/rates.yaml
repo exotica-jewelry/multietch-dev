@@ -525,7 +525,7 @@ platinum:
 
 rhodium:
   custom:
-    label: 'Remove iron contamination from rhodium using Multi‑Etch'
+    label: 'Remove iron contamination from rhodium'
     note: 'Removes iron contamination without removing any rhodium ions.'
     position: 'top'
     columns:
@@ -539,6 +539,30 @@ rhodium:
         - 2: 'no change'
         - 3: 'contamination removed'
 
+silver:
+  custom:
+    label: 'Remove light firescale from silver'
+    position: 'top'
+    columns:
+      - 0: 'Process'
+      - 1: 'Etch time (minutes)'
+      - 2: 'Etch depth'
+      - 3: 'Surface change'
+    items:
+      - - 0: '135°F regular strength'
+        - 1: 3
+        - 2: 'no change'
+        - 3: 'light firescale removed'
+  drill_bits:
+    note:
+      '3 minutes will remove enough to be picked out; etch longer to dissolve
+      whole bit.'
+    time_suffix: '(minutes)'
+    process:
+      '135°F regular strength':
+        - time: '3+'
+          surface: 'slightly matte'
+
 stainless_steel:
   etching:
     time_suffix: '(minutes)'
@@ -551,26 +575,6 @@ stainless_steel:
             - time: 3
               depth: 0.001
               surface: 'matte with dark grey smut'
-
-silver:
-  custom:
-    label: 'Remove light firescale from silver using Multi‑Etch'
-    time_suffix: '(minutes)'
-    depth_suffix: ''
-    process:
-      '135°F regular strength':
-        - time: 3
-          depth: 'no change'
-          surface: 'light firescale removed'
-  drill_bits:
-    note:
-      '3 minutes will remove enough to be picked out; etch longer to dissolve
-      whole bit.'
-    time_suffix: '(minutes)'
-    process:
-      '135°F regular strength':
-        - time: '3+'
-          surface: 'slightly matte'
 
 tantalum:
   removing_color:
