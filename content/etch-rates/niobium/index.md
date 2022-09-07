@@ -2,7 +2,7 @@
 title: niobium
 date: 2022-09-01T13:38:13-07:00
 lastmod: 2022-09-01T13:38:13-07:00
-draft: true # Set to false to publish
+draft: false # Set to false to publish
 
 featured_image:
   file: 'images/niobium.jpg'
@@ -15,7 +15,7 @@ hf: true # Set to true to describe Multi-Etch as an alternative to hydrofluoric 
 # Content below this line will be used as introductory text on the page.
 ---
 
-### Preparing niobium for anodizing using <span class='multietch-wordmark'>Multi&#8209;Etch<span class='registered'>&#174;</span></span>{.subheading}
+### Preparing niobium for anodizing using <span class='multietch-wordmark'>Multi&#8209;Etch<span class='registered'>&#174;</span></span> {.subheading}
 
 Not usually necessary. Sometimes niobium arrives with mill oxides which are hard
 to see and may require etching to get good color. For many small parts, use a

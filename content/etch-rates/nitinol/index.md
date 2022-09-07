@@ -2,7 +2,7 @@
 title: NiTinol
 date: 2022-09-01T16:28:32-07:00
 lastmod: 2022-09-01T16:28:32-07:00
-draft: true # Set to false to publish
+draft: false # Set to false to publish
 
 featured_image:
   file: 'images/nitinol.jpg'

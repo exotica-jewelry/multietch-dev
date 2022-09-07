@@ -2,7 +2,7 @@
 title: pewter
 date: 2022-09-02T16:39:31-07:00
 lastmod: 2022-09-02T16:39:31-07:00
-draft: true # Set to false to publish
+draft: false # Set to false to publish
 
 featured_image:
   file: 'images/pewter.jpg'
