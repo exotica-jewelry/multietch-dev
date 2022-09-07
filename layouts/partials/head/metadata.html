@@ -12,7 +12,7 @@
   {{- $desc = .Site.Params.description -}}
 {{- end -}}
 {{- if .IsPage -}}
-  {{- $desc = .Summary -}}
+  {{- $desc = .Description -}}
 {{- end -}}
 {{- if eq .Type "etch-rates" -}}
   {{- $desc = printf "%s" ", a low-acid, safer alternative to hydrofluoric and other etchants." | printf "%s%s" .Site.Params.title | printf "%s%s" " using " | printf "%s%s" (.Title | lower) | printf "%s%s" "Etch rates for " | printf "%s" -}}
@@ -57,7 +57,8 @@
   </title>
 {{- else -}}
   <title>
-    {{- $title }} {{ .Site.Params.titleSeparator }}
+    {{- $title }}
+    {{ .Site.Params.titleSeparator }}
     {{ .Site.Params.title -}}
   </title>
 {{- end -}}
