@@ -1,61 +1,62 @@
-{{/*
+{{/* USAGE: The grid shortcode sets the number of columns and minimum widths for each
+  child item, allowing items to overflow to the next row if they can't fit within
+  minimum-width values.
 
-USAGE: The grid shortcode sets the number of columns and minimum widths for each
-child item, allowing items to overflow to the next row if they can't fit within
-minimum-width values.
+  Source:
+  https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
 
-Source:
-https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
-
-Use default values: 3 columns, 200px min-width of items, 1rem gap, 0 margin on
-items:
-< grid >
+  Use default values: 3 columns, 200px min-width of items, 1rem gap, 0 margin on
+  items:
+  < grid >
   [items]
-</ grid >
+  </ grid >
 
-Set number of columns to 2; use defaults for other values:
-< grid cols="2" >
+  Set number of columns to 2; use defaults for other values:
+  < grid cols="2" >
   [items]
-</ grid >
+  </ grid >
 
-Set number of columns to 2, min-width to 500px, gap to 5rem, and margins on
-items to '1rem 0':
-< grid cols="2" width="500px" gap="5rem" margin="1rem 0" >
+  Set number of columns to 2, min-width to 500px, gap to 5rem, and margins on
+  items to '1rem 0':
+  < grid cols="2" width="500px" gap="5rem" margin="1rem 0" >
   [items]
-</ grid >
+  </ grid >
 
-Set number of columns to 4, and set child images to be perfect squares (using
-'cover', allowing for clipping):
-< grid cols="4" sq="true" >
+  Set number of columns to 4, and set child images to be perfect squares (using
+  'cover', allowing for clipping), and set a class of "foo":
+  < grid cols="4" sq="true" class="foo" >
   [items]
-</ grid >
-
-*/}}
+  </ grid >
+  */}}
 {{- $columns := .Get "cols" -}}
 {{- $itemWidth := .Get "width" -}}
 {{- $itemGap := .Get "gap" -}}
 {{- $itemMargin := .Get "margin" -}}
 {{- $itemSquare := .Get "sq" -}}
+{{- $cssClass := .Get "class" -}}
 <div
   class="
     grid-container
     {{ with $itemSquare -}}
-      grid-container--square
-    {{- end -}}
+    grid-container--square
+  {{- end -}}
+    {{ with $cssClass -}}
+    {{ . | anchorize }}
+  {{- end -}}
   "
   style="
     {{- with $columns -}}
-      --grid-column-count: {{ . }};
-    {{- end -}}
+    --grid-column-count: {{ . }};
+  {{- end -}}
     {{- with $itemWidth -}}
-      --grid-item--min-width: {{ . }};
-    {{- end -}}
+    --grid-item--min-width: {{ . }};
+  {{- end -}}
     {{- with $itemGap -}}
-      --grid-layout-gap: {{ . }};
-    {{- end -}}
+    --grid-layout-gap: {{ . }};
+  {{- end -}}
     {{- with $itemMargin -}}
-      --grid-item--margin: {{ . }};
-    {{- end -}}
+    --grid-item--margin: {{ . }};
+  {{- end -}}
   "
 >
   {{ .Inner }}
