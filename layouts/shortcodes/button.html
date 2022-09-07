@@ -1,56 +1,84 @@
-{{/*
+{{/* USAGE
 
-USAGE
+  Primary-colored button to external link:
+  < button href="https://example.com/" text="Follow this link" level="primary" >
 
-Primary-colored button to external link:
-< button href="https://example.com/" text="Follow this link" level="primary" >
+  Primary-colored submit button:
+  < button type="submit" text="Follow this link" level="primary" >
 
-Secondary-colored button to internal link:
-< button relref="/about" text="Follow this link" level="secondary" >
+  Secondary-colored button to internal link:
+  < button relref="/about" text="Follow this link" level="secondary" >
 
-Primary-colored button to external link, 50% width:
-< button href="https://example.com/" text="Follow this link" level="primary" width="50%" >
+  Primary-colored button to external link, 50% width:
+  < button href="https://example.com/" text="Follow this link" level="primary" width="50%" >
 
-Primary-colored small button to internal link, with arbitrary class:
-< button relref="/foo" text="Follow this link" level="primary" size="sm" class="foo" >
+  Primary-colored small button to internal link, with arbitrary class:
+  < button relref="/foo" text="Follow this link" level="primary" size="sm" class="foo" >
 
-Secondary-colored small left-aligned button with non-bolded text, to internal link:
-< button relref="/bar" text="Follow this link" level="secondary" size="sm" align="left" weight="normal" >
-
+  Secondary-colored small left-aligned button with non-bolded text, to internal link:
+  < button relref="/bar" text="Follow this link" level="secondary" size="sm" align="left" weight="normal" >
 */}}
-{{ $text := .Get "text" }}
-{{ $ref := .Get "href" }}
-{{ $rel := "" }}
-{{ with $ref }}
-  {{ $rel = "noreferrer" }}
-{{ end }}
-{{ with .Get "relref" }}
-  {{ $ref = relref $ . }}
-{{ end }}
-{{ $align := .Get "align" }}
-{{ $size := .Get "size" }}
-{{ $width := .Get "width" }}
-{{ $weight := .Get "weight" }}
-<div class="btn-wrapper btn-wrapper--shortcode">
-  <a
-    {{ with $ref }}
-      href="{{ . }}"
-    {{ end }}
-    {{ with $rel }}
-      rel="{{ . }}"
-    {{ end }}
-    role="button"
-    class="
-      btn
-      btn--shortcode
-      btn-{{ $size | default "lg"}}
-      btn-{{ $weight | default "bold"}}
-      {{ with .Get "level" }}btn-{{ . }}{{ end }}
-      {{ with .Get "class" }}{{ . }}{{ end }}
-    "
-    {{ with $width }}
-    style="width: {{ . }};"
-    {{ end }}
-  >{{- $text | safeHTML -}}</a>
-</div>
+{{- $text := .Get "text" -}}
+{{- $ref := .Get "href" -}}
+{{- $type := .Get "type" -}}
 
+{{- $rel := "" -}}
+{{- with $ref -}}
+  {{- $rel = "noreferrer" -}}
+{{- end -}}
+{{- with .Get "relref" -}}
+  {{- $ref = relref $ . -}}
+{{- end -}}
+
+{{- $align := .Get "align" -}}
+{{- $size := .Get "size" -}}
+{{- $width := .Get "width" -}}
+{{- $weight := .Get "weight" -}}
+{{- $level := .Get "level" -}}
+{{- $customClass := .Get "class" -}}
+
+{{- $scratch := newScratch -}}
+{{- $scratch.Add "classes" (slice "btn" "btn--shortcode") -}}
+{{- with $type -}}
+  {{- $scratch.Add "classes" (slice "btn--element") -}}
+{{- else -}}
+  {{- $scratch.Add "classes" (slice "btn--link") -}}
+{{- end -}}
+{{- $scratch.Add "classes" (slice (printf "%s" ($size | default "lg") | printf "%s%s" "btn-" | printf "%s")) -}}
+{{- $scratch.Add "classes" (slice (printf "%s" ($weight | default "bold") | printf "%s%s" "btn-" | printf "%s")) -}}
+{{- with $level -}}
+  {{- $scratch.Add "classes" (slice (printf "%s" . | printf "%s%s" "btn-" | printf "%s")) -}}
+{{- end -}}
+{{- with $customClass -}}
+  {{- $scratch.Add "classes" (slice . ) -}}
+{{- end -}}
+
+
+<div class="btn-wrapper btn-wrapper--shortcode">
+  {{ with $type -}}
+    <button
+      type="{{ . }}"
+      class="{{- range $scratch.Get "classes" }}{{ . }}{{ end -}}"
+      {{ with $width -}}
+        style="width: {{ . }};"
+      {{ end -}}
+    >
+      {{- $text | safeHTML -}}
+    </button>
+  {{ else -}}
+    <a
+      role="button"
+      {{ with $ref -}}
+        href="{{ . }}"
+      {{ end -}}
+      {{ with $rel -}}
+        rel="{{ . }}"
+      {{ end -}}
+      class="{{- range $scratch.Get "classes" }}{{ . }}{{ end -}}"
+      {{ with $width -}}
+        style="width: {{ . }};"
+      {{ end -}}
+      >{{- $text | safeHTML -}}</a
+    >
+  {{- end }}
+</div>
