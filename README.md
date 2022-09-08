@@ -138,17 +138,117 @@ typing in the command.
 
 ### Etch rates pages
 
-**Editing existing etch rates:** See the `data/etch-rates.yaml` file for the
-bulk of the content on each page, and the `content/etch-rates/` subdirectories
-for the introductory text and featured images for each page.
+Etch rate pages contain
+[responsive data tables](https://github.com/rootwork/responsive-tables-builder),
+which have a spreadsheet look on wider-screen devices and a grouped-list look on
+narrower-screen devices, as well as being fully navigable by keyboard and
+assistive devices. This responsive transformation of the data tables are the
+primary reason this information isn't simply pasted in as Markdown.
+
+**Editing existing etch rates:** The content of the tables on etch rate pages
+lives in the `data/etch-rates.yaml` file (see below for details). The
+subdirectories in `content/etch-rates/` contain the introductory text and
+featured images for each page.
 
 **Adding a new etch rate page:** `npm run create:rate [metal]` will create a
 stub directory in `content/etch-rates/[metal]` using the name of the metal you
 supply, set to draft by default. Use this Markdown file to set the introductory
 text, and save the featured image in the `images` subdirectory. Add the
-necessary data to the `data/etch-rates.yaml` file, and once you're satisfied
-with the result, change the `draft` status on the Markdown file to `false` to
-publish the page. Menu listings will automatically be updated.
+necessary data to the `data/etch-rates.yaml` file (see below), and once you're
+satisfied with the result, change the `draft` status on the Markdown file to
+`false` to publish the page. Menu listings will automatically be updated.
+
+#### Etch rate data
+
+We use Hugo's
+[data templates system](https://gohugo.io/templates/data-templates/) to store
+the content of the etch rate tables in the file `data/etch-rates.yaml`.
+
+This file is in [YAML](https://www.stackpath.com/edge-academy/what-is-yaml/)
+format. For each metal there are five types of rate tables available (defined in
+the `layouts/partials/data/` directory): `preparing`, `removing_color`,
+`etching`, `drill_bits` and `custom`. Each metal can use one or all of the types
+of tables.
+
+**General table settings:**
+
+- The top-level `alloy` field allows you to further describe the metal. For
+  instance, aluminum has the field set to "3003" and so every table for this
+  metal will be titled using "aluminum (3003)" rather than simply "aluminum".
+- The `note` field in each table displays a message at the top of the table,
+  prepended with `Note: `. This field can include Markdown.
+- The `subtype` groups the types of metal, such as grades. The first child of
+  this field, `label`, defines what the "subtype" actually is. The subsequent
+  fields within `subtype` after `label` are the individual types, e.g. "1 (CP)",
+  "2 (CP)", etc. for a subtype of grade. If you don't want any subtype grouping,
+  set an empty label (`label: ''`) and use "none" for the name of the type.
+- The items beneath each individual subtype are the data columns, grouped into
+  `process`, `time`, `depth` and `surface` depending on the needs of the table.
+- `time_suffix` and `depth_suffix` are available to selectively display
+  information such as "minutes" for time or "inches" for depth.
+
+Editing existing data in the table should be straightforward. If you add a new
+metal to the data table, you'll then need to create an etch rate page for it
+(see above) to set its display image and introductory text.
+
+#### Preparing
+
+This table contains an optional top-level `label` field allowing you to describe
+the type of preparation (e.g. "for anodizing or welding") in the title of the
+table.
+
+| key | `preparing` | | visible title | "Preparing [metal] [`label`] using
+Multi-Etch" | | columns available | `process`, `time`, `surface` |
+
+#### Removing color
+
+| key | `removing_color` | | visible title | "Removing color from [metal] using
+Multi-Etch" | | columns available | `process`, `time`, `surface` |
+
+#### Etching
+
+| key | `etching` | | visible title | "Etch rates for [metal] using Multi-Etch"
+| | columns available | `process` (grouped), `time`, `depth`, `surface` |
+
+#### Drill bits
+
+| key | `drill_bits` | | visible title | "How to remove drill bits from [metal]
+using Multi-Etch" | | columns available | `process` (grouped), `time`, `surface`
+|
+
+#### Custom
+
+Custom tables (key: `custom`) are the most flexible and have no defined title or
+columns. The `label` field defines the title of the table. Like other table
+types, they can have a `note` displayed at the top. The `position` field is
+required and will place the custom table either at the `top` (before any other
+tables) or `bottom` (after any other tables).
+
+Columns are defined using key:value maps. You can define any number of columns.
+For instance:
+
+```yaml
+columns:
+  - 0: 'Process'
+  - 1: 'Etch time (minutes)'
+  - 2: 'Etch depth (inches)'
+  - 3: 'Surface change'
+```
+
+Items are then defined in the same way and using the same order of the columns.
+Note the double hyphen/indentation indicating the start of each new item:
+
+```yaml
+items:
+  - - 0: '135°F single strength'
+    - 1: 1
+    - 2: 0.00005
+    - 3: 'no change'
+  - - 0: '135°F double strength'
+    - 1: 1
+    - 2: 0.0025
+    - 3: 'polish will turn slightly matte'
+```
 
 ### Editing site variables
 
