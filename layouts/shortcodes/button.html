@@ -58,7 +58,11 @@
   {{ with $type -}}
     <button
       type="{{ . }}"
-      class="{{- range $scratch.Get "classes" }}{{ . }}{{ end -}}"
+      class="
+      {{- range $scratch.Get "classes" }}
+        {{ . }}
+      {{ end -}}
+      "
       {{ with $width -}}
         style="width: {{ . }};"
       {{ end -}}
@@ -74,7 +78,11 @@
       {{ with $rel -}}
         rel="{{ . }}"
       {{ end -}}
-      class="{{- range $scratch.Get "classes" }}{{ . }}{{ end -}}"
+      class="
+      {{- range $scratch.Get "classes" }}
+        {{ . }}
+      {{ end -}}
+      "
       {{ with $width -}}
         style="width: {{ . }};"
       {{ end -}}
