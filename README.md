@@ -146,23 +146,25 @@ assistive devices. This responsive transformation of the data tables are the
 primary reason this information isn't simply pasted in as Markdown.
 
 **Editing existing etch rates:** The content of the tables on etch rate pages
-lives in the `data/etch-rates.yaml` file (see below for details). The
-subdirectories in `content/etch-rates/` contain the introductory text and
-featured images for each page.
+lives in the [`data/etch-rates.yaml`](data/etch-rates.yaml) file (see below for
+details). The subdirectories in `content/etch-rates/` contain the introductory
+text and featured images for each page.
 
 **Adding a new etch rate page:** `npm run create:rate [metal]` will create a
 stub directory in `content/etch-rates/[metal]` using the name of the metal you
 supply, set to draft by default. Use this Markdown file to set the introductory
 text, and save the featured image in the `images` subdirectory. Add the
-necessary data to the `data/etch-rates.yaml` file (see below), and once you're
-satisfied with the result, change the `draft` status on the Markdown file to
-`false` to publish the page. Menu listings will automatically be updated.
+necessary data to the [`data/etch-rates.yaml`](data/etch-rates.yaml) file (see
+below), and once you're satisfied with the result, change the `draft` status on
+the Markdown file to `false` to publish the page. Menu listings will
+automatically be updated.
 
 #### Etch rate data
 
 We use Hugo's
 [data templates system](https://gohugo.io/templates/data-templates/) to store
-the content of the etch rate tables in the file `data/etch-rates.yaml`.
+the content of the etch rate tables in the file
+[`data/etch-rates.yaml`](data/etch-rates.yaml).
 
 This file is in [YAML](https://www.stackpath.com/edge-academy/what-is-yaml/)
 format. For each metal there are five types of rate tables available (defined in
@@ -197,24 +199,35 @@ This table contains an optional top-level `label` field allowing you to describe
 the type of preparation (e.g. "for anodizing or welding") in the title of the
 table.
 
-| key | `preparing` | | visible title | "Preparing [metal] [`label`] using
-Multi-Etch" | | columns available | `process`, `time`, `surface` |
+|                   |                                                |
+| :---------------- | ---------------------------------------------- |
+| key               | `preparing`                                    |
+| visible title     | "Preparing [metal] [`label`] using Multi-Etch" |
+| columns available | `process`, `time`, `surface`                   |
 
 #### Removing color
 
-| key | `removing_color` | | visible title | "Removing color from [metal] using
-Multi-Etch" | | columns available | `process`, `time`, `surface` |
+|                   |                                                |
+| :---------------- | ---------------------------------------------- |
+| key               | `removing_color`                               |
+| visible title     | "Removing color from [metal] using Multi-Etch" |
+| columns available | `process`, `time`, `surface`                   |
 
 #### Etching
 
-| key | `etching` | | visible title | "Etch rates for [metal] using Multi-Etch"
-| | columns available | `process` (grouped), `time`, `depth`, `surface` |
+|                   |                                                 |
+| :---------------- | ----------------------------------------------- |
+| key               | `etching`                                       |
+| visible title     | "Etch rates for [metal] using Multi-Etch"       |
+| columns available | `process` (grouped), `time`, `depth`, `surface` |
 
 #### Drill bits
 
-| key | `drill_bits` | | visible title | "How to remove drill bits from [metal]
-using Multi-Etch" | | columns available | `process` (grouped), `time`, `surface`
-|
+|                   |                                                          |
+| :---------------- | -------------------------------------------------------- |
+| key               | `drill_bits`                                             |
+| visible title     | "How to remove drill bits from [metal] using Multi-Etch" |
+| columns available | `process` (grouped), `time`, `surface`                   |
 
 #### Custom
 
