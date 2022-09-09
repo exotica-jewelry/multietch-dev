@@ -20,6 +20,7 @@
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
+    "create:blog": "scripts/new_blog_post.sh --editor='subl' -o -a",
     "create:rate": "scripts/new_rate.sh",
     "prestart": "npm run clean",
     "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --buildDrafts --buildFuture --baseURL=http://localhost",
