@@ -1,9 +1,9 @@
 {{/* USAGE
 
-  Primary-colored button to external link:
-  < button href="https://example.com/" text="Follow this link" level="primary" >
+  Button to an external link, colored primary by default:
+  < button href="https://example.com/" text="Follow this link" >
 
-  Primary-colored submit button:
+  Submit button, specifying primary level:
   < button type="submit" text="Follow this link" level="primary" >
 
   Secondary-colored button to internal link:
@@ -46,9 +46,7 @@
 {{- end -}}
 {{- $scratch.Add "classes" (slice (printf "%s" ($size | default "lg") | printf "%s%s" "btn-" | printf "%s")) -}}
 {{- $scratch.Add "classes" (slice (printf "%s" ($weight | default "bold") | printf "%s%s" "btn-" | printf "%s")) -}}
-{{- with $level -}}
-  {{- $scratch.Add "classes" (slice (printf "%s" . | printf "%s%s" "btn-" | printf "%s")) -}}
-{{- end -}}
+{{- $scratch.Add "classes" (slice (printf "%s" ($level | default "primary") | printf "%s%s" "btn-" | printf "%s")) -}}
 {{- with $customClass -}}
   {{- $scratch.Add "classes" (slice . ) -}}
 {{- end -}}
