@@ -15,7 +15,7 @@ description: >
   Description
 
 draft: true # Change to 'false' to publish this post.
-sitemap_exclude: true # Change to 'true' to exclude from sitemaps submitted to search engines.
+sitemap_exclude: false # Change to 'true' to exclude from sitemaps submitted to search engines.
 feed_exclude: false # Change to 'true' to exclude from RSS etc.
 
 # Archive taxonomy terms (auto-generated)
