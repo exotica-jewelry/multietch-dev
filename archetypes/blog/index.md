@@ -22,9 +22,9 @@ feed_exclude: false # Change to 'true' to exclude from RSS etc.
 year: '{{ .Date | dateFormat "2006" }}'
 month: '{{ .Date | dateFormat "2006-01" }}'
 
-# Post images: The first image, which is required, will be used as the header
-# image of the post and when shared on social media.
+# Post images: At least one image is highly recommended, as the first image
+# listed will be used as the header image and when shared on social media.
 images:
-  - "{{ .Name | urlize }}.jpg"
+  - ""
 
 ---
