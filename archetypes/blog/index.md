@@ -22,9 +22,8 @@ feed_exclude: false # Change to 'true' to exclude from RSS etc.
 year: '{{ .Date | dateFormat "2006" }}'
 month: '{{ .Date | dateFormat "2006-01" }}'
 
-# Post images: At least one image is highly recommended, as the first image
-# listed will be used as the header image and when shared on social media.
-images:
-  - ""
+featured_image:
+  file: '' # Recommended. Used as a header, and when sharing on social media.
+  caption: '' # Markdown can be included here
 
 ---

@@ -1,21 +1,53 @@
 {{ define "main" }}
+  {{- $pctx := . }}
   <div class="row justify-content-center">
-    <div class="col-lg-7">
+    <div class="col-lg-10">
       <article>
-        <h1>
-          {{ dict
-            "content" .Title
-            "siteParams" .Site.Params
-            | partial "function/content.html"
-            | safeHTML
-          }}
-        </h1>
-        {{ dict
-          "content" .Content
-          "siteParams" .Site.Params
-          | partial "function/content.html"
-          | safeHTML
-        }}
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+            <div class="blog-header">
+              <h1>
+                {{ dict
+                  "content" .Title
+                  "siteParams" .Site.Params
+                  | partial "function/content.html"
+                  | safeHTML
+                }}
+              </h1>
+              {{ partial "main/blog-meta.html" . }}
+            </div>
+          </div>
+          <div class="col-md-13">
+            <div>
+              {{ partial "content/image.html" (dict
+                "pctx" $pctx
+                "file" .Params.featured_image.file
+                "caption" .Params.featured_image.caption
+                )
+              }}
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-9">
+            {{ dict
+              "content" .Content
+              "siteParams" .Site.Params
+              | partial "function/content.html"
+              | safeHTML
+            }}
+            {{ if .Params.tags -}}
+              <div class="mt-4">
+                {{ range $index, $tag := .Params.tags -}}
+                  <a
+                    class="btn btn-light"
+                    href="{{ "/tags/" | absURL }}{{ . | urlize }}/"
+                    role="button"
+                    >{{ . }}</a
+                  >
+                {{ end -}}
+              </div>
+            {{ end -}}
+          </div>
+        </div>
       </article>
     </div>
   </div>
