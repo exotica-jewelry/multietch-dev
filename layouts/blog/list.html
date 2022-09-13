@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-lg-10 col-xl-8">
+      <h1>
+        {{ dict
+          "content" .Title
+          "siteParams" .Site.Params
+          | partial "function/content.html"
+          | safeHTML
+        }}
+      </h1>
+      {{ $paginator := .Paginate (.Data.Pages) -}}
+      <ul>
+        {{ range $paginator.Pages -}}
+          <li>
+            <article>
+              <h2>
+                <a href="{{ .Permalink }}"
+                  >{{ dict
+                    "content" .Title
+                    "siteParams" .Site.Params
+                    | partial "function/content.html"
+                    | safeHTML
+                  }}</a
+                >
+              </h2>
+              {{ dict
+                "content" .Description
+                "siteParams" .Site.Params
+                | partial "function/content.html"
+                | safeHTML
+              }}
+            </article>
+          </li>
+        {{ end -}}
+      </ul>
+      {{ template "_internal/pagination.html" . -}}
+    </div>
+  </div>
+{{ end }}
