@@ -40,14 +40,61 @@ questions and get some answers. You can start a discussion and hear what others
 are experiencing. We’ll address your questions and ask some of our own to get
 conversations going as well as post articles of interest.
 
-{{< grid cols="4" sq="true" width="100px" >}}
-{{< img src="1-dental.jpg" alt="Dental titanium implants" >}}
-{{< img src="2-nexxt.jpg" alt="Nexxt titanium implants" >}}
-{{< img src="3-aerospace.jpg" alt="Aerospace titanium components" >}}
-{{< img src="4-bicycle.jpg" alt="Bicycles made of titanium" >}}
-{{< img src="5-ring.jpg" alt="Titanium wedding ring" >}}
-{{< img src="6-toys.jpg" alt="Toys made of titanium" >}}
-{{< img src="7-knives.jpg" alt="Titanium knives" >}} {{</ grid >}}
+<section class="grid-gallery">
+  <ul role="list">
+    <li>
+      <button>
+        <figure>
+          <img src="1-dental.jpg" alt="Dental titanium implants" />
+          <figcaption>Dental titanium implants</figcaption>
+        </figure>
+      </button>
+    </li>
+    <li>
+      <button>
+        <figure>
+          <img src="2-nexxt.jpg" alt="Nexxt titanium implants" />
+          <figcaption>Nexxt titanium implants Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</figcaption>
+        </figure>
+      </button>
+    </li>
+    <li>
+      <button>
+        <figure>
+          <img src="3-aerospace.jpg" alt="Aerospace titanium components" />
+        </figure>
+      </button>
+    </li>
+    <li>
+      <button>
+        <figure>
+          <img src="4-bicycle.jpg" alt="Bicycles made of titanium" />
+        </figure>
+      </button>
+    </li>
+    <li>
+      <button>
+        <figure>
+          <img src="5-ring.jpg" alt="Titanium wedding ring" />
+        </figure>
+      </button>
+    </li>
+    <li>
+      <button>
+        <figure>
+          <img src="6-toys.jpg" alt="Toys made of titanium" />
+        </figure>
+      </button>
+    </li>
+    <li>
+      <button>
+        <figure>
+          <img src="7-knives.jpg" alt="Titanium knives" />
+        </figure>
+      </button>
+    </li>
+  </ul>
+</section>
 
 Join others in the **dental, medical, jewelry, aerospace, and consumer product
 industries** who have switched from using dangerous acids like Hydrofluoric, or

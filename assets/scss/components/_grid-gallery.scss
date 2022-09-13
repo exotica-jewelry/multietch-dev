@@ -1,0 +1,139 @@
+// Grid gallery variables
+:root {
+  --grid-gallery-gap: 0.25rem;
+  --grid-gallery-background: white;
+  --grid-gallery-image-minwidth: 200px;
+  --grid-gallery-image-aspect: 1;
+  --grid-gallery-image-active-outline-color: gray;
+  --grid-gallery-caption-padding: 0.25rem;
+  --grid-gallery-caption-font-size: 1rem;
+  --grid-gallery-caption-font-color: black;
+  --grid-gallery-caption-background: rgba(255, 255, 255, 0.65);
+  --grid-gallery-duration-shrink: 0.5s;
+  --grid-gallery-duration-expand: 0.25s;
+  --grid-gallery-no-duration: 0s;
+}
+
+// Media queries don't accept CSS variables
+$grid-gallery-breakpoint: 400px;
+
+.grid-gallery {
+  max-width: 100%;
+
+  // Note for keyboard users and those navigating with assistive devices.
+  .key-note {
+    display: none; // Overridden at breakpoint
+    margin: 0;
+    padding: 0 0 1px;
+    font-size: 80%;
+    font-style: italic;
+
+    kbd {
+      padding: 0.15em 0.35em;
+      background-color: #ddd;
+      color: black;
+      border-radius: 0.2em;
+      font-family: monospace;
+      font-size: inherit;
+    }
+
+    // Accessibly hiding .key-note by default and displaying when tabbed/focused.
+    &:not(:focus):not(:focus-visible):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); // Overridden at breakpoint
+    grid-gap: var(--grid-gallery-gap);
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background: var(--grid-gallery-background);
+    transition-property: transform, opacity, outline-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--grid-gallery-duration-expand);
+    outline: calc(var(--grid-gallery-gap) / 2) solid transparent;
+  }
+
+  li.is-zoomed {
+    transition-duration: var(--grid-gallery-duration-shrink);
+  }
+
+  li.is-zoomed button,
+  ul:not(.is-zoomed) button:focus {
+    outline-color: var(--grid-gallery-image-active-outline-color);
+  }
+
+  @media (prefers-reduced-motion) {
+    li,
+    li.is-zoomed {
+      transition-duration: var(--grid-gallery-no-duration);
+    }
+  }
+
+  button {
+    all: initial;
+    display: grid;
+    align-items: start;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: var(--grid-gallery-image-aspect);
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: var(--grid-gallery-caption-padding);
+    font-size: var(--grid-gallery-caption-font-size);
+    color: var(--grid-gallery-caption-font-color);
+    background: var(--grid-gallery-caption-background);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (min-width: $grid-gallery-breakpoint) {
+    .key-note {
+      display: block;
+    }
+
+    ul {
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(var(--grid-gallery-image-minwidth), 1fr)
+      );
+    }
+
+    li:hover {
+      outline-color: var(--grid-gallery-image-active-outline-color);
+    }
+  }
+}
