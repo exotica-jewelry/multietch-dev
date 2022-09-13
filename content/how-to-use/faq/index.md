@@ -142,8 +142,7 @@ techniques to anodize since the 1970s, sometimes we still get our wires crossed!
 
     We use 1 tablespoon of ammonium sulfate per gallon of distilled water. You
     can get ammonium sulfate wherever gardening supplies are sold. You can also
-    use
-    [**TSP-PF Electrolyte**](https://www.reactivemetals.com/patinas-chemicals).
+    use TSP-PF, available at big box and hardware stores.
 
     Start with 1/8 cup per gallon of distilled water. If the anodizing reaction
     is too slow, add a little more TSP. For a bath of either ammonium sulfate or
