@@ -2,8 +2,9 @@
 let $activeElem = false
 let timeout = 0
 
-// Get gallery element
-const $gallery = document.querySelector('.grid-gallery ul')
+// Get gallery container and grid
+const $gallery = document.querySelector('.grid-gallery')
+const $grid = document.querySelector('.grid-gallery ul')
 
 // Add note for a11y
 let note = document.createElement('p')
@@ -11,17 +12,17 @@ note.innerHTML =
   'Press <kbd>Return</kbd> to zoom images and <kbd>Esc</kbd> to exit zoomed images.'
 note.classList.add('key-note')
 note.setAttribute('tabindex', '0')
-$gallery.parentNode.insertBefore(note, $gallery)
+$grid.parentNode.insertBefore(note, $grid)
 
 // Get the transition timeout from CSS
 const getTimeouts = () => {
   const durationOn = parseFloat(
-    getComputedStyle(document.documentElement).getPropertyValue(
+    getComputedStyle($gallery).getPropertyValue(
       '--grid-gallery-duration-expand'
     )
   )
 
-  timeout = parseFloat(durationOn) * 1000
+  timeout = parseFloat(durationOn) * 100
 }
 
 // Get the top offset
@@ -35,15 +36,6 @@ const getTop = ($elem) => {
 const setDataAttrs = ($elems, $parent) => {
   // Get the top offset of the first element
   let top = getTop($elems[0])
-
-  // Set grid gap from CSS
-  const gridColumnGap = parseFloat(
-    getComputedStyle(document.documentElement).getPropertyValue(
-      '--grid-gallery-gap'
-    )
-  )
-
-  $parent.setAttribute('data-gap', gridColumnGap)
 
   // Set grid item width from CSS
   const eStyle = getComputedStyle($elems[0])
@@ -98,7 +90,6 @@ const activateElem = ($elems, $parent, $elem, $button, lengthOfElems, i) => {
   // Get data attributes from parent
   const cols = parseInt($parent.getAttribute('data-cols'))
   const width = parseFloat($parent.getAttribute('data-width'))
-  const gap = parseFloat($parent.getAttribute('data-gap'))
 
   // If there is only a single column, prevent from executing
   if (cols === 1) {
@@ -147,9 +138,9 @@ const activateElem = ($elems, $parent, $elem, $button, lengthOfElems, i) => {
   $elem.style.transformOrigin = transformOrigin
 
   // Calculate the scale coefficient
-  const scale = (width * 2 + gap) / width
+  const scale = (width * 2) / width
 
-  // After a whole timeout, set CSS high z-index to avoid overlay issues
+  // After a whole timeout...
   setTimeout(() => {
     // Set high CSS z-index to avoid overlay issues
     $elem.style.zIndex = 100
@@ -234,21 +225,21 @@ const setResizeEvents = ($elems, $parent) => {
 }
 
 // If the gallery element exists, start the functionality
-if ($gallery) {
+if ($grid) {
   // Find all list items
-  const $items = $gallery.querySelectorAll('li')
+  const $items = $grid.querySelectorAll('li')
 
   // Check if there are list items
   if ($items.length) {
     // Get the transition timeout from CSS
     getTimeouts($items)
     // Set data attributes for calculations
-    setDataAttrs($items, $gallery)
+    setDataAttrs($items, $grid)
     // Set click events on anchors
-    setClicks($items, $gallery)
+    setClicks($items, $grid)
     // Set keyboard events
     setKeyboardEvents()
     // Set resize events
-    setResizeEvents($items, $gallery)
+    setResizeEvents($items, $grid)
   }
 }

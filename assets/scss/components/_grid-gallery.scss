@@ -1,17 +1,5 @@
 // Grid gallery variables
 :root {
-  --grid-gallery-gap: 0.25rem;
-  --grid-gallery-background: white;
-  --grid-gallery-image-minwidth: 200px;
-  --grid-gallery-image-aspect: 1;
-  --grid-gallery-image-active-outline-color: gray;
-  --grid-gallery-caption-padding: 0.25rem;
-  --grid-gallery-caption-font-size: 1rem;
-  --grid-gallery-caption-font-color: black;
-  --grid-gallery-caption-background: rgba(255, 255, 255, 0.65);
-  --grid-gallery-duration-shrink: 0.5s;
-  --grid-gallery-duration-expand: 0.25s;
-  --grid-gallery-no-duration: 0s;
 }
 
 // Media queries don't accept CSS variables
@@ -52,12 +40,13 @@ $grid-gallery-breakpoint: 400px;
   ul {
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); // Overridden at breakpoint
-    grid-gap: var(--grid-gallery-gap);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   li {
+    flex-basis: 100%; // Overridden at breakpoint
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -65,7 +54,8 @@ $grid-gallery-breakpoint: 400px;
     transition-property: transform, opacity, outline-color;
     transition-timing-function: ease-in-out;
     transition-duration: var(--grid-gallery-duration-expand);
-    outline: calc(var(--grid-gallery-gap) / 2) solid transparent;
+    outline: calc(var(--grid-gallery-image-active-outline-size) / 2) solid
+      transparent;
   }
 
   li.is-zoomed {
@@ -80,7 +70,7 @@ $grid-gallery-breakpoint: 400px;
   @media (prefers-reduced-motion) {
     li,
     li.is-zoomed {
-      transition-duration: var(--grid-gallery-no-duration);
+      transition-duration: 0s;
     }
   }
 
@@ -125,15 +115,12 @@ $grid-gallery-breakpoint: 400px;
       display: block;
     }
 
-    ul {
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(var(--grid-gallery-image-minwidth), 1fr)
-      );
-    }
+    li {
+      flex-basis: calc(100% / var(--grid-cols));
 
-    li:hover {
-      outline-color: var(--grid-gallery-image-active-outline-color);
+      &:hover {
+        outline-color: var(--grid-gallery-image-active-outline-color);
+      }
     }
   }
 }
