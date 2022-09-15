@@ -1,7 +1,6 @@
 {{/* USAGE */}}
-{{- $gridCols := .Get "gridCols" | default "3" -}}
+{{- $gridCols := .Get "gridcols" | default "3" -}}
 {{- $gridBackground := .Get "gridbg" | default "white" | safeCSS -}}
-{{- $imageMinWidth := .Get "imagemin" | default "200px" | safeCSS -}}
 {{- $imageAspectRatio := .Get "imageratio" | default "1" | safeCSS -}}
 {{- $imageActiveOutlineSize := .Get "imageoutlinesize" | default "0.25rem" | safeCSS -}}
 {{- $imageActiveOutlineColor := .Get "imageoutlinecolor" | default "gray" | safeCSS -}}
@@ -9,21 +8,24 @@
 {{- $captionFontSize := .Get "capsize" | default "1rem" | safeCSS -}}
 {{- $capFontColor := .Get "capcolor" | default "black" | safeCSS -}}
 {{- $capBackground := .Get "capbg" | default "rgba(255, 255, 255, 0.65)" | safeCSS -}}
-{{- $durationExpand := .Get "timeExpand" | default "0.5s" | safeCSS -}}
-{{- $durationShrink := .Get "timeShrink" | default "0.25s" | safeCSS -}}
+{{- $backgroundOpacity := .Get "bgopacity" | default "0.333" | safeCSS -}}
+{{- $scaleFactor := .Get "scale" | default "2" -}}
+{{- $durationExpand := .Get "durexpand" | default "0.5s" | safeCSS -}}
+{{- $durationShrink := .Get "durshrink" | default "0.25s" | safeCSS -}}
 <section
   class="grid-gallery"
   style="
     --grid-cols: {{ $gridCols }};
     --grid-gallery-background: {{ $gridBackground }};
-    --grid-gallery-image-minwidth: {{ $imageMinWidth }};
     --grid-gallery-image-aspect: {{ $imageAspectRatio }};
-    --grid-gallery-image-active-outline-size: {{ $imageActiveOutlineColor }};
+    --grid-gallery-image-active-outline-size: {{ $imageActiveOutlineSize }};
     --grid-gallery-image-active-outline-color: {{ $imageActiveOutlineColor }};
     --grid-gallery-caption-padding: {{ $captionPadding }};
     --grid-gallery-caption-font-size: {{ $captionFontSize }};
     --grid-gallery-caption-font-color: {{ $capFontColor }};
     --grid-gallery-caption-background: {{ $capBackground }};
+    --grid-gallery-background-opacity: {{ $backgroundOpacity }};
+    --grid-gallery-scale-factor: {{ $scaleFactor }};
     --grid-gallery-duration-expand: {{ $durationExpand }};
     --grid-gallery-duration-shrink: {{ $durationShrink }};
   "
@@ -43,8 +45,7 @@
           <img src="2-nexxt.jpg" alt="Nexxt titanium implants" />
           <figcaption>
             Nexxt titanium implants Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad.
+            adipiscing elit, sed do eiusmod tempor incididunt.
           </figcaption>
         </figure>
       </button>

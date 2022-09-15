@@ -40,7 +40,7 @@ questions and get some answers. You can start a discussion and hear what others
 are experiencing. We’ll address your questions and ask some of our own to get
 conversations going as well as post articles of interest.
 
-{{< gallery gridcols="3" >}}
+{{< gallery scale="3" >}}
 
 Join others in the **dental, medical, jewelry, aerospace, and consumer product
 industries** who have switched from using dangerous acids like Hydrofluoric, or

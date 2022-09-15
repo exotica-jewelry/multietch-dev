@@ -14,6 +14,11 @@ note.classList.add('key-note')
 note.setAttribute('tabindex', '0')
 $grid.parentNode.insertBefore(note, $grid)
 
+// Get the scale factor
+const scaleFactor = getComputedStyle($gallery).getPropertyValue(
+  '--grid-gallery-scale-factor'
+)
+
 // Get the transition timeout from CSS
 const getTimeouts = () => {
   const durationOn = parseFloat(
@@ -114,31 +119,61 @@ const activateElem = ($elems, $parent, $elem, $button, lengthOfElems, i) => {
     return
   }
 
-  // Calculate if the item is in the last row
-  const isLastRow = i + 1 > rows * cols
-  // Set default transform direction to top (expand down)
-  let transformOrigin = 'top'
+  // Set default transform origin to center (expand out)
+  let transformOrigin = 'center'
 
+  // If item is in the first row, set transform origin to top (expand down)
+  const isFirstRow = i < cols
+  if (isFirstRow) {
+    transformOrigin = 'top'
+  }
+
+  // If item is in the last row, set transform origin to bottom (expand up)
+  const isLastRow = i + 1 > rows * cols
   if (isLastRow) {
-    // If the item is in the last row, set transform direction to bottom (expand up)
     transformOrigin = 'bottom'
   }
 
-  // Calculate if the item is the most right
-  const isRight = (i + 1) % cols !== 0
+  // Determine which column the item is in
+  const curColumn = (i % cols) + 1
+  let isFirstCol = false
+  let isLastCol = false
+  let isRemainder = false
 
-  if (isRight) {
-    // If the item is the most right, set transform direction to left (expand right)
-    transformOrigin += ' left'
-  } else {
-    // If the item is the most right, set transform direction to right (expand left)
+  if (curColumn === 1) {
+    isFirstCol = true
+  }
+
+  if (curColumn === cols) {
+    isLastCol = true
+  }
+
+  // Determine if an item in the last row is left over (not in a full row)
+  if (isLastRow) {
+    if (lengthOfElems % cols !== 0) {
+      isRemainder = true
+    }
+  }
+
+  if (isFirstCol) {
+    // If the item is in the first column, set transform origin to left (expand right), unless it is left over (thus center-positioned), in which case set transform origin to center (expand out)
+    if (!isRemainder) {
+      transformOrigin += ' left'
+    } else {
+      transformOrigin += ' center'
+    }
+  } else if (isLastCol) {
+    // If the item is in the last column, set transform origin to right (expand left)
     transformOrigin += ' right'
+  } else {
+    // Otherwise, set transform origin to center (expand out)
+    transformOrigin += ' center'
   }
 
   $elem.style.transformOrigin = transformOrigin
 
   // Calculate the scale coefficient
-  const scale = (width * 2) / width
+  const scale = (width * scaleFactor) / width
 
   // After a whole timeout...
   setTimeout(() => {
