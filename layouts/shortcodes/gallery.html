@@ -1,4 +1,5 @@
 {{/* USAGE */}}
+{{- $class := .Get "class" -}}
 {{- $gridCols := .Get "gridcols" | default "3" -}}
 {{- $gridBackground := .Get "gridbg" | default "white" | safeCSS -}}
 {{- $imageAspectRatio := .Get "imageratio" | default "1" | safeCSS -}}
@@ -13,7 +14,12 @@
 {{- $durationExpand := .Get "durexpand" | default "0.5s" | safeCSS -}}
 {{- $durationShrink := .Get "durshrink" | default "0.25s" | safeCSS -}}
 <section
-  class="grid-gallery"
+  class="
+    grid-gallery
+  {{- with $class }}
+    {{ . }}
+  {{ end -}}
+  "
   style="
     --grid-cols: {{ $gridCols }};
     --grid-gallery-background: {{ $gridBackground }};
@@ -34,56 +40,12 @@
     <li>
       <button>
         <figure>
-          <img src="1-dental.jpg" alt="Dental titanium implants" />
-          <figcaption>Dental titanium implants</figcaption>
-        </figure>
-      </button>
-    </li>
-    <li>
-      <button>
-        <figure>
-          <img src="2-nexxt.jpg" alt="Nexxt titanium implants" />
-          <figcaption>
-            Nexxt titanium implants Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt.
-          </figcaption>
-        </figure>
-      </button>
-    </li>
-    <li>
-      <button>
-        <figure>
-          <img src="3-aerospace.jpg" alt="Aerospace titanium components" />
-        </figure>
-      </button>
-    </li>
-    <li>
-      <button>
-        <figure>
-          <img src="4-bicycle.jpg" alt="Bicycles made of titanium" />
-        </figure>
-      </button>
-    </li>
-    <li>
-      <button>
-        <figure>
-          <img src="5-ring.jpg" alt="Titanium wedding ring" />
-        </figure>
-      </button>
-    </li>
-    <li>
-      <button>
-        <figure>
-          <img src="6-toys.jpg" alt="Toys made of titanium" />
-        </figure>
-      </button>
-    </li>
-    <li>
-      <button>
-        <figure>
-          <img src="7-knives.jpg" alt="Titanium knives" />
+          {{ .Inner }}
         </figure>
       </button>
     </li>
   </ul>
 </section>
+
+<!-- <img src="1-dental.jpg" alt="Dental titanium implants" />
+<figcaption>Dental titanium implants</figcaption> -->
