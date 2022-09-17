@@ -11,6 +11,3 @@ import 'lazysizes'
 
 // global alert
 import './assets/js/alert'
-
-// grid gallery of images
-import './assets/js/grid-gallery'

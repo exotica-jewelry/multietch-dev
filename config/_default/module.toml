@@ -5,3 +5,6 @@
 [[mounts]]
   source = "node_modules/@hyas/images/layouts"
   target = "layouts"
+
+[[imports]]
+  path = "github.com/rootwork/hugo-module-gallery-grid"

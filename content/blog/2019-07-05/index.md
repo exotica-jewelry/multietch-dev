@@ -42,6 +42,14 @@ conversations going as well as post articles of interest.
 
 {{< gallery scale="3" >}}
 
+- 1-dental.jpg Dental titanium implants Dental titanium implants
+- 2-nexxt.jpg Nexxt titanium implants Nexxt titanium implants!
+- 3-aerospace.jpg Aerospace titanium components
+- 4-bicycle.jpg Bicycles made of titanium
+- 5-ring.jpg Titanium wedding rings
+- 6-toys.jpg Toys made of titanium
+- 7-knives.jpg Titanium knives {{</ gallery >}}
+
 Join others in the **dental, medical, jewelry, aerospace, and consumer product
 industries** who have switched from using dangerous acids like Hydrofluoric, or
 never wanted those hazards in their work life in the first place and chose the
