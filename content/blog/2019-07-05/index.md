@@ -48,7 +48,9 @@ conversations going as well as post articles of interest.
 - 4-bicycle.jpg Bicycles made of titanium
 - 5-ring.jpg Titanium wedding rings
 - 6-toys.jpg Toys made of titanium
-- 7-knives.jpg Titanium knives {{</ gallery >}}
+- 7-knives.jpg Titanium knives
+
+{{</ gallery >}}
 
 Join others in the **dental, medical, jewelry, aerospace, and consumer product
 industries** who have switched from using dangerous acids like Hydrofluoric, or
